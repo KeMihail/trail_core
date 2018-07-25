@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jul 24, 2018 5:33:55 PM                     ---
+ * --- Generated at Jul 25, 2018 3:32:08 PM                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -31,7 +31,10 @@ public class GeneratedTrainingCoreConstants
 	}
 	public static class Attributes
 	{
-		// no constants defined.
+		public static class Product
+		{
+			public static final String METAINFO = "metaInfo".intern();
+		}
 	}
 	public static class Enumerations
 	{

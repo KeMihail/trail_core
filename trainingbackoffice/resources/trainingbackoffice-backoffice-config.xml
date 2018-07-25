@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<config xmlns="http://www.hybris.com/cockpit/config"
+	xmlns:y="http://www.hybris.com/cockpit/config/hybris"
+	xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config"
+	xmlns:list-view="http://www.hybris.com/cockpitng/component/listView"
+	xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea"
+	xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree"
+	xmlns:simple-search="http://www.hybris.com/cockpitng/config/simplesearch"
+	xmlns:advanced-search="http://www.hybris.com/cockpitng/config/advancedsearch"
+	xmlns:df="http://www.hybris.com/cockpitng/component/dynamicForms"
+	xmlns:dsb="http://www.hybris.com/cockpitng/config/dashboard"
+	xmlns:na="http://www.hybris.com/cockpitng/config/notifications"
+	xmlns:grid-view="http://www.hybris.com/cockpitng/component/gridView">
+
+	<context component="create-wizard" type="Product">
+		<wz:flow id="ProductWizard"
+			title="create.title(ctx.TYPE_CODE)">
+			<wz:prepare id="productPrepare">
+				<wz:initialize property="newProduct"
+					type="ctx.TYPE_CODE" />
+			</wz:prepare>
+			<wz:step id="step1" label="create.product.essential.label"
+				sublabel="create.product.essential.sublabel">
+				<wz:content id="step1.content">
+					<wz:property-list root="newProduct">
+						<wz:property qualifier="code" type="java.lang.String" />
+						<wz:property qualifier="approvalStatus" />
+						<wz:property qualifier="catalogVersion" />
+						<wz:property qualifier="metaInfo"
+							type="java.lang.String" />
+					</wz:property-list>
+				</wz:content>
+				<wz:navigation id="step1.navigation">
+					<wz:cancel />
+					<wz:next visible="!#empty(newProduct.code)" />
+					<wz:done visible="!#empty(newProduct.code)">
+						<wz:save property="newProduct" />
+					</wz:done>
+				</wz:navigation>
+			</wz:step>
+		</wz:flow>
+	</context>
+
+	<context merge-by="type" parent="GenericItem" type="Product"
+		component="editor-area">
+		<editorArea:editorArea name="">
+			<editorArea:essentials>
+				<editorArea:essentialSection
+					name="hmc.essential">
+					<editorArea:attribute qualifier="code" />
+					<editorArea:attribute qualifier="name" />
+					<editorArea:attribute
+						qualifier="catalogVersion" />
+					<editorArea:attribute
+						qualifier="approvalStatus" />
+					<editorArea:attribute qualifier="metaInfo" />
+				</editorArea:essentialSection>
+			</editorArea:essentials>
+		</editorArea:editorArea>
+	</context>
+</config>

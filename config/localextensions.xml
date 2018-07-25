@@ -66,5 +66,7 @@
 		<extension name='trainingcockpits' />
 		<extension name='trainingfulfilmentprocess' />
 
+		<extension name="trainingbackoffice" />
+
 	</extensions>
 </hybrisconfig>

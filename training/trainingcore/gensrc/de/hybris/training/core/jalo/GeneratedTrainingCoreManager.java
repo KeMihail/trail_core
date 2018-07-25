@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jul 24, 2018 5:33:55 PM                     ---
+ * --- Generated at Jul 25, 2018 3:32:08 PM                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -13,12 +13,14 @@
  */
 package de.hybris.training.core.jalo;
 
+import de.hybris.platform.jalo.GenericItem;
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
 import de.hybris.platform.jalo.JaloBusinessException;
 import de.hybris.platform.jalo.JaloSystemException;
 import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.extension.Extension;
+import de.hybris.platform.jalo.product.Product;
 import de.hybris.platform.jalo.type.ComposedType;
 import de.hybris.platform.jalo.type.JaloGenericCreationException;
 import de.hybris.training.core.constants.TrainingCoreConstants;
@@ -26,6 +28,7 @@ import de.hybris.training.core.jalo.ApparelProduct;
 import de.hybris.training.core.jalo.ApparelSizeVariantProduct;
 import de.hybris.training.core.jalo.ApparelStyleVariantProduct;
 import de.hybris.training.core.jalo.ElectronicsColorVariantProduct;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -39,6 +42,9 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 	static
 	{
 		final Map<String, Map<String, AttributeMode>> ttmp = new HashMap();
+		Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>();
+		tmp.put("metaInfo", AttributeMode.INITIAL);
+		ttmp.put("de.hybris.platform.jalo.product.Product", Collections.unmodifiableMap(tmp));
 		DEFAULT_INITIAL_ATTRIBUTES = ttmp;
 	}
 	@Override
@@ -161,6 +167,42 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 	public String getName()
 	{
 		return TrainingCoreConstants.EXTENSIONNAME;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.metaInfo</code> attribute.
+	 * @return the metaInfo
+	 */
+	public String getMetaInfo(final SessionContext ctx, final Product item)
+	{
+		return (String)item.getProperty( ctx, TrainingCoreConstants.Attributes.Product.METAINFO);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.metaInfo</code> attribute.
+	 * @return the metaInfo
+	 */
+	public String getMetaInfo(final Product item)
+	{
+		return getMetaInfo( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.metaInfo</code> attribute. 
+	 * @param value the metaInfo
+	 */
+	public void setMetaInfo(final SessionContext ctx, final Product item, final String value)
+	{
+		item.setProperty(ctx, TrainingCoreConstants.Attributes.Product.METAINFO,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.metaInfo</code> attribute. 
+	 * @param value the metaInfo
+	 */
+	public void setMetaInfo(final Product item, final String value)
+	{
+		setMetaInfo( getSession().getSessionContext(), item, value );
 	}
 	
 }

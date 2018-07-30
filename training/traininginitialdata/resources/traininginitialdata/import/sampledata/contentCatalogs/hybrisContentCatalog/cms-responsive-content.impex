@@ -318,11 +318,6 @@ INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]   
                                  
                                  
                                  
-                                 
-                                 
-                                 
-                                 
-                                 
 INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]              ; name                              ; active ; cmsComponents(&componentRef)
                           
                           ;                         ; MiddleContent-StoreFinderPage ; Middle Slot for Store Finder Page ; true   ; StoreFinderComponent        

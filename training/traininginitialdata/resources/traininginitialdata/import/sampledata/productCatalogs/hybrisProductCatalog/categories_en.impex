@@ -1,0 +1,15 @@
+
+$productCatalog=hybrisProductCatalog
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+# Language
+$lang=en
+
+# Create Categories
+UPDATE Category ; code[unique=true] ; $catalogVersion ; name[lang=$lang] 
+                ; 1                 ;                 ; Hybris Catalogue ;  
+                ; 100               ;                 ; Stuff            ;  
+                ; 200               ;                 ; Clothes          ;  
+                ; 210               ;                 ; Shirts           ;  
+                ; 220               ;                 ; Sweats           ;  

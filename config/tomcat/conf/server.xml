@@ -98,7 +98,7 @@
 	      		 	pattern="combined"
           />
 
-      <Host startStopThreads="0"   	name="localhost"
+      <Host startStopThreads="0"         	name="localhost"
       			appBase="webapps"
 		       	unpackWARs="false"
 		       	autoDeploy="false"
@@ -118,6 +118,12 @@
   </Service>
 
 </Server>
+
+
+
+
+
+
 
 
 

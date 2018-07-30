@@ -1,0 +1,28 @@
+$contentCatalog=Default	
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+
+INSERT_UPDATE PageTemplate;$contentCV;uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true]
+;;ContentPage2Template;Content Page 2 Template;layout/contentLayout2Page;ContentPage
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='ContentPage2Template'];validComponentTypes(code)
+;SiteLogo;;CMSImageComponent,BannerComponent
+;HeaderLinks;;CMSLinkComponent,CMSParagraphComponent
+;MiniCart;;MiniCartComponent
+;NavigationBar;;NavigationComponent
+;Footer;;CMSLinkComponent,CMSParagraphComponent,FooterNavigationComponent
+
+INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]       ; name                            ; active
+;;SiteLogoSlot;Site Logo Slot;true
+;;HomepageNavLinkSlot;Home page Nav Link Slot;true
+;;NavigationBarSlot;Navigation Bar Slot;true
+;;MiniCartSlot;Mini Cart Slot;true
+;;FooterSlot;Footer Slot;true
+;;HeaderLinksSlot;Header Links Slot;true
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV;uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='ContentPage2Template'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-ContentPage2;SiteLogo;;SiteLogoSlot;true
+;;HomepageLink-ContentPage2;HomepageNavLink;;HomepageNavLinkSlot;true
+;;NavigationBar-ContentPage2;NavigationBar;;NavigationBarSlot;true
+;;MiniCart-ContentPage2;MiniCart;;MiniCartSlot;true
+;;Footer-ContentPage2;Footer;;FooterSlot;true
+;;HeaderLinks-ContentPage2;HeaderLinks;;HeaderLinksSlot;true

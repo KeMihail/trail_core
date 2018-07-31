@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jul 30, 2018 2:14:34 PM                     ---
+ * --- Generated at Jul 31, 2018 4:52:02 PM                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -13,19 +13,23 @@
  */
 package de.hybris.training.core.jalo;
 
+import de.hybris.platform.jalo.GenericItem;
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
 import de.hybris.platform.jalo.JaloBusinessException;
 import de.hybris.platform.jalo.JaloSystemException;
 import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.extension.Extension;
+import de.hybris.platform.jalo.product.Product;
 import de.hybris.platform.jalo.type.ComposedType;
 import de.hybris.platform.jalo.type.JaloGenericCreationException;
+import de.hybris.platform.jalo.user.User;
 import de.hybris.training.core.constants.TrainingCoreConstants;
 import de.hybris.training.core.jalo.ApparelProduct;
 import de.hybris.training.core.jalo.ApparelSizeVariantProduct;
 import de.hybris.training.core.jalo.ApparelStyleVariantProduct;
 import de.hybris.training.core.jalo.ElectronicsColorVariantProduct;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -39,6 +43,9 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 	static
 	{
 		final Map<String, Map<String, AttributeMode>> ttmp = new HashMap();
+		Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>();
+		tmp.put("internalOnly", AttributeMode.INITIAL);
+		ttmp.put("de.hybris.platform.jalo.product.Product", Collections.unmodifiableMap(tmp));
 		DEFAULT_INITIAL_ATTRIBUTES = ttmp;
 	}
 	@Override
@@ -161,6 +168,79 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 	public String getName()
 	{
 		return TrainingCoreConstants.EXTENSIONNAME;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.internalOnly</code> attribute.
+	 * @return the internalOnly
+	 */
+	public Boolean isInternalOnly(final SessionContext ctx, final Product item)
+	{
+		return (Boolean)item.getProperty( ctx, TrainingCoreConstants.Attributes.Product.INTERNALONLY);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.internalOnly</code> attribute.
+	 * @return the internalOnly
+	 */
+	public Boolean isInternalOnly(final Product item)
+	{
+		return isInternalOnly( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.internalOnly</code> attribute. 
+	 * @return the internalOnly
+	 */
+	public boolean isInternalOnlyAsPrimitive(final SessionContext ctx, final Product item)
+	{
+		Boolean value = isInternalOnly( ctx,item );
+		return value != null ? value.booleanValue() : false;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.internalOnly</code> attribute. 
+	 * @return the internalOnly
+	 */
+	public boolean isInternalOnlyAsPrimitive(final Product item)
+	{
+		return isInternalOnlyAsPrimitive( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.internalOnly</code> attribute. 
+	 * @param value the internalOnly
+	 */
+	public void setInternalOnly(final SessionContext ctx, final Product item, final Boolean value)
+	{
+		item.setProperty(ctx, TrainingCoreConstants.Attributes.Product.INTERNALONLY,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.internalOnly</code> attribute. 
+	 * @param value the internalOnly
+	 */
+	public void setInternalOnly(final Product item, final Boolean value)
+	{
+		setInternalOnly( getSession().getSessionContext(), item, value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.internalOnly</code> attribute. 
+	 * @param value the internalOnly
+	 */
+	public void setInternalOnly(final SessionContext ctx, final Product item, final boolean value)
+	{
+		setInternalOnly( ctx, item, Boolean.valueOf( value ) );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.internalOnly</code> attribute. 
+	 * @param value the internalOnly
+	 */
+	public void setInternalOnly(final Product item, final boolean value)
+	{
+		setInternalOnly( getSession().getSessionContext(), item, value );
 	}
 	
 }

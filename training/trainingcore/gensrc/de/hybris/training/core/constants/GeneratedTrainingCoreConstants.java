@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jul 30, 2018 2:14:34 PM                     ---
+ * --- Generated at Jul 31, 2018 4:52:02 PM                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -31,7 +31,14 @@ public class GeneratedTrainingCoreConstants
 	}
 	public static class Attributes
 	{
-		// no constants defined.
+		public static class Customer
+		{
+			public static final String ISINTERNAL = "isInternal".intern();
+		}
+		public static class Product
+		{
+			public static final String INTERNALONLY = "internalOnly".intern();
+		}
 	}
 	public static class Enumerations
 	{

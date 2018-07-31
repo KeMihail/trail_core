@@ -1,28 +1,48 @@
 $contentCatalog=Default	
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 
-INSERT_UPDATE PageTemplate;$contentCV;uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true]
-;;ContentPage2Template;Content Page 2 Template;layout/contentLayout2Page;ContentPage
+$wideContent=CMSImageComponent,SimpleBannerComponent,BannerComponent,ImageMapComponent,RotatingImagesComponent,ProductCarouselComponent,CMSParagraphComponent
+$narrowContent=ProductFeatureComponent,CategoryFeatureComponent,CMSImageComponent,SimpleBannerComponent,BannerComponent,ImageMapComponent,RotatingImagesComponent,ProductCarouselComponent,CMSParagraphComponent
 
-INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='ContentPage2Template'];validComponentTypes(code)
-;SiteLogo;;CMSImageComponent,BannerComponent
-;HeaderLinks;;CMSLinkComponent,CMSParagraphComponent
-;MiniCart;;MiniCartComponent
-;NavigationBar;;NavigationComponent
-;Footer;;CMSLinkComponent,CMSParagraphComponent,FooterNavigationComponent
+UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor] ; pk[unique=true]
+$jarResourceCms=$config-jarResourceCmsValue                                                                
 
-INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]       ; name                            ; active
-;;SiteLogoSlot;Site Logo Slot;true
-;;HomepageNavLinkSlot;Home page Nav Link Slot;true
-;;NavigationBarSlot;Navigation Bar Slot;true
-;;MiniCartSlot;Mini Cart Slot;true
-;;FooterSlot;Footer Slot;true
-;;HeaderLinksSlot;Header Links Slot;true
+INSERT_UPDATE PageTemplate ; $contentCV ; uid[unique=true]     ; name                    ; frontendTemplateName      ; restrictedPageTypes(code) ; active[default=true]
+                           ;            ; ContentPage2Template ; Content Page 2 Template ; layout/contentLayout2Page ; ContentPage               
 
-INSERT_UPDATE ContentSlotForTemplate;$contentCV;uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='ContentPage2Template'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
-;;SiteLogo-ContentPage2;SiteLogo;;SiteLogoSlot;true
-;;HomepageLink-ContentPage2;HomepageNavLink;;HomepageNavLinkSlot;true
-;;NavigationBar-ContentPage2;NavigationBar;;NavigationBarSlot;true
-;;MiniCart-ContentPage2;MiniCart;;MiniCartSlot;true
-;;Footer-ContentPage2;Footer;;FooterSlot;true
-;;HeaderLinks-ContentPage2;HeaderLinks;;HeaderLinksSlot;true
+INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='ContentPage2Template'] ; validComponentTypes(code)                                       
+                              ; SiteLogo          ;                                                                       ; CMSImageComponent,BannerComponent                               
+                              ; HeaderLinks       ;                                                                       ; CMSLinkComponent,CMSParagraphComponent                          
+                              ; MiniCart          ;                                                                       ; MiniCartComponent                                               
+                              ; NavigationBar     ;                                                                       ; NavigationComponent                                             
+                              ; Footer            ;                                                                       ; CMSLinkComponent,CMSParagraphComponent,FooterNavigationComponent
+                              ; Section1          ;                                                                       ; $wideContent                                                    
+                              ; Section2          ;                                                                       ; $wideContent                                                    
+                              ; Section3          ;                                                                       ; $narrowContent                                                  
+
+INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]    ; name                    ; active
+                          ;                         ; SiteLogoSlot        ; Site Logo Slot          ; true  
+                          ;                         ; HomepageNavLinkSlot ; Home page Nav Link Slot ; true  
+                          ;                         ; NavigationBarSlot   ; Navigation Bar Slot     ; true  
+                          ;                         ; MiniCartSlot        ; Mini Cart Slot          ; true  
+                          ;                         ; FooterSlot          ; Footer Slot             ; true  
+                          ;                         ; HeaderLinksSlot     ; Header Links Slot       ; true  
+
+INSERT_UPDATE ContentSlotForTemplate ; $contentCV ; uid[unique=true]           ; position[unique=true] ; pageTemplate(uid,$contentCV)[unique=true][default='ContentPage2Template'] ; contentSlot(uid,$contentCV)[unique=true] ; allowOverwrite
+                                     ;            ; SiteLogo-ContentPage2      ; SiteLogo              ;                                                                           ; SiteLogoSlot                             ; true          
+                                     ;            ; HomepageLink-ContentPage2  ; HomepageNavLink       ;                                                                           ; HomepageNavLinkSlot                      ; true          
+                                     ;            ; NavigationBar-ContentPage2 ; NavigationBar         ;                                                                           ; NavigationBarSlot                        ; true          
+                                     ;            ; MiniCart-ContentPage2      ; MiniCart              ;                                                                           ; MiniCartSlot                             ; true          
+                                     ;            ; Footer-ContentPage2        ; Footer                ;                                                                           ; FooterSlot                               ; true          
+                                     ;            ; HeaderLinks-ContentPage2   ; HeaderLinks           ;                                                                           ; HeaderLinksSlot                          ; true          
+
+                                     
+
+INSERT_UPDATE PageTemplate ; $contentCV ; uid[unique=true]     ; velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+                           ;            ; ContentPage2Template ; $jarResourceCms/structure-view/structure_customCMSPage.vm              
+                           
+INSERT_UPDATE PageTemplate ; $contentCV[unique=true] ; uid[unique=true]       ; name                       ; restrictedPageTypes(code) ; active[default=true]
+                           ;                         ; ContentPage2Template ; Content Page 2 Template                    ; ContentPage 
+
+INSERT_UPDATE ContentPage;$contentCV;uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default=true];homepage[default=false];approvalStatus(code)[default='approved']
+;;myDefaultPage;default page;ContentPage2Template;label;;                      

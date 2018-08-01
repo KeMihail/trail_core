@@ -66,8 +66,8 @@
 			class="qty js-qty-selector-input" value="1">
 	</c:if>
 	<input type="hidden" name="productCodePost"
-		value="${fn:escapeXml(product.code)}" />
-
+		value="${fn:escapeXml(product.code)}" />ghfhgfh
+${product.internalOnly}
 	<c:if test="${empty showAddToCart ? true : showAddToCart}">
 		<c:set var="buttonType">button</c:set>
 		<c:if

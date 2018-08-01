@@ -7,9 +7,10 @@
 <div class="banner__component simple-banner">
 	<c:choose>
 		<c:when test="${empty encodedUrl || encodedUrl eq '#'}">
-			<img title="${fn:escapeXml(media.altText)}" alt="${fn:escapeXml(media.altText)}"
-				src="${media.url}">
+			<img title="${fn:escapeXml(media.altText)}"
+				alt="${fn:escapeXml(media.altText)}" src="${media.url}">
 		</c:when>
+
 		<c:otherwise>
 			<a href="${encodedUrl}"><img title="${fn:escapeXml(media.altText)}"
 				alt="${fn:escapeXml(media.altText)}" src="${media.url}"></a>

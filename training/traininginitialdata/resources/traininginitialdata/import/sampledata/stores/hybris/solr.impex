@@ -25,27 +25,27 @@ $productCatalogVersion=catalogversion(catalog(id[default=$productCatalog]),versi
 
 
 # Define Range Set
-INSERT_UPDATE SolrValueRangeSet;name[unique=true];qualifier;type;solrValueRanges(&rangeValueRefID)
+INSERT_UPDATE SolrValueRangeSet ; name[unique=true] ; qualifier ; type ; solrValueRanges(&rangeValueRefID)
 
-# Define Ranges
-INSERT_UPDATE SolrValueRange;&rangeValueRefID;solrValueRangeSet(name)[unique=true];name[unique=true];from;to
+# Define Ranges                 
+INSERT_UPDATE SolrValueRange ; &rangeValueRefID ; solrValueRangeSet(name)[unique=true] ; name[unique=true] ; from ; to
 
-INSERT_UPDATE SolrIndexedProperty;solrIndexedType(identifier)[unique=true];name[unique=true];type(code);sortableType(code);currency[default=false];localized[default=false];multiValue[default=false];facet[default=false];facetType(code);facetSort(code);priority;visible;fieldValueProvider;customFacetSortProvider;rangeSets(name);$classAttributeAssignment
+INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true] ; type(code) ; sortableType(code) ; currency[default=false] ; localized[default=false] ; multiValue[default=false] ; facet[default=false] ; facetType(code) ; facetSort(code) ; priority ; visible ; fieldValueProvider ; customFacetSortProvider ; rangeSets(name) ; $classAttributeAssignment
 
-INSERT_UPDATE SolrIndexedProperty;solrIndexedType(identifier)[unique=true];name[unique=true];type(code);localized[default=true];multiValue[default=false];fieldValueProvider;$classAttributeAssignment
+INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true] ; type(code) ; localized[default=true] ; multiValue[default=false] ; fieldValueProvider ; $classAttributeAssignment
 
-# Import Classification Features
-INSERT_UPDATE SolrIndexedProperty;solrIndexedType(identifier)[unique=true];name[unique=true];type(code);localized[default=true];multiValue[default=false];fieldValueProvider;$classAttributeAssignment
+# Import Classification Features  
+INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true] ; type(code) ; localized[default=true] ; multiValue[default=false] ; fieldValueProvider ; $classAttributeAssignment
 
 # Show the Classification Features in the Product List View Category /Search Pages
-INSERT_UPDATE ClassAttributeAssignment;$classClass[unique=true];$classAttribute[unique=true];$classSystemVersion[unique=true];listable[default=true]
+INSERT_UPDATE ClassAttributeAssignment ; $classClass[unique=true] ; $classAttribute[unique=true] ; $classSystemVersion[unique=true] ; listable[default=true]
 
-# Redirect page URL
-INSERT_UPDATE SolrURIRedirect;url[unique=true]
+# Redirect page URL                    
+INSERT_UPDATE SolrURIRedirect ; url[unique=true]
 
-INSERT_UPDATE SolrPageRedirect;redirectItem(uid,$contentCatalogVersion)[unique=true]
+INSERT_UPDATE SolrPageRedirect ; redirectItem(uid,$contentCatalogVersion)[unique=true]
 
-INSERT_UPDATE SolrCategoryRedirect;redirectItem(code,$productCatalogVersion)[unique=true]
+INSERT_UPDATE SolrCategoryRedirect ; redirectItem(code,$productCatalogVersion)[unique=true]
 
-INSERT_UPDATE SolrProductRedirect;redirectItem(code,$productCatalogVersion)[unique=true]
+INSERT_UPDATE SolrProductRedirect ; redirectItem(code,$productCatalogVersion)[unique=true]
 

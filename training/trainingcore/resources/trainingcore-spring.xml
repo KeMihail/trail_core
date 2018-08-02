@@ -712,4 +712,9 @@
 		class="de.hybris.training.core.model.DynamicHybrisCustomerAttributeBean">
 	</bean>
 
+	<bean id="trainingProductReviewAverageRatingValueProvider"
+		class="de.hybris.training.core.search.solrfacetsearch.provider.impl.TrainingProductReviewAverageRatingValueProvider"
+		parent="productReviewAverageRatingValueProvider">
+	</bean>
+
 </beans>

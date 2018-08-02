@@ -8,5 +8,6 @@
 	<classpathentry kind="src" path="/platform"/>
 	<classpathentry kind="src" path="gensrc"/>
 	<classpathentry kind="src" output="eclipsebin/classes" path="testsrc"/>
+	<classpathentry exported="true" kind="src" path="/commerceservices"/>
 	<classpathentry kind="output" path="eclipsebin/notused"/>
 </classpath>

@@ -5,26 +5,88 @@ $productCatalog=hybrisProductCatalog
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default='$productCatalog:Staged']
 $prices=Europe1prices[translator=de.hybris.platform.europe1.jalo.impex.Europe1PricesTranslator]
 
+$taxGroup=Europe1PriceFactory_PTG(code)[default=jp-vat-full]
+
 # Set product approval status to Approved only for those products that have prices.
 $approved=approvalstatus(code)[default='approved']
 
-UPDATE Product ; code[unique=true] ; $prices                                     ; $approved ; $catalogVersion ; Europe1PriceFactory_PTG(code)
-               ; 0001              ; 5,00 GBP, 5,50 EUR, 7,48 USD, 765,33 JPY    
-               ; 0002              ; 2,50 GBP, 2,75 EUR, 3,74 USD, 382,66 JPY    
-               ; 0003              ; 5,00 GBP, 5,50 EUR, 7,48 USD, 765,33 JPY    
-               ; 0004              ; 10,00 GBP, 11,00 EUR, 14,96 USD, 1530,65 JPY
-               ; 0005              ; 8,00 GBP, 10,00 EUR, 13,6 USD, 1391,50 JPY  
-               ; 0006              ; 18,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
-               ; 0007              ; 12,00 GBP, 15,00 EUR, 20,40 USD, 2087,25 JPY
-               ; 0100              ; 20,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
-               ; 0101              ; 20,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
-               ; 0102              ; 20,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
-               ; 0110              ; 20,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
-               ; 0111              ; 20,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
-               ; 0112              ; 20,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
-               ; 0200              ; 30,00 GBP, 33,00 EUR, 44,88 USD, 4591,95 JPY
-               ; 0201              ; 30,00 GBP, 33,00 EUR, 44,88 USD, 4591,95 JPY
-               ; 0202              ; 30,00 GBP, 33,00 EUR, 44,88 USD, 4591,95 JPY
-               ; 0210              ; 30,00 GBP, 33,00 EUR, 44,88 USD, 4591,95 JPY
-               ; 0211              ; 30,00 GBP, 33,00 EUR, 44,88 USD, 4591,95 JPY
-               ; 0212              ; 30,00 GBP, 33,00 EUR, 44,88 USD, 4591,95 JPY
+UPDATE Product ; code[unique=true] ; $approved ; $catalogVersion ; $taxGroup
+               ; 0001              
+               ; 0002                 
+               ; 0003              
+               ; 0004              
+               ; 0005              
+               ; 0006              
+               ; 0007              
+               ; 0100              
+               ; 0101              
+               ; 0102              
+               ; 0110              
+               ; 0111              
+               ; 0112              
+               ; 0200              
+               ; 0201              
+               ; 0202              
+               ; 0210              
+               ; 0211              
+               ; 0212              
+               
+
+INSERT_UPDATE 	 ; productId[unique=true] ; unit(code[unique=true,default=pieces]) ; currency(isocode)[unique=true] ; price   ; minqtd ; unitFactor ; net  
+;0001;pieces;USD;1255,93;1;1;false
+;0001;pieces;GBP;955,2;1;1;false
+;0001;pieces;EUR;1424,93;1;1;false
+;0002;pieces;USD;345,93;1;1;false
+;0002;pieces;GBP;241,93;1;1;false
+;0002;pieces;EUR;453,93;1;1;false
+;0003;pieces;USD;10250,93;1;1;false
+;0003;pieces;GBP;9340,93;1;1;false
+;0003;pieces;EUR;11250,93;1;1;false
+;0004;pieces;USD;1430,93;1;1;false
+;0004;pieces;GBP;1240,93;1;1;false
+;0004;pieces;EUR;1630,93;1;1;false
+;0005;pieces;USD;25,93;1;1;false
+;0005;pieces;GBP;19,93;1;1;false
+;0005;pieces;EUR;31,93;1;1;false
+;0006;pieces;USD;150,93;1;1;false
+;0006;pieces;GBP;113,93;1;1;false
+;0006;pieces;EUR;160,93;1;1;false
+;0007;pieces;USD;586,93;1;1;false
+;0007;pieces;GBP;434,93;1;1;false
+;0007;pieces;EUR;590,93;1;1;false
+;0100;pieces;USD;931,93;1;1;false
+;0100;pieces;GBP;864,93;1;1;false
+;0100;pieces;EUR;955,93;1;1;false
+;0101;pieces;USD;112,93;1;1;false
+;0101;pieces;GBP;100,93;1;1;false
+;0101;pieces;EUR;115,93;1;1;false
+;0102;pieces;USD;345,93;1;1;false
+;0102;pieces;GBP;320,93;1;1;false
+;0102;pieces;EUR;410,93;1;1;false
+;0110;pieces;USD;400,93;1;1;false
+;0110;pieces;GBP;385,93;1;1;false
+;0110;pieces;EUR;425,93;1;1;false
+;0111;pieces;USD;2150,93;1;1;false
+;0111;pieces;GBP;2010,93;1;1;false
+;0111;pieces;EUR;2314,93;1;1;false
+;0112;pieces;USD;100224,93;1;1;false
+;0112;pieces;GBP;100100,93;1;1;false
+;0112;pieces;EUR;100504,93;1;1;false
+;0200;pieces;USD;70,93;1;1;false
+;0200;pieces;GBP;61,93;1;1;false
+;0200;pieces;EUR;75,93;1;1;false
+;0201;pieces;USD;125,93;1;1;false
+;0201;pieces;GBP;114,93;1;1;false
+;0201;pieces;EUR;134,93;1;1;false
+;0202;pieces;USD;250,93;1;1;false
+;0202;pieces;GBP;234,93;1;1;false
+;0202;pieces;EUR;301,93;1;1;false
+;0210;pieces;USD;525,93;1;1;false
+;0210;pieces;GBP;493,93;1;1;false
+;0210;pieces;EUR;536,93;1;1;false
+;0211;pieces;USD;752,93;1;1;false
+;0211;pieces;GBP;741,93;1;1;false
+;0211;pieces;EUR;810,93;1;1;false
+;0212;pieces;USD;5040,93;1;1;false
+;0212;pieces;GBP;4950,93;1;1;false
+;0212;pieces;EUR;5100,93;1;1;false

@@ -64,6 +64,16 @@
 		<!-- 'brands' is the root of the brands hierarchy -->
 	</bean>
 
+	<bean id="hybrisCategorySource" parent="abstractCategorySource">
+		<property name="rootCategory" value="1" />
+		<!-- '1' is the root icecat category -->
+	</bean>
+	<bean id="hybrisBrandCategorySource"
+		parent="abstractCategorySource">
+		<property name="rootCategory" value="brands" />
+		<!-- 'brands' is the root of the brands hierarchy -->
+	</bean>
+
 	<bean id="apparelCategorySource" parent="abstractCategorySource">
 		<property name="rootCategory" value="categories" />
 		<!-- 'categories' is the root apparel category -->
@@ -113,6 +123,27 @@
 		<property name="categorySource"
 			ref="electronicsBrandCategorySource" />
 	</bean>
+
+
+	<bean id="hybrisCategoryCodeValueProvider"
+		parent="abstractCategoryCodeValueProvider">
+		<property name="categorySource" ref="hybrisCategorySource" />
+	</bean>
+	<bean id="hybrisBrandCategoryCodeValueProvider"
+		parent="abstractCategoryCodeValueProvider">
+		<property name="categorySource"
+			ref="hybrisBrandCategorySource" />
+	</bean>
+	<bean id="hybrisCategoryNameValueProvider"
+		parent="abstractCategoryNameValueProvider">
+		<property name="categorySource" ref="hybrisCategorySource" />
+	</bean>
+	<bean id="hybrisBrandCategoryNameValueProvider"
+		parent="abstractCategoryNameValueProvider">
+		<property name="categorySource"
+			ref="hybrisBrandCategorySource" />
+	</bean>
+
 
 	<bean id="apparelCategoryCodeValueProvider"
 		parent="abstractCategoryCodeValueProvider">
@@ -215,6 +246,14 @@
 		<property name="pointOfServiceService"
 			ref="pointOfServiceService" />
 	</bean>
+
+
+	<bean id="hybrisPointOfServiceFacetDisplayNameProvider"
+		class="de.hybris.training.core.search.solrfacetsearch.provider.impl.PointOfServiceFacetDisplayNameProvider">
+		<property name="pointOfServiceService"
+			ref="pointOfServiceService" />
+	</bean>
+
 
 	<bean id="genderValueProvider"
 		class="de.hybris.training.core.search.solrfacetsearch.provider.impl.GenderValueProvider"

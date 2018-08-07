@@ -66,19 +66,12 @@
 			class="qty js-qty-selector-input" value="1">
 	</c:if>
 	<input type="hidden" name="productCodePost"
-		value="${fn:escapeXml(product.code)}" />ghfhgfh
-${product.internalOnly}
+		value="${fn:escapeXml(product.code)}" />
 	<c:if test="${empty showAddToCart ? true : showAddToCart}">
 		<c:set var="buttonType">button</c:set>
 		<c:if
 			test="${product.purchasable and product.stock.stockLevelStatus.code ne 'outOfStock' }">
 			<c:set var="buttonType">submit</c:set>
-		</c:if>
-
-		<c:if test="${product.internalOnly and !user.internal}">
-			<c:set var="buttonType">button</c:set>
-			<spring:theme var="addToCartProblemText"
-				code="text.addToCart.unavailable" />
 		</c:if>
 
 		<c:choose>
@@ -90,7 +83,7 @@ ${product.internalOnly}
 					<spring:theme code="product.variants.out.of.stock" />
 				</button>
 			</c:when>
-			
+
 			<c:otherwise>
 				<ycommerce:testId code="addToCartButton">
 					<button id="addToCartButton" type="${buttonType}"

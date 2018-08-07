@@ -2,7 +2,7 @@
 #
 $storePrefix=hybris
 $productCatalog=hybrisProductCatalog
-$currencies=JPY,USD
+$currencies=EUR,USD,GBP
 $net=false
 $storeUid=$storePrefix
 $defaultCurrency=USD

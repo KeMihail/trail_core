@@ -26,11 +26,6 @@
 			<input type="hidden" name="productPostPrice"
 				value="${product.price.value}" />
 
-			<c:if test="${product.internalOnly and !user.internal}">
-				<c:set var="buttonType">button</c:set>
-				<spring:theme code="text.addToCart.unavailable" var="addToCartText" />
-			</c:if>
-
 			<div class="cart clearfix">
 				<c:url value="/cart/add" var="addToCartUrl" />
 				<ycommerce:testId code="searchPage_addToCart_button_${product.code}">
@@ -40,8 +35,8 @@
 						<input type="hidden" name="productCodePost"
 							value="${product.code}" />
 						<button type="${buttonType}"
-							class="addToCartButton <c:if test="
-            ${product.stock.stockLevelStatus.code eq 'outOfStock' }">out-of-stock</c:if>"
+							class="addToCartButton 
+							<c:if test="${product.stock.stockLevelStatus.code eq 'outOfStock' }">out-of-stock</c:if>"
 							<c:if test="${(product.stock.stockLevelStatus.code eq 'outOfStock') || fn:contains(buttonType, 'button') }"> disabled="disabled" aria-disabled="true"</c:if>>${addToCartText}</button>
 					</form:form>
 				</ycommerce:testId>

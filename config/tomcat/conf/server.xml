@@ -51,9 +51,8 @@
 				directory="${HYBRIS_LOG_DIR}/tomcat" prefix="access." suffix=".log"
 				pattern="combined" />
 
-			<Host startStopThreads="0"   name="localhost" appBase="webapps"
-				unpackWARs="false" autoDeploy="false"
-				startStopThreads="${tomcat.startStopThreads}">
+			<Host name="localhost" appBase="webapps" unpackWARs="false"
+				autoDeploy="false" startStopThreads="${tomcat.startStopThreads}">
 
 				<Valve className="org.apache.catalina.valves.ErrorReportValve"
 					showReport="${tomcat.errorReport.showReport}"
@@ -69,6 +68,7 @@
 	</Service>
 
 </Server>
+
 
 
 

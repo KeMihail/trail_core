@@ -817,3 +817,5 @@ INSERT_UPDATE ComponentTypeGroups2ComponentType ; source(code)[unique=true] ; ta
                                                 ; wide                      ; CMSMediaParagraphComponent
                                                 ; narrow                    ; CMSCustomComponent        
                                                 ; wide                      ; CMSCustomComponent        
+                                                ; narrow                    ; FeedbackComponent         
+                                                ; wide                      ; FeedbackComponent         

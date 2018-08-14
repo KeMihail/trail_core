@@ -272,4 +272,13 @@
 		<property name="add" ref="customerInternalPopulator" />
 	</bean>
 
+	<alias alias="feedbackFacade" name="defaultFeedbackFacade" />
+	<bean id="defaultFeedbackFacade"
+		class="de.hybris.training.facades.feedback.impl.DefaultFeedbackFacade"
+		scope="tenant">
+		<property name="ticketBusinessService"
+			ref="ticketBusinessService" />
+		<property name="userService" ref="userService" />
+	</bean>
+
 </beans>

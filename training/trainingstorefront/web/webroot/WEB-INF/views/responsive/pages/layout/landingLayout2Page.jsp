@@ -52,4 +52,9 @@
 			class="yComponentWrapper" />
 	</cms:pageSlot>
 
+	<cms:pageSlot position="SummerOffersSlotName" var="feature"
+		element="div" class="span-24 section5 cms_disp-img_slot">
+		<cms:component component="${feature}" />
+	</cms:pageSlot>
+
 </template:page>

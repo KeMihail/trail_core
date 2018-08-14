@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Aug 14, 2018 9:35:31 AM                     ---
+ * --- Generated at Aug 14, 2018 4:00:17 PM                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -30,7 +30,9 @@ import de.hybris.training.core.jalo.ApparelSizeVariantProduct;
 import de.hybris.training.core.jalo.ApparelStyleVariantProduct;
 import de.hybris.training.core.jalo.CMSCustomComponent;
 import de.hybris.training.core.jalo.CMSMediaParagraphComponent;
+import de.hybris.training.core.jalo.CustomOffersComponent;
 import de.hybris.training.core.jalo.ElectronicsColorVariantProduct;
+import de.hybris.training.core.jalo.FeedbackComponent;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -192,6 +194,32 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 		return createCMSMediaParagraphComponent( getSession().getSessionContext(), attributeValues );
 	}
 	
+	public CustomOffersComponent createCustomOffersComponent(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingCoreConstants.TC.CUSTOMOFFERSCOMPONENT );
+			return (CustomOffersComponent)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating CustomOffersComponent : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public CustomOffersComponent createCustomOffersComponent(final Map attributeValues)
+	{
+		return createCustomOffersComponent( getSession().getSessionContext(), attributeValues );
+	}
+	
 	public ElectronicsColorVariantProduct createElectronicsColorVariantProduct(final SessionContext ctx, final Map attributeValues)
 	{
 		try
@@ -216,6 +244,32 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 	public ElectronicsColorVariantProduct createElectronicsColorVariantProduct(final Map attributeValues)
 	{
 		return createElectronicsColorVariantProduct( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public FeedbackComponent createFeedbackComponent(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingCoreConstants.TC.FEEDBACKCOMPONENT );
+			return (FeedbackComponent)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating FeedbackComponent : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public FeedbackComponent createFeedbackComponent(final Map attributeValues)
+	{
+		return createFeedbackComponent( getSession().getSessionContext(), attributeValues );
 	}
 	
 	@Override

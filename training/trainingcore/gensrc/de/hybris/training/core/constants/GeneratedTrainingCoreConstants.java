@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Aug 14, 2018 9:35:31 AM                     ---
+ * --- Generated at Aug 14, 2018 4:00:17 PM                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -28,7 +28,9 @@ public class GeneratedTrainingCoreConstants
 		public static final String APPARELSTYLEVARIANTPRODUCT = "ApparelStyleVariantProduct".intern();
 		public static final String CMSCUSTOMCOMPONENT = "CMSCustomComponent".intern();
 		public static final String CMSMEDIAPARAGRAPHCOMPONENT = "CMSMediaParagraphComponent".intern();
+		public static final String CUSTOMOFFERSCOMPONENT = "CustomOffersComponent".intern();
 		public static final String ELECTRONICSCOLORVARIANTPRODUCT = "ElectronicsColorVariantProduct".intern();
+		public static final String FEEDBACKCOMPONENT = "FeedbackComponent".intern();
 		public static final String SWATCHCOLORENUM = "SwatchColorEnum".intern();
 	}
 	public static class Attributes

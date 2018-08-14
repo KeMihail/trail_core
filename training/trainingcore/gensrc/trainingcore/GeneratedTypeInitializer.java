@@ -106,6 +106,26 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			false
 		);
 	
+		createItemType(
+			"FeedbackComponent",
+			"SimpleCMSComponent",
+			de.hybris.training.core.jalo.FeedbackComponent.class,
+			null,
+			false,
+			null,
+			false
+		);
+	
+		createItemType(
+			"CustomOffersComponent",
+			"SimpleCMSComponent",
+			de.hybris.training.core.jalo.CustomOffersComponent.class,
+			null,
+			false,
+			null,
+			false
+		);
+	
 		createEnumerationType(
 			"SwatchColorEnum",
 			null
@@ -121,6 +141,12 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			"SwatchColorSet",
 			"SwatchColorEnum",
 			CollectionType.SET
+		);
+	
+		createCollectionType(
+			"CustomOfferLinksList",
+			"CMSLinkComponent",
+			CollectionType.LIST
 		);
 	
 	}
@@ -157,6 +183,18 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				single_createattr_CMSCustomComponent_description();
 			
 				single_createattr_CMSCustomComponent_media();
+			
+				single_createattr_FeedbackComponent_media();
+			
+				single_createattr_FeedbackComponent_confirmationMessage();
+			
+				single_createattr_CustomOffersComponent_headrerText();
+			
+				single_createattr_CustomOffersComponent_footerText();
+			
+				single_createattr_CustomOffersComponent_offerImage();
+			
+				single_createattr_CustomOffersComponent_offerImageLink();
 			
 
 	}
@@ -345,6 +383,108 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
+	public void single_createattr_FeedbackComponent_media() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"FeedbackComponent", 
+					"media",  
+					null,
+					"Media",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_FeedbackComponent_confirmationMessage() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"FeedbackComponent", 
+					"confirmationMessage",  
+					null,
+					"java.lang.String",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_CustomOffersComponent_headrerText() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"CustomOffersComponent", 
+					"headrerText",  
+					null,
+					"localized:java.lang.String",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_CustomOffersComponent_footerText() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"CustomOffersComponent", 
+					"footerText",  
+					null,
+					"localized:java.lang.String",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_CustomOffersComponent_offerImage() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"CustomOffersComponent", 
+					"offerImage",  
+					null,
+					"Media",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_CustomOffersComponent_offerImageLink() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"CustomOffersComponent", 
+					"offerImageLink",  
+					null,
+					"CustomOfferLinksList",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
 
 
 	/**
@@ -496,6 +636,44 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		
 			single_setAttributeProperties_CMSCustomComponent_media();
 		
+				{
+				Map customPropsMap = new HashMap();
+				
+				setItemTypeProperties(
+					"FeedbackComponent",
+					false,
+					true,
+					true,
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_FeedbackComponent_media();
+		
+			single_setAttributeProperties_FeedbackComponent_confirmationMessage();
+		
+				{
+				Map customPropsMap = new HashMap();
+				
+				setItemTypeProperties(
+					"CustomOffersComponent",
+					false,
+					true,
+					true,
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_CustomOffersComponent_headrerText();
+		
+			single_setAttributeProperties_CustomOffersComponent_footerText();
+		
+			single_setAttributeProperties_CustomOffersComponent_offerImage();
+		
+			single_setAttributeProperties_CustomOffersComponent_offerImageLink();
+		
 				setDefaultProperties(
 					"GenderList",
 					true,
@@ -505,6 +683,13 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 				setDefaultProperties(
 					"SwatchColorSet",
+					true,
+					true,
+					null
+				);
+			
+				setDefaultProperties(
+					"CustomOfferLinksList",
 					true,
 					true,
 					null
@@ -751,6 +936,138 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							setAttributeProperties(
 								"CMSCustomComponent", 
 								"media",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_FeedbackComponent_media() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"FeedbackComponent", 
+								"media",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_FeedbackComponent_confirmationMessage() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"FeedbackComponent", 
+								"confirmationMessage",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_CustomOffersComponent_headrerText() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"CustomOffersComponent", 
+								"headrerText",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_CustomOffersComponent_footerText() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"CustomOffersComponent", 
+								"footerText",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_CustomOffersComponent_offerImage() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"CustomOffersComponent", 
+								"offerImage",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_CustomOffersComponent_offerImageLink() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"CustomOffersComponent", 
+								"offerImageLink",
 								false, 
 								null,
 								null,

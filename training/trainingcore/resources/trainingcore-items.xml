@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- [y] hybris Platform Copyright (c) 2018 SAP SE or an SAP affiliate company. 
-	All rights reserved. This software is the confidential and proprietary information 
-	of SAP ("Confidential Information"). You shall not disclose such Confidential 
-	Information and shall use it only in accordance with the terms of the license 
-	agreement you entered into with SAP. -->
+
 <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="items.xsd">
 
@@ -13,6 +9,11 @@
 		<collectiontype code="SwatchColorSet"
 			elementtype="SwatchColorEnum" autocreate="true" generate="true"
 			type="set" />
+
+		<collectiontype code="CustomOfferLinksList"
+			elementtype="CMSLinkComponent" autocreate="true" generate="true"
+			type="list" />
+
 	</collectiontypes>
 
 	<enumtypes>
@@ -165,6 +166,53 @@
 					</attribute>
 					<attribute qualifier="media" type="localized:Media"
 						autocreate="true" generate="true">
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="FeedbackComponent" autocreate="true"
+				generate="true" abstract="false" extends="SimpleCMSComponent"
+				jaloclass="de.hybris.training.core.jalo.FeedbackComponent">
+
+				<attributes>
+					<attribute qualifier="media" type="Media">
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="confirmationMessage"
+						type="java.lang.String">
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+
+			</itemtype>
+
+
+			<itemtype code="CustomOffersComponent" autocreate="true"
+				generate="true" extends="SimpleCMSComponent"
+				jaloclass="de.hybris.training.core.jalo.CustomOffersComponent">
+
+				<description>Used to display offers on homepage</description>
+
+				<attributes>
+					<attribute qualifier="headrerText"
+						type="localized:java.lang.String">
+						<modifiers read="true" write="true" optional="false" />
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="footerText"
+						type="localized:java.lang.String">
+						<modifiers read="true" write="true" optional="false" />
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="offerImage" type="Media">
+						<modifiers read="true" write="true" optional="false" />
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="offerImageLink"
+						type="CustomOfferLinksList">
+						<description>List of CMS Link Component</description>
+						<modifiers read="true" write="true" />
 						<persistence type="property" />
 					</attribute>
 				</attributes>

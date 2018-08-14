@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Aug 6, 2018 9:22:31 AM                      ---
+ * --- Generated at Aug 14, 2018 9:10:17 AM                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -28,6 +28,8 @@ import de.hybris.training.core.constants.TrainingCoreConstants;
 import de.hybris.training.core.jalo.ApparelProduct;
 import de.hybris.training.core.jalo.ApparelSizeVariantProduct;
 import de.hybris.training.core.jalo.ApparelStyleVariantProduct;
+import de.hybris.training.core.jalo.CMSCustomComponent;
+import de.hybris.training.core.jalo.CMSMediaParagraphComponent;
 import de.hybris.training.core.jalo.ElectronicsColorVariantProduct;
 import java.util.Collections;
 import java.util.HashMap;
@@ -136,6 +138,58 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 	public ApparelStyleVariantProduct createApparelStyleVariantProduct(final Map attributeValues)
 	{
 		return createApparelStyleVariantProduct( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public CMSCustomComponent createCMSCustomComponent(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingCoreConstants.TC.CMSCUSTOMCOMPONENT );
+			return (CMSCustomComponent)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating CMSCustomComponent : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public CMSCustomComponent createCMSCustomComponent(final Map attributeValues)
+	{
+		return createCMSCustomComponent( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public CMSMediaParagraphComponent createCMSMediaParagraphComponent(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingCoreConstants.TC.CMSMEDIAPARAGRAPHCOMPONENT );
+			return (CMSMediaParagraphComponent)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating CMSMediaParagraphComponent : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public CMSMediaParagraphComponent createCMSMediaParagraphComponent(final Map attributeValues)
+	{
+		return createCMSMediaParagraphComponent( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public ElectronicsColorVariantProduct createElectronicsColorVariantProduct(final SessionContext ctx, final Map attributeValues)

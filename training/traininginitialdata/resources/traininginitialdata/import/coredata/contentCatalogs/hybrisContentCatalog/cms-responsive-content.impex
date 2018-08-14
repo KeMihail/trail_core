@@ -496,6 +496,8 @@ INSERT_UPDATE ContentPage ; $contentCV[unique=true] ; uid[unique=true]     ; nam
                           ;                         ; saved-carts          ; Saved Carts Page               ; AccountPageTemplate            ; saved-carts         
                           ;                         ; consents             ; Consent Management Page        ; AccountPageTemplate            ; consents            
                           ;                         ; close-account        ; Close Account Page             ; AccountPageTemplate            ; close-account       
+                          ;                         ; account              ; Account Page                   ; AccountPageTemplate            ; account             
+                          ;                         ; profile              ; Profile Page                   ; AccountPageTemplate            ; profile             
 ###### AccountPageTemplate end ######
 
 
@@ -808,3 +810,10 @@ INSERT_UPDATE ContentPage ; $contentCV[unique=true] ; uid[unique=true]       ; n
 ###### QuickOrderPageTemplate end ######
 
 
+
+
+INSERT_UPDATE ComponentTypeGroups2ComponentType ; source(code)[unique=true] ; target(code)[unique=true] 
+                                                ; narrow                    ; CMSMediaParagraphComponent
+                                                ; wide                      ; CMSMediaParagraphComponent
+                                                ; narrow                    ; CMSCustomComponent        
+                                                ; wide                      ; CMSCustomComponent        

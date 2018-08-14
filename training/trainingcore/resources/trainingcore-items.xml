@@ -135,7 +135,41 @@
 					</attribute>
 				</attributes>
 			</itemtype>
-		</typegroup>
 
+			<itemtype code="CMSMediaParagraphComponent"
+				extends="CMSParagraphComponent" generate="true" autocreate="true">
+				<description>It represents paragraph component with an additional media attribute</description>
+				<attributes>
+					<attribute qualifier="media" generate="true"
+						autocreate="true" type="localized:Media">
+						<persistence type="property" />
+						<description>Attribute that stores the localized media of the paragraph</description>
+					</attribute>
+				</attributes>
+
+			</itemtype>
+
+			<itemtype code="CMSCustomComponent" autocreate="true"
+				generate="true" extends="CMSParagraphComponent">
+				<attributes>
+
+					<attribute qualifier="title"
+						type="localized:java.lang.String" autocreate="true"
+						generate="true">
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="description"
+						type="localized:java.lang.String" autocreate="true"
+						generate="true">
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="media" type="localized:Media"
+						autocreate="true" generate="true">
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+		</typegroup>
 	</itemtypes>
 </items>

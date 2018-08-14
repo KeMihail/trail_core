@@ -74,8 +74,7 @@
 					</span> <input type="text" maxlength="3"
 						class="form-control js-qty-selector-input" size="1"
 						value="${qtyMinus}" data-max="${product.stock.stockLevel}"
-						data-min="1" id="qty" name="qty" /> <span
-						class="input-group-btn">
+						data-min="1" id="qty" name="qty" /> <span class="input-group-btn">
 						<button class="btn btn-primary js-qty-selector-plus" type="button">
 							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 						</button>
@@ -108,12 +107,13 @@
 				</c:if>
 
 				<c:if test="${product.internalOnly and !user.internal}">
-					<c:set var="buttonType">button</c:set>
+					<c:set var="buttonType">zxcvxz</c:set>
 					<spring:theme var="addToCartProblemText"
 						code="text.addToCart.unavailable" />
 				</c:if>
 
 				<c:choose>
+
 					<c:when test="${fn:contains(buttonType, 'button')}">
 						<button type="${buttonType}"
 							class="btn btn-primary btn-block js-add-to-cart btn-icon glyphicon-shopping-cart outOfStock"
@@ -121,6 +121,14 @@
 							<spring:theme code="product.variants.out.of.stock" />
 						</button>
 					</c:when>
+					
+					
+
+					<%-- 	<c:when test="${fn:contains(buttonType, 'button')}">
+						<button type="${buttonType}" class="addToCartButton outOfStock"
+							disabled="disabled">${addToCartProblemText}</button>
+					</c:when> --%>
+
 					<c:otherwise>
 						<button id="addToCartButton" type="${buttonType}"
 							class="btn btn-primary btn-block js-add-to-cart js-enable-btn btn-icon glyphicon-shopping-cart"
@@ -130,6 +138,7 @@
 					</c:otherwise>
 				</c:choose>
 			</c:if>
+
 		</form:form>
 
 		<c:if

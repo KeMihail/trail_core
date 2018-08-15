@@ -29,7 +29,7 @@ INSERT_UPDATE Media ; $contentCV[unique=true] ; code[unique=true]               
                     ;                         ; /images/theme/logo-hybris.png          ; logo-hybris.png          ; $siteResource/images/theme/logo-hybris.png                                 ; image/png                  ; hybris  Store       ;                                    
                     ;                         ; /images/theme/banner-free-delivery.jpg ; banner-free-delivery.jpg ; $siteResource/images/theme/banner-free-delivery.jpg                        ; image/jpg                  ; hybris  Store       ;                                    
                     ;                         ; /images/theme/banner.jpg               ; banner.jpg               ; $siteResource/images/theme/banner-sale-now-on.jpg                          ; image/jpg                  ; hybris  Store       ;                                    
-                    ;                         ; feedback.jpg                           ; feedback.jpg             ; $siteResource/images/theme/feedback.jpg                                    ; image/jpg                  ; Create new Feddback ;                                    
+                    ;                         ; /feedback.png                          ; feedback.png             ; $siteResource/images/theme/feedback.png                                    ; image/png                  ; Create new Feddback ;                                    
 
 # Site Logo Component           
 INSERT_UPDATE SimpleBannerComponent ; $contentCV[unique=true] ; uid[unique=true]  ; name                ; &componentRef     ; urlLink
@@ -65,8 +65,8 @@ INSERT_UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]     
                                ;                         ; FeedbackLink                    ; Feedback Link                   ; /submit                                                                 ; FeedbackLink                    ; FeedbackLink                    ;                                    ;           ;          ;  
                                
                                
-INSERT_UPDATE FeedbackComponent ; $contentCV[unique=true] ; uid[unique=true]  ; name               ; visible ; $picture     ; &componentRef    
-                                ;                         ; feedbackComponent ; Feedback Component ; true    ; feedback.jpg ; FeedbackComponent
+INSERT_UPDATE FeedbackComponent ; $contentCV[unique=true] ; uid[unique=true]  ; name               ; visible ; $picture      ; &componentRef    
+                                ;                         ; FeedbackComponent ; Feedback Component ; true    ; /feedback.png ; FeedbackComponent
 
 # Lightbox Banner for Mini Cart 
 INSERT_UPDATE SimpleBannerComponent ; $contentCV[unique=true] ; uid[unique=true]                    ; name                                    ; &componentRef                       ; urlLink
@@ -215,6 +215,7 @@ INSERT_UPDATE FooterComponent ; $contentCV[unique=true] ; uid[unique=true] ; nav
 # CMS Navigation Nodes #      
 INSERT_UPDATE CMSNavigationNode ; uid[unique=true] ; $contentCV[unique=true] ; name ; children(uid,$contentCV)[mode=append]
                                 ; root             ;                         ; root ;                                      ;  
+
 INSERT_UPDATE CMSNavigationNode ; uid[unique=true]             ; $contentCV[unique=true] ; name                    ; parent(uid, $contentCV) ; links(&linkRef)                                                                             ; &nodeRef                    
                                 ; SiteRootNode                 ;                         ; SiteRootNode            ; root                    ;                                                                                             ; SiteRootNode                
                                 ; MerchandiseNavNode           ;                         ; hybris Merchandise Site ; SiteRootNode            ; HomepageNavLink                                                                             ; MerchandiseNavNode          
@@ -248,7 +249,7 @@ INSERT_UPDATE ProductCarouselComponent ; $contentCV[unique=true] ; uid[unique=tr
                                        
 INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]       ; name                        ; active ; cmsComponents(&componentRef)          
                           ;                         ; Section1Slot-Homepage  ; Section1 Slot for Homepage  ; true   ; welcomeMessage                        
-                          ;                         ; Section2ASlot-Homepage ; Section2A Slot for Homepage ; true   ; MediaParagraph                        
+                          ;                         ; Section2ASlot-Homepage ; Section2A Slot for Homepage ; true   ;                                       
                           ;                         ; Section2BSlot-Homepage ; Section2B Slot for Homepage ; true   ;                                       
                           ;                         ; Section2CSlot-Homepage ; Section2C Slot for Homepage ; true   ; customComponent                       
                           ;                         ; Section3Slot-Homepage  ; Section3 Slot for Homepage  ; true   ; HybrisHomepageProductCarouselComponent
@@ -314,7 +315,7 @@ INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]   
                                  ;                         ; CenterRightContentSlot-cartPage ; CenterRightContentSlot ;                                                       ; CenterRightContentSlot-cartPage         
                                  ;                         ; BottomContentSlot-cartPage      ; BottomContentSlot      ;                                                       ; BottomContentSlot-cartPage              
                                  
-###### Merchandise Checkout Login Page ######
+###### Hybris Checkout Login Page ######
                                  
 INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]            ; name                                ; active ; cmsComponents(&componentRef)
                           ;                         ; BottomContent-checkoutLogin ; Bottom Slot for Checkout Login Page ; true   ; HelpParagraphComponent      

@@ -6,6 +6,7 @@
 	<classpathentry kind="src" path="gensrc"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="/platform"/>
+	<classpathentry exported="true" kind="src" path="/ticketsystem"/>
 	<classpathentry exported="true" kind="src" path="/trainingcore"/>
 	<classpathentry kind="src" output="eclipsebin/classes" path="testsrc"/>
 	<classpathentry kind="output" path="eclipsebin/notused"/>

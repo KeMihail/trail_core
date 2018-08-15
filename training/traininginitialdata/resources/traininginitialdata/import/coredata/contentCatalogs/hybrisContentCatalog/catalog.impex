@@ -1,6 +1,6 @@
 # Import the Content Catalog
 #
-$contentCatalog=hybriscContentCatalog
+$contentCatalog=hybrisContentCatalog
 $languages=ja,en,de,zh
 
 # Content catalog for CMS contents

@@ -27,6 +27,13 @@
 			<a href="${productUrl}"><c:out value="${product.name}" /></a>
 		</div>
 
+		<%-- 	<div class="name">
+			<c:out value="${product.stock.stockLevelStatus.code}" />
+			<p>
+				<c:out value="${product.stock.stockLevel}" />
+			</p>
+		</div> --%>
+
 		<product:productReviewSummary product="${product}" showLinks="false"
 			starsClass="quick-view-stars" />
 
@@ -101,14 +108,17 @@
 				<div class="stock-status">${productStockLevel}</div>
 
 				<c:set var="buttonType">button</c:set>
+				<spring:theme var="buttonAddToCart"
+					code="product.variants.out.of.stock" />
+
 				<c:if
 					test="${product.purchasable and product.stock.stockLevelStatus.code ne 'outOfStock' }">
 					<c:set var="buttonType">submit</c:set>
 				</c:if>
 
 				<c:if test="${product.internalOnly and !user.internal}">
-					<c:set var="buttonType">zxcvxz</c:set>
-					<spring:theme var="addToCartProblemText"
+					<c:set var="buttonType">button</c:set>
+					<spring:theme var="buttonAddToCart"
 						code="text.addToCart.unavailable" />
 				</c:if>
 
@@ -118,16 +128,10 @@
 						<button type="${buttonType}"
 							class="btn btn-primary btn-block js-add-to-cart btn-icon glyphicon-shopping-cart outOfStock"
 							disabled="disabled">
-							<spring:theme code="product.variants.out.of.stock" />
+							<spring:theme code="${buttonAddToCart}" />
 						</button>
 					</c:when>
-					
-					
 
-					<%-- 	<c:when test="${fn:contains(buttonType, 'button')}">
-						<button type="${buttonType}" class="addToCartButton outOfStock"
-							disabled="disabled">${addToCartProblemText}</button>
-					</c:when> --%>
 
 					<c:otherwise>
 						<button id="addToCartButton" type="${buttonType}"

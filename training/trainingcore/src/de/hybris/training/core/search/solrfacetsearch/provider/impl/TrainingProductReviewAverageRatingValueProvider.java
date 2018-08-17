@@ -33,6 +33,13 @@ public class TrainingProductReviewAverageRatingValueProvider extends ProductRevi
 			LOG.error("Could not get Range value", e);
 		}
 
+		//
+		for (final String item : rangeNameList)
+		{
+			LOG.info(item);
+		}
+
+
 		String rangeName = null;
 
 		if (CollectionUtils.isNotEmpty(rangeNameList))
@@ -40,13 +47,27 @@ public class TrainingProductReviewAverageRatingValueProvider extends ProductRevi
 			rangeName = rangeNameList.get(0);
 		}
 
+		//
+		LOG.info(rangeName);
+
+
 		final Collection<String> fieldNames = getFieldNameProvider().getFieldNames(indexedProperty,
 				language == null ? null : language.getIsocode());
+
+		for (final String item : fieldNames)
+		{
+			LOG.info(item);
+		}
+
 		final Object valueToPass = (rangeName == null ? value : rangeName);
 
 		for (final String fieldName : fieldNames)
 		{
 			fieldValues.add(new FieldValue(fieldName, valueToPass));
+
+			//
+			LOG.info("fieldName: " + fieldName);
+			LOG.info("valueToPass: " + valueToPass);
 		}
 	}
 }

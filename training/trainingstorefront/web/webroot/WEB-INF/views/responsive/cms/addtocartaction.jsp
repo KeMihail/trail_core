@@ -66,8 +66,7 @@
 			class="qty js-qty-selector-input" value="1">
 	</c:if>
 	<input type="hidden" name="productCodePost"
-		value="${fn:escapeXml(product.code)}" />ghfhgfh
-${product.internalOnly}
+		value="${fn:escapeXml(product.code)}" />
 	<c:if test="${empty showAddToCart ? true : showAddToCart}">
 		<c:set var="buttonType">button</c:set>
 		<c:if
@@ -90,7 +89,7 @@ ${product.internalOnly}
 					<spring:theme code="product.variants.out.of.stock" />
 				</button>
 			</c:when>
-			
+
 			<c:otherwise>
 				<ycommerce:testId code="addToCartButton">
 					<button id="addToCartButton" type="${buttonType}"

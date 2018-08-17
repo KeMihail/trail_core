@@ -62,12 +62,12 @@ INSERT_UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]     
                                ;                         ; AccountManagePaymentDetailsLink ; AccountManagePaymentDetailsLink ; /my-account/payment-details                                             ; AccountManagePaymentDetailsLink ; AccountManagePaymentDetailsLink ;                                    ;           ;          ;  
                                ;                         ; AccountOrderHistoryLink         ; AccountOrderHistoryLink         ; /my-account/orders                                                      ; AccountOrderHistoryLink         ; AccountOrderHistoryLink         ;                                    ;           ;          ;  
                                ;                         ; AccountViewOrderHistoryLink     ; AccountViewOrderHistoryLink     ; /my-account/orders                                                      ; AccountViewOrderHistoryLink     ; AccountViewOrderHistoryLink     ;                                    ;           ;          ;  
-                               ;                         ; FeedbackLink                    ; Feedback Link                   ; /submit                                                                 ; FeedbackLink                    ; FeedbackLink                    ;                                    ;           ;          ;  
+                               ;                         ; FeedbackLink                    ; Feedback Link                   ; /feedback                                                               ; FeedbackLink                    ; FeedbackLink                    ;                                    ;           ;          ;  
                                
                                
 INSERT_UPDATE FeedbackComponent ; $contentCV[unique=true] ; uid[unique=true]  ; name               ; visible ; $picture      ; &componentRef    
                                 ;                         ; FeedbackComponent ; Feedback Component ; true    ; /feedback.png ; FeedbackComponent
-
+                                
 # Lightbox Banner for Mini Cart 
 INSERT_UPDATE SimpleBannerComponent ; $contentCV[unique=true] ; uid[unique=true]                    ; name                                    ; &componentRef                       ; urlLink
                                     ;                         ; LightboxHomeDeliveryBannerComponent ; Lightbox Home Delivery Banner Component ; LightboxHomeDeliveryBannerComponent ;        
@@ -175,8 +175,14 @@ INSERT_UPDATE SearchBoxComponent ; $contentCV[unique=true] ; uid[unique=true] ; 
 # CMS Language and Currency Component
 INSERT_UPDATE LanguageCurrencyComponent ; $contentCV[unique=true] ; uid[unique=true]      ; name                            ; &componentRef        
                                         ;                         ; LangCurrencyComponent ; Language and Currency Component ; LangCurrencyComponent
+
+
+
 INSERT_UPDATE ProductRefinementComponent ; $contentCV[unique=true] ; uid[unique=true]         ; name                               ; &componentRef           
                                          ;                         ; RefinementFacetComponent ; Product Refinement Facet Component ; RefinementFacetComponent
+
+
+
 INSERT_UPDATE CMSProductListComponent ; $contentCV[unique=true] ; uid[unique=true] ; name                   ; actions(uid,$contentCV)                     ; &componentRef
                                       ;                         ; ProductList      ; Product List Component ; ListPickUpInStoreAction,ListAddToCartAction ; ProductList  
 INSERT_UPDATE ProductGridComponent ; $contentCV[unique=true] ; uid[unique=true] ; name                   ; actions(uid,$contentCV)                     ; &componentRef
@@ -187,21 +193,21 @@ INSERT_UPDATE SearchResultsListComponent ; $contentCV[unique=true] ; uid[unique=
                                          ;                         ; SearchResultsGrid ; Search Result Grid Component ; ListPickUpInStoreAction,ListAddToCartAction ; SearchResultsGrid
                                          
 # Content Slots                          
-INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]       ; cmsComponents(&componentRef)       
-                          ;                         ; SiteLogoSlot           ; SiteLogoComponent                  
-                          ;                         ; HomepageNavLinkSlot    ; HomepageNavLink                    
-                          ;                         ; MiniCartSlot           ; MiniCart                           
-                          ;                         ; NavigationBarSlot      ; NavBarComponent,breadcrumbComponent
-                          ;                         ; TabsSlot               ; TabPanelContainer                  
-                          ;                         ; FooterSlot             ; FooterComponent                    
-                          ;                         ; HeaderLinksSlot        ; ContactInfo                        
-                          ;                         ; SearchBoxSlot          ; SearchBox,LangCurrencyComponent    
-                          ;                         ; VariantSelectorSlot    ; VariantSelector                    
-                          ;                         ; AddToCartSlot          ; AddToCart                          
-                          ;                         ; UpSellingSlot          ; Similar                            
-                          ;                         ; CrossSellingSlot       ; accessories                        
-                          ;                         ; SuggestionSlot         ; CartSuggestions                    
-                          ;                         ; ProductLeftRefinements ; RefinementFacetComponent           
+INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]           ; cmsComponents(&componentRef)       
+                          ;                         ; SiteLogoSlot               ; SiteLogoComponent                  
+                          ;                         ; HomepageNavLinkSlot        ; HomepageNavLink                    
+                          ;                         ; MiniCartSlot               ; MiniCart                           
+                          ;                         ; NavigationBarSlot          ; NavBarComponent,breadcrumbComponent
+                          ;                         ; TabsSlot                   ; TabPanelContainer                  
+                          ;                         ; FooterSlot                 ; FooterComponent                    
+                          ;                         ; HeaderLinksSlot            ; ContactInfo                        
+                          ;                         ; SearchBoxSlot              ; SearchBox,LangCurrencyComponent    
+                          ;                         ; VariantSelectorSlot        ; VariantSelector                    
+                          ;                         ; AddToCartSlot              ; AddToCart                          
+                          ;                         ; UpSellingSlot              ; Similar                            
+                          ;                         ; CrossSellingSlot           ; accessories                        
+                          ;                         ; SuggestionSlot             ; CartSuggestions                    
+                          ;                         ; ProductLeftRefinementsSlot ; RefinementFacetComponent           
                           
 # Category Pages          
 INSERT_UPDATE CategoryPage ; $contentCV[unique=true] ; uid[unique=true] ; name    ; masterTemplate(uid,$contentCV) ; defaultPage ; approvalStatus(code)[default='approved'] ; previewImage(code, $contentCV)
@@ -334,8 +340,6 @@ INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]   
 ###### Hybris Store Finder Page ######
                                  
                                  
-                                 
-                                 
 INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]              ; name                              ; active ; cmsComponents(&componentRef)
                           
                           ;                         ; MiddleContent-StoreFinderPage ; Middle Slot for Store Finder Page ; true   ; StoreFinderComponent        
@@ -423,6 +427,7 @@ INSERT_UPDATE JspIncludeComponent ; $contentCV[unique=true] ; uid[unique=true]  
                                   ;                         ; NewCustomerCheckoutLoginComponent       ; New Customer Checkout Login Component         ; checkoutNewCustomerLogin.jsp       ;                         ; NewCustomerCheckoutLoginComponent      
                                   ;                         ; ReturningCustomerCheckoutLoginComponent ; Returning Customer Checkout Login Component   ; checkouReturningCustomerLogin.jsp  ;                         ; ReturningCustomerCheckoutLoginComponent
                                   ;                         ; GuestCheckoutLoginComponent             ; Guest Checkout Login Component                ; checkoutGuestLogin.jsp             ;                         ; GuestCheckoutLoginComponent            
+
 INSERT_UPDATE BreadcrumbComponent ; $contentCV[unique=true] ; uid[unique=true]    ; name                     ; &componentRef      
                                   ;                         ; breadcrumbComponent ; Breadcrumb CMS Component ; breadcrumbComponent
 # CMS View Order Action           

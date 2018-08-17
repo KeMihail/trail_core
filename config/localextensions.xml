@@ -67,5 +67,10 @@
 		<extension name='trainingcockpits' />
 		<extension name='trainingfulfilmentprocess' />
 
+		<extension name="addonsupport" />
+		<extension name="btg" />
+		<extension name="acceleratorstorefrontcommons" />
+		<extension name="b2cbtgaddon" />
+
 	</extensions>
 </hybrisconfig>

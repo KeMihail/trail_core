@@ -45,6 +45,8 @@ public class HomePageController extends AbstractPageController
 		setUpMetaDataForContentPage(model, getContentPageForLabelOrId(null));
 		updatePageTitle(model, getContentPageForLabelOrId(null));
 
+		final String jspName = getViewForPage(model);
+
 		return getViewForPage(model);
 	}
 

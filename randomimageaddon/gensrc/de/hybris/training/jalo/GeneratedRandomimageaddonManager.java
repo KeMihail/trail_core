@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Aug 23, 2018 10:10:12 AM                    ---
+ * --- Generated at Aug 23, 2018 2:49:38 PM                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -15,8 +15,14 @@ package de.hybris.training.jalo;
 
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
+import de.hybris.platform.jalo.JaloBusinessException;
+import de.hybris.platform.jalo.JaloSystemException;
+import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.extension.Extension;
+import de.hybris.platform.jalo.type.ComposedType;
+import de.hybris.platform.jalo.type.JaloGenericCreationException;
 import de.hybris.training.constants.RandomimageaddonConstants;
+import de.hybris.training.jalo.RandomImageParagraphComponent;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,6 +48,32 @@ public abstract class GeneratedRandomimageaddonManager extends Extension
 			ret.putAll(attr);
 		}
 		return ret;
+	}
+	
+	public RandomImageParagraphComponent createRandomImageParagraphComponent(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( RandomimageaddonConstants.TC.RANDOMIMAGEPARAGRAPHCOMPONENT );
+			return (RandomImageParagraphComponent)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating RandomImageParagraphComponent : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public RandomImageParagraphComponent createRandomImageParagraphComponent(final Map attributeValues)
+	{
+		return createRandomImageParagraphComponent( getSession().getSessionContext(), attributeValues );
 	}
 	
 	@Override

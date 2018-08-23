@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <classpath>
 	<classpathentry exported="true" kind="src" path="/acceleratorcms"/>
 	<classpathentry exported="true" kind="lib" path="resources"/>
@@ -10,4 +11,5 @@
 	<classpathentry kind="src" output="eclipsebin/classes" path="testsrc"/>
 	<classpathentry exported="true" kind="src" path="/commerceservices"/>
 	<classpathentry kind="output" path="eclipsebin/notused"/>
+	
 </classpath>

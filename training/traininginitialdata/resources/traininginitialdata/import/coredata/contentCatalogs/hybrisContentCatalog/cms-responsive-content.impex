@@ -806,10 +806,12 @@ INSERT_UPDATE ContentPage ; $contentCV[unique=true] ; uid[unique=true]       ; n
 
 
 
-INSERT_UPDATE ComponentTypeGroups2ComponentType ; source(code)[unique=true] ; target(code)[unique=true] 
-                                                ; narrow                    ; CMSMediaParagraphComponent
-                                                ; wide                      ; CMSMediaParagraphComponent
-                                                ; narrow                    ; CMSCustomComponent        
-                                                ; wide                      ; CMSCustomComponent        
-                                                ; narrow                    ; FeedbackComponent         
-                                                ; wide                      ; FeedbackComponent         
+INSERT_UPDATE ComponentTypeGroups2ComponentType ; source(code)[unique=true] ; target(code)[unique=true]    
+                                                ; narrow                    ; CMSMediaParagraphComponent   
+                                                ; wide                      ; CMSMediaParagraphComponent   
+                                                ; narrow                    ; CMSCustomComponent           
+                                                ; wide                      ; CMSCustomComponent           
+                                                ; narrow                    ; FeedbackComponent            
+                                                ; wide                      ; FeedbackComponent            
+                                                ; narrow                    ; RandomImageParagraphComponent
+                                                ; wide                      ; RandomImageParagraphComponent

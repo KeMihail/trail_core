@@ -46,6 +46,21 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		// performCreateTypes
 	
 	
+		createItemType(
+			"RandomImageParagraphComponent",
+			"CMSParagraphComponent",
+			de.hybris.training.jalo.RandomImageParagraphComponent.class,
+			null,
+			false,
+			null,
+			false
+		);
+	
+		createEnumerationType(
+			"RandomPictureTopic",
+			null
+		);
+	
 	}
 
 	/**
@@ -59,9 +74,85 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 
 	
 	
+				single_createattr_RandomImageParagraphComponent_topic();
+			
+				single_createattr_RandomImageParagraphComponent_width();
+			
+				single_createattr_RandomImageParagraphComponent_height();
+			
+				single_createattr_RandomImageParagraphComponent_text();
+			
 
 	}
 
+	
+	public void single_createattr_RandomImageParagraphComponent_topic() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"RandomImageParagraphComponent", 
+					"topic",  
+					null,
+					"RandomPictureTopic",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_RandomImageParagraphComponent_width() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"RandomImageParagraphComponent", 
+					"width",  
+					null,
+					"java.lang.Integer",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.PRIMITIVE_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_RandomImageParagraphComponent_height() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"RandomImageParagraphComponent", 
+					"height",  
+					null,
+					"java.lang.Integer",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.PRIMITIVE_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_RandomImageParagraphComponent_text() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"RandomImageParagraphComponent", 
+					"text",  
+					null,
+					"localized:java.lang.String",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
 	
 
 
@@ -74,10 +165,145 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		// performCreateObjects
 	
 	
+		createEnumerationValues(
+			"RandomPictureTopic",
+			false,
+			Arrays.asList( new String[] {
+			
+				"fashion",
+				"sports",
+				"abstract",
+				"animals",
+				"city",
+				"food",
+				"nightlife",
+				"people",
+				"nature",
+				"technics",
+				"transport"
+			} )
+		);
+	
+				{
+				Map customPropsMap = new HashMap();
+				
+				setItemTypeProperties(
+					"RandomImageParagraphComponent",
+					false,
+					true,
+					true,
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_RandomImageParagraphComponent_topic();
+		
+			single_setAttributeProperties_RandomImageParagraphComponent_width();
+		
+			single_setAttributeProperties_RandomImageParagraphComponent_height();
+		
+			single_setAttributeProperties_RandomImageParagraphComponent_text();
+		
+				setDefaultProperties(
+					"RandomPictureTopic",
+					true,
+					true,
+					null
+				);
+			
 	}
 
 
 		
+						public void single_setAttributeProperties_RandomImageParagraphComponent_topic() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"RandomImageParagraphComponent", 
+								"topic",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_RandomImageParagraphComponent_width() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"RandomImageParagraphComponent", 
+								"width",
+								false, 
+								Integer.valueOf(228),
+								"Integer.valueOf(228)",
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_RandomImageParagraphComponent_height() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"RandomImageParagraphComponent", 
+								"height",
+								false, 
+								Integer.valueOf(228),
+								"Integer.valueOf(228)",
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_RandomImageParagraphComponent_text() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"RandomImageParagraphComponent", 
+								"text",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
 }
 
 	

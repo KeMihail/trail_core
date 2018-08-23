@@ -2,6 +2,7 @@
 	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
 	xsi:noNamespaceSchemaLocation='../bin/platform/resources/schemas/extensions.xsd'>
 	<extensions>
+
 		<path dir='${HYBRIS_BIN_DIR}' autoload='false' />
 		<extension name='mcc' />
 		<extension name='adaptivesearchsolr' />
@@ -68,9 +69,9 @@
 		<extension name='trainingfulfilmentprocess' />
 		<extension name="promotionenginetrail" />
 
+		<extension name="addonsupport" />
 		<extension name="randomimageaddon" />
 
-		<extension name="addonsupport" />
 		<extension name="btg" />
 		<extension name="acceleratorstorefrontcommons" />
 		<extension name="b2cbtgaddon" />

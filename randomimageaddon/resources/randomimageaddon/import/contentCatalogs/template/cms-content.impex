@@ -16,5 +16,5 @@
 #######
 
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
-$jarResourceCmsCockpit=jar:de.hybris.platform.addons.randomimageaddon.constants.RandomimageaddonConstants&/randomimageaddon/import/cockpit/cmscockpit
+$jarResourceCmsCockpit=jar:de.hybris.training.constants.RandomimageaddonConstants&/randomimageaddon/import/cockpit/cmscockpit
 

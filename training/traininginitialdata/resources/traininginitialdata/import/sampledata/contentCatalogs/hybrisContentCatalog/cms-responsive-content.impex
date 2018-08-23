@@ -172,11 +172,6 @@ INSERT_UPDATE CartSuggestionComponent ; $contentCV[unique=true] ; uid[unique=tru
 # CMS SearchBox Components            
 INSERT_UPDATE SearchBoxComponent ; $contentCV[unique=true] ; uid[unique=true] ; name       ; &componentRef
                                  ;                         ; SearchBox        ; Search Box ; SearchBox    
-# CMS Language and Currency Component
-INSERT_UPDATE LanguageCurrencyComponent ; $contentCV[unique=true] ; uid[unique=true]      ; name                            ; &componentRef        
-                                        ;                         ; LangCurrencyComponent ; Language and Currency Component ; LangCurrencyComponent
-
-
 
 INSERT_UPDATE ProductRefinementComponent ; $contentCV[unique=true] ; uid[unique=true]         ; name                               ; &componentRef           
                                          ;                         ; RefinementFacetComponent ; Product Refinement Facet Component ; RefinementFacetComponent
@@ -201,7 +196,7 @@ INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]          
                           ;                         ; TabsSlot                   ; TabPanelContainer                  
                           ;                         ; FooterSlot                 ; FooterComponent                    
                           ;                         ; HeaderLinksSlot            ; ContactInfo                        
-                          ;                         ; SearchBoxSlot              ; SearchBox,LangCurrencyComponent    
+                          ;                         ; SearchBoxSlot              ; SearchBox                          
                           ;                         ; VariantSelectorSlot        ; VariantSelector                    
                           ;                         ; AddToCartSlot              ; AddToCart                          
                           ;                         ; UpSellingSlot              ; Similar                            

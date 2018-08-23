@@ -59,7 +59,7 @@ INSERT_UPDATE SiteMapConfig ; &siteMapConfigId      ; configId[unique=true]  ; s
 
 
 # CMS Site                  
-INSERT_UPDATE CMSSite ; uid[unique=true] ; theme(code) ; channel(code) ; stores(uid) ; contentCatalogs(id) ; defaultCatalog(id) ; defaultLanguage(isoCode) ; siteMapConfig(&siteMapConfigId) ; urlPatterns                                                                                                                                         ; active ; previewURL                            ; startingPage(uid,$contentCV) ; urlEncodingAttributes ; defaultPromotionGroup(Identifier)[default=hybrisPromoGrp]
+INSERT_UPDATE CMSSite ; uid[unique=true] ; theme(code) ; channel(code) ; stores(uid) ; contentCatalogs(id) ; defaultCatalog(id) ; defaultLanguage(isoCode) ; siteMapConfig(&siteMapConfigId) ; urlPatterns                                                                                                                                        ; active ; previewURL                            ; startingPage(uid,$contentCV) ; urlEncodingAttributes ; defaultPromotionGroup(Identifier)[default=hybrisPromoGrp]
                       ; $siteUid         ; alpha       ; B2C           ; $storeUid   ; $contentCatalog     ; $productCatalog    ; $defaultLanguage         ; $siteUidSiteMapConfig           ; (?i)^https?://[^/]+(/[^?]*)?\?(.*\&)?(site=$siteUid)(|\&.*)$,(?i)^https?://$siteUid\.[^/]+(|/.*|\?.*)$,(?i)^https?://hybris\.de\.[^/]+(|/.*|\?.*)$ ; true   ; $storefrontContextRoot/?site=$siteUid ; homepage                     ; language              
 
 # Cart Cleanup CronJobs

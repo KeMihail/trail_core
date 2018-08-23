@@ -66,6 +66,9 @@
 		<extension name='trainingtest' />
 		<extension name='trainingcockpits' />
 		<extension name='trainingfulfilmentprocess' />
+		<extension name="promotionenginetrail" />
+
+		<extension name="randomimageaddon" />
 
 		<extension name="addonsupport" />
 		<extension name="btg" />

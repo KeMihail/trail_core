@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- [y] hybris Platform Copyright (c) 2018 SAP SE or an SAP affiliate company. 
+	All rights reserved. This software is the confidential and proprietary information 
+	of SAP ("Confidential Information"). You shall not disclose such Confidential 
+	Information and shall use it only in accordance with the terms of the license 
+	agreement you entered into with SAP. -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+	<bean id="promotionengineSystemSetup"
+		class="de.hybris.training.setup.PromotionengineSystemSetup">
+		<!-- constructor arg injection example -->
+		<constructor-arg ref="promotionengineService" />
+	</bean>
+
+	<bean id="promotionengineService"
+		class="de.hybris.training.service.impl.DefaultPromotionengineService">
+		<!-- setter injection example -->
+		<property name="modelService" ref="modelService" />
+		<property name="mediaService" ref="mediaService" />
+		<property name="flexibleSearchService"
+			ref="flexibleSearchService" />
+	</bean>
+
+	<alias name="defaultReviewRaoConverter"
+		alias="customerReviewRaoConverter" />
+
+	<bean id="defaultReviewRaoConverter"
+		parent="abstractPopulatingConverter">
+		<property name="targetClass"
+			value="de.hybris.platform.promotionenginetrail.rao.CustomerReviewRAO" />
+		<property name="populators">
+			<list>
+				<ref bean="customerReviewRaoPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias name="defaultCustomerReviewRaoPopulator"
+		alias="customerReviewRaoPopulator" />
+
+	<bean id="defaultCustomerReviewRaoPopulator"
+		class="de.hybris.training.converters.populator.CustomerReviewRaoPopulator">
+		<property name="productConverter" ref="productRaoConverter" />
+	</bean>
+
+	<alias name="promotionenginetrailUserRaoPopulator"
+		alias="promotionenginetrailUserRaoPopulator" />
+
+	<bean id="promotionenginetrailUserRaoPopulator"
+		class="de.hybris.training.converters.populator.PromotionenginetrailUserRaoPopulator">
+		<property name="customerReviewConverter"
+			ref="customerReviewRaoConverter" />
+	</bean>
+
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="userRaoConverter" />
+		<property name="add" ref="promotionengineUserRaoPopulator" />
+	</bean>
+
+	<alias name="defaultCustomerReviewRaoExtractor"
+		alias="customerReviewRaoExtractor" />
+
+	<bean id="defaultCustomerReviewRaoExtractor"
+		class="de.hybris.training.rao.providers.impl.CustomerReviewRaoExtractor" />
+
+	<bean
+		id="promotionEngineCartRAOProviderExtractorsListMergeDirective"
+		depends-on="cartRAOProviderExtractors" parent="listMergeDirective">
+		<property name="add" ref="customerReviewRaoExtractor" />
+	</bean>
+
+</beans>

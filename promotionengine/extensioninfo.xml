@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<extensioninfo
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
+
+	<extension abstractclassprefix="Generated"
+		classprefix="Promotionengine" managername="PromotionengineManager"
+		managersuperclass="de.hybris.platform.jalo.extension.Extension"
+		name="promotionengine" usemaven="false">
+
+		<requires-extension name="promotionengineservices" />
+		<requires-extension name="ruleengineservices" />
+
+		<coremodule generated="true"
+			manager="de.hybris.training.jalo.PromotionengineManager"
+			packageroot="de.hybris.training" />
+
+		<webmodule jspcompile="false" webroot="/promotionengine" />
+
+	</extension>
+
+</extensioninfo>

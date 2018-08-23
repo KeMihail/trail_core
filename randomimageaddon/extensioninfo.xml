@@ -15,7 +15,7 @@
 		<!-- you should add all required extensions to this list, except platform extensions which are automatically required -->         
 		<requires-extension name="addonsupport"/>
 
-		<coremodule generated="true" manager="de.hybris.platform.addons.randomimageaddon.jalo.RandomimageaddonManager" packageroot="de.hybris.platform.addons.randomimageaddon"/>
+		<coremodule generated="true" manager="de.hybris.training.jalo.RandomimageaddonManager" packageroot="de.hybris.training"/>
 
 		
 		<meta key="classpathgen" value="false"/>

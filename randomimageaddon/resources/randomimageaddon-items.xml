@@ -20,7 +20,7 @@
 <!--
 		<itemtype generate="true"
 		   code="MyProduct"
-		   jaloclass="de.hybris.platform.addons.randomimageaddon.jalo.MyProduct"
+		   jaloclass="de.hybris.training.jalo.MyProduct"
 		   extends="Product"
 		   autocreate="true"
 	   >

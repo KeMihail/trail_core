@@ -2,14 +2,6 @@ $contentCatalog=hybrisContentCatalog
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default='Staged'])[default=$contentCatalog:Staged]
 $languages=ja,en,de,zh
 
-INSERT_UPDATE ContentCatalog ; id[unique=true]
-                             ; $contentCatalog
-
-# Catalog versions for content catalogs
-INSERT_UPDATE CatalogVersion ; catalog(id)[unique=true] ; version[unique=true] ; active ; languages(isoCode)
-                             ; $contentCatalog          ; Staged               ; false  ; $languages        
-                             ; $contentCatalog          ; Online               ; true   ; $languages        
-
 
 # Import config properties into impex macros
 UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor] ; pk[unique=true]

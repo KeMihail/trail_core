@@ -70,7 +70,7 @@
 		<extension name="promotionenginetrail" />
 
 		<extension name="addonsupport" />
-		<extension name="randomimageaddon" />
+		<!-- <extension name="randomimageaddon" /> -->
 
 		<extension name="btg" />
 		<extension name="acceleratorstorefrontcommons" />

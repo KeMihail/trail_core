@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Aug 23, 2018 2:49:38 PM                     ---
+ * --- Generated at Aug 24, 2018 3:29:54 PM                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -33,6 +33,7 @@ import de.hybris.training.core.jalo.CMSMediaParagraphComponent;
 import de.hybris.training.core.jalo.CustomOffersComponent;
 import de.hybris.training.core.jalo.ElectronicsColorVariantProduct;
 import de.hybris.training.core.jalo.FeedbackComponent;
+import de.hybris.training.core.jalo.RandomImageParagraphComponent;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -270,6 +271,32 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 	public FeedbackComponent createFeedbackComponent(final Map attributeValues)
 	{
 		return createFeedbackComponent( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public RandomImageParagraphComponent createRandomImageParagraphComponent(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingCoreConstants.TC.RANDOMIMAGEPARAGRAPHCOMPONENT );
+			return (RandomImageParagraphComponent)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating RandomImageParagraphComponent : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public RandomImageParagraphComponent createRandomImageParagraphComponent(final Map attributeValues)
+	{
+		return createRandomImageParagraphComponent( getSession().getSessionContext(), attributeValues );
 	}
 	
 	@Override

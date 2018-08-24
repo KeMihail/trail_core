@@ -7,7 +7,7 @@
 		classprefix="TrainingStorefront" name="trainingstorefront"
 		usemaven="false">
 
-		<requires-extension name="randomimageaddon" />
+	<!-- <requires-extension name="randomimageaddon" /> -->
 		<requires-extension name="commerceorgsamplesaddon" />
 		<requires-extension
 			name="promotionenginesamplesaddon" />

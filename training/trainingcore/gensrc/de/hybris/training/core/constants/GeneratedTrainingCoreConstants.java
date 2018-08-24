@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Aug 23, 2018 2:49:38 PM                     ---
+ * --- Generated at Aug 24, 2018 3:29:54 PM                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -31,6 +31,8 @@ public class GeneratedTrainingCoreConstants
 		public static final String CUSTOMOFFERSCOMPONENT = "CustomOffersComponent".intern();
 		public static final String ELECTRONICSCOLORVARIANTPRODUCT = "ElectronicsColorVariantProduct".intern();
 		public static final String FEEDBACKCOMPONENT = "FeedbackComponent".intern();
+		public static final String RANDOMIMAGEPARAGRAPHCOMPONENT = "RandomImageParagraphComponent".intern();
+		public static final String RANDOMPICTURETOPIC = "RandomPictureTopic".intern();
 		public static final String SWATCHCOLORENUM = "SwatchColorEnum".intern();
 	}
 	public static class Attributes
@@ -46,6 +48,20 @@ public class GeneratedTrainingCoreConstants
 	}
 	public static class Enumerations
 	{
+		public static class RandomPictureTopic
+		{
+			public static final String FASHION = "fashion".intern();
+			public static final String SPORTS = "sports".intern();
+			public static final String ABSTRACT = "abstract".intern();
+			public static final String ANIMALS = "animals".intern();
+			public static final String CITY = "city".intern();
+			public static final String FOOD = "food".intern();
+			public static final String NIGHTLIFE = "nightlife".intern();
+			public static final String PEOPLE = "people".intern();
+			public static final String NATURE = "nature".intern();
+			public static final String TECHNICS = "technics".intern();
+			public static final String TRANSPORT = "transport".intern();
+		}
 		public static class SwatchColorEnum
 		{
 			public static final String BLACK = "BLACK".intern();

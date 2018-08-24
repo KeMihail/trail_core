@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Aug 24, 2018 1:07:48 PM                     ---
+ * --- Generated at Aug 24, 2018 3:29:54 PM                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -11,7 +11,7 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with SAP.
  */
-package de.hybris.training.jalo;
+package de.hybris.training.core.jalo;
 
 import de.hybris.platform.cms2.jalo.contents.components.CMSParagraphComponent;
 import de.hybris.platform.jalo.Item.AttributeMode;
@@ -20,7 +20,7 @@ import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.c2l.C2LManager;
 import de.hybris.platform.jalo.c2l.Language;
 import de.hybris.platform.jalo.enumeration.EnumerationValue;
-import de.hybris.training.constants.RandomimageaddonConstants;
+import de.hybris.training.core.constants.TrainingCoreConstants;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;

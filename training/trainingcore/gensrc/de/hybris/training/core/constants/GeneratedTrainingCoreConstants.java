@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Aug 24, 2018 3:29:54 PM                     ---
+ * --- Generated at Aug 27, 2018 11:16:29 AM                    ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -31,8 +31,8 @@ public class GeneratedTrainingCoreConstants
 		public static final String CUSTOMOFFERSCOMPONENT = "CustomOffersComponent".intern();
 		public static final String ELECTRONICSCOLORVARIANTPRODUCT = "ElectronicsColorVariantProduct".intern();
 		public static final String FEEDBACKCOMPONENT = "FeedbackComponent".intern();
-		public static final String RANDOMIMAGEPARAGRAPHCOMPONENT = "RandomImageParagraphComponent".intern();
-		public static final String RANDOMPICTURETOPIC = "RandomPictureTopic".intern();
+		public static final String RANDOMIMAGEPARAGRAPHCOMPONENTFROMCORE = "RandomImageParagraphComponentFromCore".intern();
+		public static final String RANDOMPICTURE = "RandomPicture".intern();
 		public static final String SWATCHCOLORENUM = "SwatchColorEnum".intern();
 	}
 	public static class Attributes
@@ -48,7 +48,7 @@ public class GeneratedTrainingCoreConstants
 	}
 	public static class Enumerations
 	{
-		public static class RandomPictureTopic
+		public static class RandomPicture
 		{
 			public static final String FASHION = "fashion".intern();
 			public static final String SPORTS = "sports".intern();

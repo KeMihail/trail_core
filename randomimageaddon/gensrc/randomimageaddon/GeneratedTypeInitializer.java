@@ -167,7 +167,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 	
 		createEnumerationValues(
 			"RandomPictureTopic",
-			false,
+			true,
 			Arrays.asList( new String[] {
 			
 				"fashion",

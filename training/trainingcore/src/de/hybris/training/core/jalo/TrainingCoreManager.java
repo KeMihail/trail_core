@@ -1,8 +1,7 @@
 /*
+ *  
  * [y] hybris Platform
- *
- * Copyright (c) 2018 SAP SE or an SAP affiliate company.  All rights reserved.
- *
+ * Copyright (c) 2018 SAP SE or an SAP affiliate company. All rights reserved.
  * This software is the confidential and proprietary information of SAP
  * ("Confidential Information"). You shall not disclose such Confidential
  * Information and shall use it only in accordance with the terms of the
@@ -13,18 +12,18 @@ package de.hybris.training.core.jalo;
 import de.hybris.platform.jalo.JaloSession;
 import de.hybris.platform.jalo.extension.ExtensionManager;
 import de.hybris.training.core.constants.TrainingCoreConstants;
-import de.hybris.training.core.setup.CoreSystemSetup;
+import org.apache.log4j.Logger;
 
-
-/**
- * Do not use, please use {@link CoreSystemSetup} instead.
- * 
- */
+@SuppressWarnings("PMD")
 public class TrainingCoreManager extends GeneratedTrainingCoreManager
 {
+	@SuppressWarnings("unused")
+	private static final Logger log = Logger.getLogger( TrainingCoreManager.class.getName() );
+	
 	public static final TrainingCoreManager getInstance()
 	{
-		final ExtensionManager em = JaloSession.getCurrentSession().getExtensionManager();
+		ExtensionManager em = JaloSession.getCurrentSession().getExtensionManager();
 		return (TrainingCoreManager) em.getExtension(TrainingCoreConstants.EXTENSIONNAME);
 	}
+	
 }

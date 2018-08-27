@@ -33,7 +33,7 @@
 			<value code="YELLOW" />
 		</enumtype>
 
-		<enumtype code="RandomPictureTopic" autocreate="true"
+		<enumtype code="RandomPicture" autocreate="true"
 			generate="true" dynamic="true">
 			<value code="fashion" />
 			<value code="sports" />
@@ -234,11 +234,11 @@
 				</attributes>
 			</itemtype>
 
-			<itemtype code="RandomImageParagraphComponent"
+			<itemtype code="RandomImageParagraphComponentFromCore"
 				autocreate="true" generate="true" extends="CMSParagraphComponent">
 				<attributes>
 
-					<attribute qualifier="topic" type="RandomPictureTopic">
+					<attribute qualifier="topic" type="RandomPicture">
 						<description>Topic of the Image</description>
 						<modifiers read="true" write="true" search="true"
 							optional="false" />

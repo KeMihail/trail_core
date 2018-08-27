@@ -15,10 +15,10 @@ import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.type.ComposedType;
 import org.apache.log4j.Logger;
 
-public class RandomImageParagraphComponent extends GeneratedRandomImageParagraphComponent
+public class RandomImageParagraphComponentFromCore extends GeneratedRandomImageParagraphComponentFromCore
 {
 	@SuppressWarnings("unused")
-	private static final Logger LOG = Logger.getLogger( RandomImageParagraphComponent.class.getName() );
+	private static final Logger LOG = Logger.getLogger( RandomImageParagraphComponentFromCore.class.getName() );
 	
 	@Override
 	protected Item createItem(final SessionContext ctx, final ComposedType type, final ItemAttributeMap allAttributes) throws JaloBusinessException

@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Aug 24, 2018 3:29:54 PM                     ---
+ * --- Generated at Aug 27, 2018 11:16:29 AM                    ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -26,18 +26,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Generated class for type {@link de.hybris.platform.cms2.jalo.contents.components.CMSParagraphComponent RandomImageParagraphComponent}.
+ * Generated class for type {@link de.hybris.platform.cms2.jalo.contents.components.CMSParagraphComponent RandomImageParagraphComponentFromCore}.
  */
 @SuppressWarnings({"deprecation","unused","cast","PMD"})
-public abstract class GeneratedRandomImageParagraphComponent extends CMSParagraphComponent
+public abstract class GeneratedRandomImageParagraphComponentFromCore extends CMSParagraphComponent
 {
-	/** Qualifier of the <code>RandomImageParagraphComponent.topic</code> attribute **/
+	/** Qualifier of the <code>RandomImageParagraphComponentFromCore.topic</code> attribute **/
 	public static final String TOPIC = "topic";
-	/** Qualifier of the <code>RandomImageParagraphComponent.width</code> attribute **/
+	/** Qualifier of the <code>RandomImageParagraphComponentFromCore.width</code> attribute **/
 	public static final String WIDTH = "width";
-	/** Qualifier of the <code>RandomImageParagraphComponent.height</code> attribute **/
+	/** Qualifier of the <code>RandomImageParagraphComponentFromCore.height</code> attribute **/
 	public static final String HEIGHT = "height";
-	/** Qualifier of the <code>RandomImageParagraphComponent.text</code> attribute **/
+	/** Qualifier of the <code>RandomImageParagraphComponentFromCore.text</code> attribute **/
 	public static final String TEXT = "text";
 	protected static final Map<String, AttributeMode> DEFAULT_INITIAL_ATTRIBUTES;
 	static
@@ -56,7 +56,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponent.height</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponentFromCore.height</code> attribute.
 	 * @return the height
 	 */
 	public Integer getHeight(final SessionContext ctx)
@@ -65,7 +65,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponent.height</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponentFromCore.height</code> attribute.
 	 * @return the height
 	 */
 	public Integer getHeight()
@@ -74,7 +74,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponent.height</code> attribute. 
+	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponentFromCore.height</code> attribute. 
 	 * @return the height
 	 */
 	public int getHeightAsPrimitive(final SessionContext ctx)
@@ -84,7 +84,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponent.height</code> attribute. 
+	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponentFromCore.height</code> attribute. 
 	 * @return the height
 	 */
 	public int getHeightAsPrimitive()
@@ -93,7 +93,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponent.height</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponentFromCore.height</code> attribute. 
 	 * @param value the height
 	 */
 	public void setHeight(final SessionContext ctx, final Integer value)
@@ -102,7 +102,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponent.height</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponentFromCore.height</code> attribute. 
 	 * @param value the height
 	 */
 	public void setHeight(final Integer value)
@@ -111,7 +111,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponent.height</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponentFromCore.height</code> attribute. 
 	 * @param value the height
 	 */
 	public void setHeight(final SessionContext ctx, final int value)
@@ -120,7 +120,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponent.height</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponentFromCore.height</code> attribute. 
 	 * @param value the height
 	 */
 	public void setHeight(final int value)
@@ -129,20 +129,20 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponent.text</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponentFromCore.text</code> attribute.
 	 * @return the text
 	 */
 	public String getText(final SessionContext ctx)
 	{
 		if( ctx == null || ctx.getLanguage() == null )
 		{
-			throw new JaloInvalidParameterException("GeneratedRandomImageParagraphComponent.getText requires a session language", 0 );
+			throw new JaloInvalidParameterException("GeneratedRandomImageParagraphComponentFromCore.getText requires a session language", 0 );
 		}
 		return (String)getLocalizedProperty( ctx, TEXT);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponent.text</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponentFromCore.text</code> attribute.
 	 * @return the text
 	 */
 	public String getText()
@@ -151,7 +151,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponent.text</code> attribute. 
+	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponentFromCore.text</code> attribute. 
 	 * @return the localized text
 	 */
 	public Map<Language,String> getAllText(final SessionContext ctx)
@@ -160,7 +160,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponent.text</code> attribute. 
+	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponentFromCore.text</code> attribute. 
 	 * @return the localized text
 	 */
 	public Map<Language,String> getAllText()
@@ -169,7 +169,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponent.text</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponentFromCore.text</code> attribute. 
 	 * @param value the text
 	 */
 	public void setText(final SessionContext ctx, final String value)
@@ -180,13 +180,13 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 		}
 		if( ctx.getLanguage() == null )
 		{
-			throw new JaloInvalidParameterException("GeneratedRandomImageParagraphComponent.setText requires a session language", 0 );
+			throw new JaloInvalidParameterException("GeneratedRandomImageParagraphComponentFromCore.setText requires a session language", 0 );
 		}
 		setLocalizedProperty(ctx, TEXT,value);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponent.text</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponentFromCore.text</code> attribute. 
 	 * @param value the text
 	 */
 	public void setText(final String value)
@@ -195,7 +195,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponent.text</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponentFromCore.text</code> attribute. 
 	 * @param value the text
 	 */
 	public void setAllText(final SessionContext ctx, final Map<Language,String> value)
@@ -204,7 +204,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponent.text</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponentFromCore.text</code> attribute. 
 	 * @param value the text
 	 */
 	public void setAllText(final Map<Language,String> value)
@@ -213,7 +213,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponent.topic</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponentFromCore.topic</code> attribute.
 	 * @return the topic - Topic of the Image
 	 */
 	public EnumerationValue getTopic(final SessionContext ctx)
@@ -222,7 +222,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponent.topic</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponentFromCore.topic</code> attribute.
 	 * @return the topic - Topic of the Image
 	 */
 	public EnumerationValue getTopic()
@@ -231,7 +231,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponent.topic</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponentFromCore.topic</code> attribute. 
 	 * @param value the topic - Topic of the Image
 	 */
 	public void setTopic(final SessionContext ctx, final EnumerationValue value)
@@ -240,7 +240,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponent.topic</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponentFromCore.topic</code> attribute. 
 	 * @param value the topic - Topic of the Image
 	 */
 	public void setTopic(final EnumerationValue value)
@@ -249,7 +249,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponent.width</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponentFromCore.width</code> attribute.
 	 * @return the width
 	 */
 	public Integer getWidth(final SessionContext ctx)
@@ -258,7 +258,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponent.width</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponentFromCore.width</code> attribute.
 	 * @return the width
 	 */
 	public Integer getWidth()
@@ -267,7 +267,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponent.width</code> attribute. 
+	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponentFromCore.width</code> attribute. 
 	 * @return the width
 	 */
 	public int getWidthAsPrimitive(final SessionContext ctx)
@@ -277,7 +277,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponent.width</code> attribute. 
+	 * <i>Generated method</i> - Getter of the <code>RandomImageParagraphComponentFromCore.width</code> attribute. 
 	 * @return the width
 	 */
 	public int getWidthAsPrimitive()
@@ -286,7 +286,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponent.width</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponentFromCore.width</code> attribute. 
 	 * @param value the width
 	 */
 	public void setWidth(final SessionContext ctx, final Integer value)
@@ -295,7 +295,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponent.width</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponentFromCore.width</code> attribute. 
 	 * @param value the width
 	 */
 	public void setWidth(final Integer value)
@@ -304,7 +304,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponent.width</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponentFromCore.width</code> attribute. 
 	 * @param value the width
 	 */
 	public void setWidth(final SessionContext ctx, final int value)
@@ -313,7 +313,7 @@ public abstract class GeneratedRandomImageParagraphComponent extends CMSParagrap
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponent.width</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>RandomImageParagraphComponentFromCore.width</code> attribute. 
 	 * @param value the width
 	 */
 	public void setWidth(final int value)

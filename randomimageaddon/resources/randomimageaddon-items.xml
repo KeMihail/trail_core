@@ -4,8 +4,7 @@
 
 	<enumtypes>
 		<enumtype code="RandomPictureTopic" autocreate="true"
-			generate="true">
-
+			generate="true" dynamic="true">
 			<value code="fashion" />
 			<value code="sports" />
 			<value code="abstract" />
@@ -17,7 +16,6 @@
 			<value code="nature" />
 			<value code="technics" />
 			<value code="transport" />
-
 		</enumtype>
 	</enumtypes>
 

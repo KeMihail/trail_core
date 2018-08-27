@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Aug 24, 2018 3:29:54 PM                     ---
+ * --- Generated at Aug 27, 2018 11:16:29 AM                    ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -33,7 +33,7 @@ import de.hybris.training.core.jalo.CMSMediaParagraphComponent;
 import de.hybris.training.core.jalo.CustomOffersComponent;
 import de.hybris.training.core.jalo.ElectronicsColorVariantProduct;
 import de.hybris.training.core.jalo.FeedbackComponent;
-import de.hybris.training.core.jalo.RandomImageParagraphComponent;
+import de.hybris.training.core.jalo.RandomImageParagraphComponentFromCore;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -273,12 +273,12 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 		return createFeedbackComponent( getSession().getSessionContext(), attributeValues );
 	}
 	
-	public RandomImageParagraphComponent createRandomImageParagraphComponent(final SessionContext ctx, final Map attributeValues)
+	public RandomImageParagraphComponentFromCore createRandomImageParagraphComponentFromCore(final SessionContext ctx, final Map attributeValues)
 	{
 		try
 		{
-			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingCoreConstants.TC.RANDOMIMAGEPARAGRAPHCOMPONENT );
-			return (RandomImageParagraphComponent)type.newInstance( ctx, attributeValues );
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingCoreConstants.TC.RANDOMIMAGEPARAGRAPHCOMPONENTFROMCORE );
+			return (RandomImageParagraphComponentFromCore)type.newInstance( ctx, attributeValues );
 		}
 		catch( JaloGenericCreationException e)
 		{
@@ -290,13 +290,13 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 		}
 		catch( JaloBusinessException e )
 		{
-			throw new JaloSystemException( e ,"error creating RandomImageParagraphComponent : "+e.getMessage(), 0 );
+			throw new JaloSystemException( e ,"error creating RandomImageParagraphComponentFromCore : "+e.getMessage(), 0 );
 		}
 	}
 	
-	public RandomImageParagraphComponent createRandomImageParagraphComponent(final Map attributeValues)
+	public RandomImageParagraphComponentFromCore createRandomImageParagraphComponentFromCore(final Map attributeValues)
 	{
-		return createRandomImageParagraphComponent( getSession().getSessionContext(), attributeValues );
+		return createRandomImageParagraphComponentFromCore( getSession().getSessionContext(), attributeValues );
 	}
 	
 	@Override

@@ -22,11 +22,6 @@ UPDATE CMSSite ; uid[unique=true] ; defaultPreviewCategory(code, $productCV) ; d
                ; hybris           ; 100                                      ; 0007                                   
 
 
-INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='LandingPage2Template'] ; validComponentTypes(code)     ; compTypeGroup(code) ;  
-                              ; Section2A         ;                                                                       ; RandomImageParagraphComponent ; narrow              
-                              ; Section2B         ;                                                                       ; RandomImageParagraphComponent ; narrow              
-                              
-                              
 # Site Logo                   
 INSERT_UPDATE Media ; $contentCV[unique=true] ; code[unique=true]                      ; realfilename             ; @media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator] ; mime[default='image/jpeg'] ; altText             ; folder(qualifier)[default='images']
                     ;                         ; /images/theme/logo-hybris.png          ; logo-hybris.png          ; $siteResource/images/theme/logo-hybris.png                                 ; image/png                  ; hybris  Store       ;                                    
@@ -247,24 +242,31 @@ UPDATE ContentPage ; $contentCV[unique=true] ; uid[unique=true]   ; linkComponen
                    ;                         ; login              ; LoginLink               
                    
 ###### Hybris Homepage ######
+
                    
-                   
-INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='LandingPage2Template'] ; validComponentTypes(code)     ; compTypeGroup(code) ;  
-                              ; Section2A         ;                                                                       ; RandomImageParagraphComponent ; narrow              
-                              ; Section2B         ;                                                                       ; RandomImageParagraphComponent ; narrow              
+INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='LandingPage2Template'] ; validComponentTypes(code)             ; compTypeGroup(code) ;  
+                              ; Section2A         ;                                                                       ; RandomImageParagraphComponentFromCore ; narrow              
+                              ; Section2B         ;                                                                       ; RandomImageParagraphComponent         ; narrow              
                               
-INSERT_UPDATE  RandomImageParagraphComponent ; $contentCV ; uid[unique=true] ; name         ; &componentRef ; topic(code) ; width ; height
-                                             ;            ; RandomImage1     ; Random Image ; RandomImage1  ; fashion     ; 228   ; 228   
-                                             ;            ; RandomImage2     ; Random Image ; RandomImage2  ; people      ; 228   ; 228   
-                                             ;            ; RandomImage3     ; Random Image ; RandomImage3  ; nightlife   ; 228   ; 228   
+INSERT_UPDATE  RandomImageParagraphComponentFromCore ; $contentCV ; uid[unique=true]  ; name          ; &componentRef  ; topic(code) ; width ; height
+                                                     ;            ; fashioncore       ; Random Image1 ; fashioncore    ; fashion     ; 228   ; 228   
+                                                     ;            ; peoplecore        ; Random Image2 ; peoplecore     ; people      ; 228   ; 228   
+                                                     ;            ; lifestylecore     ; Random Image3 ; lifestylecore  ; nightlife   ; 228   ; 228   
+
+
+INSERT_UPDATE  RandomImageParagraphComponent ; $contentCV ; uid[unique=true]  ; name         ; &componentRef    ; topic(code) ; width ; height
+                                             ;            ; fashion           ; Random Image ; fashion          ; fashion     ; 228   ; 228   
+                                             ;            ; people            ; Random Image ; people           ; people      ; 228   ; 228   
+                                             ;            ; lifestyle         ; Random Image ; lifestyle        ; nightlife   ; 228   ; 228   
+                                             
                                              
 INSERT_UPDATE ProductCarouselComponent ; $contentCV[unique=true] ; uid[unique=true]                       ; name                             ; products(code,$productCV)                                                                      ; scroll(code) ; &componentRef                         
                                        ;                         ; HybrisHomepageProductCarouselComponent ; Hybris Homepage Product Carousel ; 0007,0001,0002,0003,0004,0005,0006,0100,0101,0102,0110,0111,0112,0200,0201,0202,0210,0211,0212 ; allVisible   ; HybrisHomepageProductCarouselComponent
                                        
 INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]       ; name                        ; active ; cmsComponents(&componentRef)          
                           ;                         ; Section1Slot-Homepage  ; Section1 Slot for Homepage  ; true   ; welcomeMessage                        
-                          ;                         ; Section2ASlot-Homepage ; Section2A Slot for Homepage ; true   ; RandomImage1                          
-                          ;                         ; Section2BSlot-Homepage ; Section2B Slot for Homepage ; true   ; RandomImage2                          
+                          ;                         ; Section2ASlot-Homepage ; Section2A Slot for Homepage ; true   ; fashioncore                          
+                          ;                         ; Section2BSlot-Homepage ; Section2B Slot for Homepage ; true   ; people                           
                           ;                         ; Section2CSlot-Homepage ; Section2C Slot for Homepage ; true   ; customComponent                       
                           ;                         ; Section3Slot-Homepage  ; Section3 Slot for Homepage  ; true   ; HybrisHomepageProductCarouselComponent
                           ;                         ; Section4Slot-Homepage  ; Section4 Slot for Homepage  ; true   ; FeedbackComponent                     

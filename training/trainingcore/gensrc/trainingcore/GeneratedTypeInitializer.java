@@ -127,9 +127,9 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		);
 	
 		createItemType(
-			"RandomImageParagraphComponent",
+			"RandomImageParagraphComponentFromCore",
 			"CMSParagraphComponent",
-			de.hybris.training.core.jalo.RandomImageParagraphComponent.class,
+			de.hybris.training.core.jalo.RandomImageParagraphComponentFromCore.class,
 			null,
 			false,
 			null,
@@ -142,7 +142,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		);
 	
 		createEnumerationType(
-			"RandomPictureTopic",
+			"RandomPicture",
 			null
 		);
 	
@@ -211,13 +211,13 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 				single_createattr_CustomOffersComponent_offerImageLink();
 			
-				single_createattr_RandomImageParagraphComponent_topic();
+				single_createattr_RandomImageParagraphComponentFromCore_topic();
 			
-				single_createattr_RandomImageParagraphComponent_width();
+				single_createattr_RandomImageParagraphComponentFromCore_width();
 			
-				single_createattr_RandomImageParagraphComponent_height();
+				single_createattr_RandomImageParagraphComponentFromCore_height();
 			
-				single_createattr_RandomImageParagraphComponent_text();
+				single_createattr_RandomImageParagraphComponentFromCore_text();
 			
 
 	}
@@ -508,16 +508,16 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
-	public void single_createattr_RandomImageParagraphComponent_topic() throws JaloBusinessException
+	public void single_createattr_RandomImageParagraphComponentFromCore_topic() throws JaloBusinessException
 	{
 		
 						Map sqlColumnDefinitions = null;
 					
 				createPropertyAttribute(
-					"RandomImageParagraphComponent", 
+					"RandomImageParagraphComponentFromCore", 
 					"topic",  
 					null,
-					"RandomPictureTopic",
+					"RandomPicture",
 					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
 					null,
 					sqlColumnDefinitions
@@ -525,13 +525,13 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
-	public void single_createattr_RandomImageParagraphComponent_width() throws JaloBusinessException
+	public void single_createattr_RandomImageParagraphComponentFromCore_width() throws JaloBusinessException
 	{
 		
 						Map sqlColumnDefinitions = null;
 					
 				createPropertyAttribute(
-					"RandomImageParagraphComponent", 
+					"RandomImageParagraphComponentFromCore", 
 					"width",  
 					null,
 					"java.lang.Integer",
@@ -542,13 +542,13 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
-	public void single_createattr_RandomImageParagraphComponent_height() throws JaloBusinessException
+	public void single_createattr_RandomImageParagraphComponentFromCore_height() throws JaloBusinessException
 	{
 		
 						Map sqlColumnDefinitions = null;
 					
 				createPropertyAttribute(
-					"RandomImageParagraphComponent", 
+					"RandomImageParagraphComponentFromCore", 
 					"height",  
 					null,
 					"java.lang.Integer",
@@ -559,13 +559,13 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
-	public void single_createattr_RandomImageParagraphComponent_text() throws JaloBusinessException
+	public void single_createattr_RandomImageParagraphComponentFromCore_text() throws JaloBusinessException
 	{
 		
 						Map sqlColumnDefinitions = null;
 					
 				createPropertyAttribute(
-					"RandomImageParagraphComponent", 
+					"RandomImageParagraphComponentFromCore", 
 					"text",  
 					null,
 					"localized:java.lang.String",
@@ -608,7 +608,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		);
 	
 		createEnumerationValues(
-			"RandomPictureTopic",
+			"RandomPicture",
 			true,
 			Arrays.asList( new String[] {
 			
@@ -788,7 +788,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				Map customPropsMap = new HashMap();
 				
 				setItemTypeProperties(
-					"RandomImageParagraphComponent",
+					"RandomImageParagraphComponentFromCore",
 					false,
 					true,
 					true,
@@ -797,13 +797,13 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				);
 				}
 			
-			single_setAttributeProperties_RandomImageParagraphComponent_topic();
+			single_setAttributeProperties_RandomImageParagraphComponentFromCore_topic();
 		
-			single_setAttributeProperties_RandomImageParagraphComponent_width();
+			single_setAttributeProperties_RandomImageParagraphComponentFromCore_width();
 		
-			single_setAttributeProperties_RandomImageParagraphComponent_height();
+			single_setAttributeProperties_RandomImageParagraphComponentFromCore_height();
 		
-			single_setAttributeProperties_RandomImageParagraphComponent_text();
+			single_setAttributeProperties_RandomImageParagraphComponentFromCore_text();
 		
 				setDefaultProperties(
 					"GenderList",
@@ -834,7 +834,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				);
 			
 				setDefaultProperties(
-					"RandomPictureTopic",
+					"RandomPicture",
 					true,
 					true,
 					null
@@ -1218,7 +1218,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							);
 						}
 					
-						public void single_setAttributeProperties_RandomImageParagraphComponent_topic() throws JaloBusinessException
+						public void single_setAttributeProperties_RandomImageParagraphComponentFromCore_topic() throws JaloBusinessException
 						{
 							
 							
@@ -1226,7 +1226,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							Map customPropsMap = new HashMap();
 							
 							setAttributeProperties(
-								"RandomImageParagraphComponent", 
+								"RandomImageParagraphComponentFromCore", 
 								"topic",
 								false, 
 								null,
@@ -1240,7 +1240,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							);
 						}
 					
-						public void single_setAttributeProperties_RandomImageParagraphComponent_width() throws JaloBusinessException
+						public void single_setAttributeProperties_RandomImageParagraphComponentFromCore_width() throws JaloBusinessException
 						{
 							
 							
@@ -1248,7 +1248,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							Map customPropsMap = new HashMap();
 							
 							setAttributeProperties(
-								"RandomImageParagraphComponent", 
+								"RandomImageParagraphComponentFromCore", 
 								"width",
 								false, 
 								Integer.valueOf(228),
@@ -1262,7 +1262,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							);
 						}
 					
-						public void single_setAttributeProperties_RandomImageParagraphComponent_height() throws JaloBusinessException
+						public void single_setAttributeProperties_RandomImageParagraphComponentFromCore_height() throws JaloBusinessException
 						{
 							
 							
@@ -1270,7 +1270,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							Map customPropsMap = new HashMap();
 							
 							setAttributeProperties(
-								"RandomImageParagraphComponent", 
+								"RandomImageParagraphComponentFromCore", 
 								"height",
 								false, 
 								Integer.valueOf(228),
@@ -1284,7 +1284,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							);
 						}
 					
-						public void single_setAttributeProperties_RandomImageParagraphComponent_text() throws JaloBusinessException
+						public void single_setAttributeProperties_RandomImageParagraphComponentFromCore_text() throws JaloBusinessException
 						{
 							
 							
@@ -1292,7 +1292,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							Map customPropsMap = new HashMap();
 							
 							setAttributeProperties(
-								"RandomImageParagraphComponent", 
+								"RandomImageParagraphComponentFromCore", 
 								"text",
 								false, 
 								null,

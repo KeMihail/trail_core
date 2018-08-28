@@ -20,4 +20,9 @@
 		<property name="internal" type="boolean" />
 	</bean>
 
+	<bean
+		class="de.hybris.platform.commercefacades.order.data.CreditCardPaymentInfoData">
+		<property name="cardOwner" type="java.lang.String" />
+	</bean>
+
 </beans>

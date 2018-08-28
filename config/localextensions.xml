@@ -71,6 +71,7 @@
 
 		<extension name="addonsupport" />
 		<extension name="randomimageaddon" />
+		<extension name="trailpayment" />
 
 		<extension name="btg" />
 		<extension name="acceleratorstorefrontcommons" />

@@ -219,6 +219,8 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 				single_createattr_RandomImageParagraphComponentFromCore_text();
 			
+				single_createattr_CreditCardPaymentInfo_cardOwner();
+			
 
 	}
 
@@ -576,6 +578,23 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
+	public void single_createattr_CreditCardPaymentInfo_cardOwner() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"CreditCardPaymentInfo", 
+					"cardOwner",  
+					null,
+					"java.lang.String",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
 
 
 	/**
@@ -804,6 +823,18 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			single_setAttributeProperties_RandomImageParagraphComponentFromCore_height();
 		
 			single_setAttributeProperties_RandomImageParagraphComponentFromCore_text();
+		
+				{
+				Map customPropsMap = new HashMap();
+				
+				changeMetaType(
+					"CreditCardPaymentInfo",
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_CreditCardPaymentInfo_cardOwner();
 		
 				setDefaultProperties(
 					"GenderList",
@@ -1294,6 +1325,28 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							setAttributeProperties(
 								"RandomImageParagraphComponentFromCore", 
 								"text",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_CreditCardPaymentInfo_cardOwner() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"CreditCardPaymentInfo", 
+								"cardOwner",
 								false, 
 								null,
 								null,

@@ -243,21 +243,25 @@ UPDATE ContentPage ; $contentCV[unique=true] ; uid[unique=true]   ; linkComponen
                    
 ###### Hybris Homepage ######
 
-                   
+
+INSERT_UPDATE ComponentTypeGroups2ComponentType ; source(code)[unique=true] ; target(code)[unique=true] 
+                                                ; narrow                    ; CMSMediaParagraphComponent
+                                                ; wide                      ; CMSMediaParagraphComponent
+                                                
 INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='LandingPage2Template'] ; validComponentTypes(code)             ; compTypeGroup(code) ;  
                               ; Section2A         ;                                                                       ; RandomImageParagraphComponentFromCore ; narrow              
                               ; Section2B         ;                                                                       ; RandomImageParagraphComponent         ; narrow              
                               
-INSERT_UPDATE  RandomImageParagraphComponentFromCore ; $contentCV ; uid[unique=true]  ; name          ; &componentRef  ; topic(code) ; width ; height
-                                                     ;            ; fashioncore       ; Random Image1 ; fashioncore    ; fashion     ; 228   ; 228   
-                                                     ;            ; peoplecore        ; Random Image2 ; peoplecore     ; people      ; 228   ; 228   
-                                                     ;            ; lifestylecore     ; Random Image3 ; lifestylecore  ; nightlife   ; 228   ; 228   
+INSERT_UPDATE  RandomImageParagraphComponentFromCore ; $contentCV ; uid[unique=true] ; name          ; &componentRef ; topic(code) ; width ; height
+                                                     ;            ; fashioncore      ; Random Image1 ; fashioncore   ; fashion     ; 228   ; 228   
+                                                     ;            ; peoplecore       ; Random Image2 ; peoplecore    ; people      ; 228   ; 228   
+                                                     ;            ; lifestylecore    ; Random Image3 ; lifestylecore ; nightlife   ; 228   ; 228   
 
 
-INSERT_UPDATE  RandomImageParagraphComponent ; $contentCV ; uid[unique=true]  ; name         ; &componentRef    ; topic(code) ; width ; height
-                                             ;            ; fashion           ; Random Image ; fashion          ; fashion     ; 228   ; 228   
-                                             ;            ; people            ; Random Image ; people           ; people      ; 228   ; 228   
-                                             ;            ; lifestyle         ; Random Image ; lifestyle        ; nightlife   ; 228   ; 228   
+INSERT_UPDATE  RandomImageParagraphComponent ; $contentCV ; uid[unique=true] ; name         ; &componentRef ; topic(code) ; width ; height
+                                             ;            ; fashion          ; Random Image ; fashion       ; fashion     ; 228   ; 228   
+                                             ;            ; people           ; Random Image ; people        ; people      ; 228   ; 228   
+                                             ;            ; lifestyle        ; Random Image ; lifestyle     ; nightlife   ; 228   ; 228   
                                              
                                              
 INSERT_UPDATE ProductCarouselComponent ; $contentCV[unique=true] ; uid[unique=true]                       ; name                             ; products(code,$productCV)                                                                      ; scroll(code) ; &componentRef                         
@@ -265,8 +269,8 @@ INSERT_UPDATE ProductCarouselComponent ; $contentCV[unique=true] ; uid[unique=tr
                                        
 INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]       ; name                        ; active ; cmsComponents(&componentRef)          
                           ;                         ; Section1Slot-Homepage  ; Section1 Slot for Homepage  ; true   ; welcomeMessage                        
-                          ;                         ; Section2ASlot-Homepage ; Section2A Slot for Homepage ; true   ; fashioncore                          
-                          ;                         ; Section2BSlot-Homepage ; Section2B Slot for Homepage ; true   ; people                           
+                          ;                         ; Section2ASlot-Homepage ; Section2A Slot for Homepage ; true   ; fashioncore                           
+                          ;                         ; Section2BSlot-Homepage ; Section2B Slot for Homepage ; true   ; people                                
                           ;                         ; Section2CSlot-Homepage ; Section2C Slot for Homepage ; true   ; customComponent                       
                           ;                         ; Section3Slot-Homepage  ; Section3 Slot for Homepage  ; true   ; HybrisHomepageProductCarouselComponent
                           ;                         ; Section4Slot-Homepage  ; Section4 Slot for Homepage  ; true   ; FeedbackComponent                     

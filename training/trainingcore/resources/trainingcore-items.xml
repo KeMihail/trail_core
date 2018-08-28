@@ -264,6 +264,15 @@
 				</attributes>
 			</itemtype>
 
+			<itemtype code="CreditCardPaymentInfo" autocreate="false"
+				generate="true">
+				<attributes>
+					<attribute qualifier="cardOwner" type="java.lang.String">
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
 		</typegroup>
 	</itemtypes>
 </items>

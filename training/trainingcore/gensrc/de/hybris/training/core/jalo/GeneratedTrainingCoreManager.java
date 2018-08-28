@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Aug 27, 2018 11:16:29 AM                    ---
+ * --- Generated at Aug 28, 2018 5:45:36 PM                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -20,6 +20,7 @@ import de.hybris.platform.jalo.JaloBusinessException;
 import de.hybris.platform.jalo.JaloSystemException;
 import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.extension.Extension;
+import de.hybris.platform.jalo.order.payment.PaymentInfo;
 import de.hybris.platform.jalo.product.Product;
 import de.hybris.platform.jalo.type.ComposedType;
 import de.hybris.platform.jalo.type.JaloGenericCreationException;
@@ -51,6 +52,9 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 		Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>();
 		tmp.put("internalOnly", AttributeMode.INITIAL);
 		ttmp.put("de.hybris.platform.jalo.product.Product", Collections.unmodifiableMap(tmp));
+		tmp = new HashMap<String, AttributeMode>();
+		tmp.put("cardOwner", AttributeMode.INITIAL);
+		ttmp.put("de.hybris.platform.jalo.order.payment.PaymentInfo", Collections.unmodifiableMap(tmp));
 		DEFAULT_INITIAL_ATTRIBUTES = ttmp;
 	}
 	@Override
@@ -63,6 +67,42 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 			ret.putAll(attr);
 		}
 		return ret;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>CreditCardPaymentInfo.cardOwner</code> attribute.
+	 * @return the cardOwner
+	 */
+	public String getCardOwner(final SessionContext ctx, final PaymentInfo item)
+	{
+		return (String)item.getProperty( ctx, TrainingCoreConstants.Attributes.CreditCardPaymentInfo.CARDOWNER);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>CreditCardPaymentInfo.cardOwner</code> attribute.
+	 * @return the cardOwner
+	 */
+	public String getCardOwner(final PaymentInfo item)
+	{
+		return getCardOwner( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>CreditCardPaymentInfo.cardOwner</code> attribute. 
+	 * @param value the cardOwner
+	 */
+	public void setCardOwner(final SessionContext ctx, final PaymentInfo item, final String value)
+	{
+		item.setProperty(ctx, TrainingCoreConstants.Attributes.CreditCardPaymentInfo.CARDOWNER,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>CreditCardPaymentInfo.cardOwner</code> attribute. 
+	 * @param value the cardOwner
+	 */
+	public void setCardOwner(final PaymentInfo item, final String value)
+	{
+		setCardOwner( getSession().getSessionContext(), item, value );
 	}
 	
 	public ApparelProduct createApparelProduct(final SessionContext ctx, final Map attributeValues)

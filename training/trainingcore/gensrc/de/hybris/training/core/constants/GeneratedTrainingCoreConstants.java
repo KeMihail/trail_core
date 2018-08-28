@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Aug 27, 2018 11:16:29 AM                    ---
+ * --- Generated at Aug 28, 2018 5:45:36 PM                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -37,6 +37,10 @@ public class GeneratedTrainingCoreConstants
 	}
 	public static class Attributes
 	{
+		public static class CreditCardPaymentInfo
+		{
+			public static final String CARDOWNER = "cardOwner".intern();
+		}
 		public static class Customer
 		{
 			public static final String ISINTERNAL = "isInternal".intern();

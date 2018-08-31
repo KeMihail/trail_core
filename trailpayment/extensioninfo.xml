@@ -9,12 +9,16 @@
 		managersuperclass="de.hybris.platform.jalo.extension.Extension"
 		name="trailpayment" usemaven="false">
 
-		<requires-extension name="commerceservices" />
+
 		<requires-extension name="payment" />
 
 		<coremodule generated="true"
 			manager="de.hybris.training.jalo.TrailpaymentManager"
 			packageroot="de.hybris.training" />
+
+		<webmodule jspcompile="false" webroot="/trailpayment" />
+
+
 
 	</extension>
 

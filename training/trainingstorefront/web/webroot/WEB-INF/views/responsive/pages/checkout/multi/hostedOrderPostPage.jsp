@@ -35,6 +35,7 @@
 		</c:if>
 
 		<div class="item_container">
+		
 			<form:form id="hostedOrderPagePostForm" name="hostedOrderPagePostForm" action="${hostedOrderPageData.postUrl}" method="POST">
 				<div id="postFormItems">
 					<dl>
@@ -51,6 +52,7 @@
 						</c:forEach>
 					</dl>
 				</div>
+				
 				<c:if test="${hopDebugMode}">
 					<div class="rightcol">
 						<spring:theme code="checkout.multi.hostedOrderPostPage.button.submit" var="submitButtonLabel"/>

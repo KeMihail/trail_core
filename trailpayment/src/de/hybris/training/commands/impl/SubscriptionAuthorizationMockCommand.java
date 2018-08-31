@@ -4,6 +4,7 @@ import de.hybris.platform.payment.commands.SubscriptionAuthorizationCommand;
 import de.hybris.platform.payment.commands.impl.GenericMockCommand;
 import de.hybris.platform.payment.commands.request.SubscriptionAuthorizationRequest;
 import de.hybris.platform.payment.commands.result.AuthorizationResult;
+import de.hybris.platform.payment.dto.AvsStatus;
 import de.hybris.platform.payment.dto.CvnStatus;
 import de.hybris.platform.payment.dto.TransactionStatus;
 import de.hybris.platform.payment.dto.TransactionStatusDetails;
@@ -14,17 +15,18 @@ import java.util.Date;
 public class SubscriptionAuthorizationMockCommand extends GenericMockCommand implements SubscriptionAuthorizationCommand
 {
 
-	private static final String INVALID = "invalid";
+	public static final String INVALID = "invalid";
 
 	@Override
 	public AuthorizationResult perform(final SubscriptionAuthorizationRequest request)
 	{
-
 		final AuthorizationResult result = new AuthorizationResult();
-
 		result.setCurrency(request.getCurrency());
-		result.setTotalAmount(request.getTotalAmount());
 		result.setAuthorizationTime(new Date());
+		result.setTotalAmount(request.getTotalAmount());
+
+		result.setAvsStatus(AvsStatus.NO_RESULT);
+		result.setCvnStatus(CvnStatus.NOT_PROCESSED);
 
 		if (request.getSubscriptionID().equalsIgnoreCase(INVALID))
 		{
@@ -33,6 +35,7 @@ public class SubscriptionAuthorizationMockCommand extends GenericMockCommand imp
 		}
 		else
 		{
+
 			if (request.getCv2() == null)
 			{
 				result.setTransactionStatus(TransactionStatus.ACCEPTED);
@@ -40,27 +43,33 @@ public class SubscriptionAuthorizationMockCommand extends GenericMockCommand imp
 			}
 			else
 			{
-				final Integer i = Integer.valueOf(request.getCv2());
 				try
 				{
+					final int i = Integer.parseInt(request.getCv2());
+
 					if (i % 2 == 0)
 					{
 						result.setTransactionStatus(TransactionStatus.ACCEPTED);
 						result.setTransactionStatusDetails(TransactionStatusDetails.SUCCESFULL);
 						result.setCvnStatus(CvnStatus.MATCHED);
 					}
+					else
+					{
+						result.setTransactionStatus(TransactionStatus.REJECTED);
+						result.setTransactionStatusDetails(TransactionStatusDetails.INVALID_CVN);
+						result.setCvnStatus(CvnStatus.REJECTED);
+					}
 				}
 				catch (final Exception e)
 				{
 					result.setTransactionStatus(TransactionStatus.REJECTED);
-					result.setTransactionStatusDetails(TransactionStatusDetails.INVALID_CVN);
+					result.setTransactionStatusDetails(TransactionStatusDetails.UNKNOWN_CODE);
 					result.setCvnStatus(CvnStatus.UNRECOGNIZED_RESULT);
 				}
 			}
+
+			genericPerform(request, result);
 		}
-
-		genericPerform(request, result);
-
 		return result;
 	}
 

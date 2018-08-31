@@ -8,25 +8,10 @@
            http://www.springframework.org/schema/aop
            http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-
-	<bean id="trailpaymentSystemSetup"
-		class="de.hybris.training.setup.TrailpaymentSystemSetup">
-		<!-- constructor arg injection example -->
-		<constructor-arg ref="trailpaymentService" />
-	</bean>
-
-	<bean id="trailpaymentService"
-		class="de.hybris.training.service.impl.DefaultTrailpaymentService">
-		<!-- setter injection example -->
-		<property name="modelService" ref="modelService" />
-		<property name="mediaService" ref="mediaService" />
-		<property name="flexibleSearchService"
-			ref="flexibleSearchService" />
-	</bean>
-
-	<bean name="mockupCommandFactory"
+	<bean name="trailMockupCommandFactory"
 		class="de.hybris.platform.payment.commands.factory.impl.DefaultCommandFactoryImpl">
-		<property name="paymentProvider" value="Mockup_Trail" />
+
+		<property name="paymentProvider" value="Trail_Mockup" />
 		<property name="commands">
 			<map>
 				<entry>
@@ -50,8 +35,12 @@
 						<value type="java.lang.Class">de.hybris.platform.payment.commands.SubscriptionAuthorizationCommand
 						</value>
 					</key>
+
 					<bean
 						class="de.hybris.training.commands.impl.SubscriptionAuthorizationMockCommand" />
+
+					<!-- <bean class="de.hybris.platform.payment.commands.impl.SubscriptionAuthorizationMockCommand" 
+						/> -->
 				</entry>
 				<entry>
 					<key>
@@ -140,5 +129,23 @@
 
 	<bean name="mockupCommandFactoryRegistry"
 		class="de.hybris.platform.payment.commands.impl.CommandFactoryRegistryMockImpl" />
+
+	<bean id="trailpaymentSystemSetup"
+		class="de.hybris.training.setup.TrailpaymentSystemSetup">
+		<!-- constructor arg injection example -->
+		<constructor-arg ref="trailpaymentService" />
+	</bean>
+
+	<bean id="trailpaymentService"
+		class="de.hybris.training.service.impl.DefaultTrailpaymentService">
+		<!-- setter injection example -->
+		<property name="modelService" ref="modelService" />
+		<property name="mediaService" ref="mediaService" />
+		<property name="flexibleSearchService"
+			ref="flexibleSearchService" />
+	</bean>
+
+	<bean name="commandFactoryRegistryMockTrailImpl"
+		class="de.hybris.training.commands.impl.CommandFactoryRegistryMockTrailImpl" />
 
 </beans>

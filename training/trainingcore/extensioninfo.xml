@@ -15,7 +15,6 @@
 		<requires-extension name="acceleratorcms" />
 		<requires-extension name="solrserver" />
 		<requires-extension name="commerceservices" />
-		<requires-extension name="trailpayment" />
 
 
 		<coremodule generated="true"

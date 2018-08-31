@@ -8,21 +8,20 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 
 
-public class CommandFactoryRegistryMockImpl
+public class CommandFactoryRegistryMockTrailImpl
 {
-	public static final String MOCKUP_PAYMENT_PROVIDER = "Mockup_Trail";
+	public static final String MOCKUP_PAYMENT_PROVIDER = "Trail_Mockup";
 	private ApplicationContext applicationContext;
 
 	public CommandFactory getFactory(final String paymentProvider) throws AdapterException
 	{
 		if (MOCKUP_PAYMENT_PROVIDER.equals(paymentProvider))
 		{
-			return this.applicationContext.getBean("mockupCommandFactory", CommandFactory.class);
+			return this.applicationContext.getBean("trailMockupCommandFactory", CommandFactory.class);
 		}
 		else
 		{
-			throw new AdapterException(
-					"The requested paymentProvider should be <Mockup_Trail> instead of <" + paymentProvider + ">");
+			throw new AdapterException("The requested paymentProvider should be <Mockup> instead of <" + paymentProvider + ">");
 		}
 	}
 

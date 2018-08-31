@@ -282,7 +282,12 @@
 	</bean>
 
 	<bean id="creditCardPaymentInfoPopulator"
-		class="de.hybris.training.facades.populators.creditCardPaymentInfoPopulator">
+		class="de.hybris.training.facades.populators.CreditCardPaymentInfoPopulator">
 	</bean>
 
+	<bean parent="modifyPopulatorList">
+		<property name="list"
+			ref="defaultCreditCardPaymentInfoConverter" />
+		<property name="add" ref="creditCardPaymentInfoPopulator" />
+	</bean>
 </beans>

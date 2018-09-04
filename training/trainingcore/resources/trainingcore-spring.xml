@@ -740,6 +740,7 @@
 		parent="abstractCategoryNameValueProvider">
 		<property name="categorySource" ref="hybrisCategorySource" />
 	</bean>
+	
 	<bean id="hybrisBrandCategoryNameValueProvider"
 		parent="abstractCategoryNameValueProvider">
 		<property name="categorySource"

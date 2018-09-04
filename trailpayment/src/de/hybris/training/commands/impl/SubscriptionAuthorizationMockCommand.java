@@ -25,8 +25,11 @@ public class SubscriptionAuthorizationMockCommand extends GenericMockCommand imp
 		result.setAuthorizationTime(new Date());
 		result.setTotalAmount(request.getTotalAmount());
 
+		final String sub = request.getSubscriptionID();
+
 		result.setAvsStatus(AvsStatus.NO_RESULT);
 		result.setCvnStatus(CvnStatus.NOT_PROCESSED);
+
 
 		if (request.getSubscriptionID().equalsIgnoreCase(INVALID))
 		{

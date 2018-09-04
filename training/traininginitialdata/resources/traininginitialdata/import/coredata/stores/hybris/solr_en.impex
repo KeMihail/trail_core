@@ -11,7 +11,7 @@ UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[uni
                            ; $solrIndexedType                         ; description          ; "Description"          
                            ; $solrIndexedType                         ; manufacturerName     ; "Manufacturer Name"    
                            ; $solrIndexedType                         ; name                 ; "Name"                 
-                           ; $solrIndexedType                         ; price                ; "Price"                
+                           ; $solrIndexedType                         ; pricess              ; "Price"                
                            ; $solrIndexedType                         ; summary              ; "Summary"              
                            ; $solrIndexedType                         ; reviewAvgRatingRange ; "Reviews"              
 

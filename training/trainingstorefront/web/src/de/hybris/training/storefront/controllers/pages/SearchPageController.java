@@ -147,6 +147,8 @@ public class SearchPageController extends AbstractSearchPageController
 		final String metaKeywords = MetaSanitizerUtil.sanitizeKeywords(searchText);
 		setUpMetaData(model, metaKeywords, metaDescription);
 
+		final String result = getViewForPage(model);
+
 		return getViewForPage(model);
 	}
 

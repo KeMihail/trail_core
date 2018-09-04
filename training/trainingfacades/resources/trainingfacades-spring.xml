@@ -35,6 +35,7 @@
 
 	<alias name="acceleratorVariantOptionDataConverter"
 		alias="variantOptionDataConverter" />
+
 	<bean id="acceleratorVariantOptionDataConverter"
 		parent="abstractPopulatingConverter">
 		<lookup-method name="createTarget"
@@ -48,6 +49,7 @@
 
 	<alias name="defaultAcceleratorVariantOptionDataPopulator"
 		alias="acceleratorVariantOptionDataPopulator" />
+
 	<bean id="defaultAcceleratorVariantOptionDataPopulator"
 		class="de.hybris.training.facades.populators.AcceleratorVariantOptionDataPopulator"
 		parent="variantOptionDataPopulator">

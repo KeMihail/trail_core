@@ -20,6 +20,7 @@ UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[uni
                            ; $solrIndexedType                         ; summary              ; "Summary"              
                            ; $solrIndexedType                         ; availableInStores    ; "availableInStores"    
                            ; $solrIndexedType                         ; reviewAvgRatingRange ; "Review"               
+                           ; $solrIndexedType                         ; internalOnly         ; "Internal"             
                            
                            
 # Define the available sorts

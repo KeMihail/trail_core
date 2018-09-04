@@ -17,6 +17,9 @@ public class TrainingProductReviewAverageRatingValueProvider extends ProductRevi
 
 	private static final Logger LOG = Logger.getLogger(TrainingProductReviewAverageRatingValueProvider.class);
 
+
+
+	//@Override
 	@Override
 	protected void addFieldValues(final List<FieldValue> fieldValues, final IndexedProperty indexedProperty,
 			final LanguageModel language, final Object value)
@@ -33,23 +36,12 @@ public class TrainingProductReviewAverageRatingValueProvider extends ProductRevi
 			LOG.error("Could not get Range value", e);
 		}
 
-		//
-		for (final String item : rangeNameList)
-		{
-			LOG.info(item);
-		}
-
-
 		String rangeName = null;
 
 		if (CollectionUtils.isNotEmpty(rangeNameList))
 		{
 			rangeName = rangeNameList.get(0);
 		}
-
-		//
-		LOG.info(rangeName);
-
 
 		final Collection<String> fieldNames = getFieldNameProvider().getFieldNames(indexedProperty,
 				language == null ? null : language.getIsocode());
@@ -64,10 +56,6 @@ public class TrainingProductReviewAverageRatingValueProvider extends ProductRevi
 		for (final String fieldName : fieldNames)
 		{
 			fieldValues.add(new FieldValue(fieldName, valueToPass));
-
-			//
-			LOG.info("fieldName: " + fieldName);
-			LOG.info("valueToPass: " + valueToPass);
 		}
 	}
 }

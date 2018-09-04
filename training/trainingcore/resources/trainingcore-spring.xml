@@ -740,12 +740,16 @@
 		parent="abstractCategoryNameValueProvider">
 		<property name="categorySource" ref="hybrisCategorySource" />
 	</bean>
-	
+
 	<bean id="hybrisBrandCategoryNameValueProvider"
 		parent="abstractCategoryNameValueProvider">
 		<property name="categorySource"
 			ref="hybrisBrandCategorySource" />
 	</bean>
 
+	<bean id="trainingProductInternalValueProvider"
+		class="de.hybris.training.core.search.solrfacetsearch.provider.impl.TrainingProductInternalValueProvider"
+		parent="abstractPropertyFieldValueProvider">
+	</bean>
 
 </beans>

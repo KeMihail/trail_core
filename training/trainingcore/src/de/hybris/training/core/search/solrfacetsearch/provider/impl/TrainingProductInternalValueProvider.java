@@ -1,7 +1,9 @@
 package de.hybris.training.core.search.solrfacetsearch.provider.impl;
 
+import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.product.VariantsService;
 import de.hybris.platform.servicelayer.i18n.CommonI18NService;
+import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.solrfacetsearch.config.IndexConfig;
 import de.hybris.platform.solrfacetsearch.config.IndexedProperty;
 import de.hybris.platform.solrfacetsearch.config.exceptions.FieldValueProviderException;
@@ -27,6 +29,15 @@ public class TrainingProductInternalValueProvider extends AbstractPropertyFieldV
 	private VariantsService variantsService;
 	private CommonI18NService commonI18NService;
 
+	private ModelService modelService;
+
+	@Override
+	@Required
+	public void setModelService(final ModelService modelService)
+	{
+		this.modelService = modelService;
+	}
+
 	@Required
 	public void setFieldNameProvider(final FieldNameProvider fieldNameProvider)
 	{
@@ -49,25 +60,45 @@ public class TrainingProductInternalValueProvider extends AbstractPropertyFieldV
 	public Collection<FieldValue> getFieldValues(final IndexConfig indexConfig, final IndexedProperty indexedProperty,
 			final Object model) throws FieldValueProviderException
 	{
-
-
 		if (model == null)
 		{
 			throw new IllegalArgumentException("No model given");
 		}
-
-		final Boolean value = modelService.getAttributeValue(model, indexedProperty.getName());
-
-		final List<String> rangeNameList = getRangeNameList(indexedProperty, value);
-
-		for (final String item : rangeNameList)
+		final List<FieldValue> fieldValues = new ArrayList<FieldValue>();
+		try
 		{
-			LOG.info("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<: " + item);
+			ProductModel product = null;
+			product = (ProductModel) model;
+
+
+			final Object value = product.getInternalOnly();
+
+			final List<String> rangeNameList = rangeNameProvider.getRangeNameList(indexedProperty, value.toString());
+
+			if (value != null || !rangeNameList.isEmpty())
+			{
+				final Collection<String> fieldNames = fieldNameProvider.getFieldNames(indexedProperty, null);
+
+				for (final String fieldName : fieldNames)
+				{
+					if (rangeNameList.isEmpty())
+					{
+						fieldValues.add(new FieldValue(fieldName, value));
+					}
+					else
+					{
+						for (final String rangeName : rangeNameList)
+						{
+							fieldValues.add(new FieldValue(fieldName, rangeName == null ? value : rangeName));
+						}
+					}
+				}
+			}
 		}
-
-		final Collection<FieldValue> fieldValues = new ArrayList<>();
-
+		catch (final Exception e)
+		{
+			throw new FieldValueProviderException("....");
+		}
 		return fieldValues;
 	}
-
 }

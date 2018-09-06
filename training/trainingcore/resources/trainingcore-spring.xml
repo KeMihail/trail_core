@@ -751,6 +751,13 @@
 		class="de.hybris.training.core.search.solrfacetsearch.provider.impl.TrainingProductInternalValueProvider"
 		parent="modelPropertyFieldValueProvider">
 		<property name="commonI18NService" ref="commonI18NService" />
+		<property name="modelService" ref="modelService" />
+	</bean>
+
+	<bean id="internalValueProvider"
+		class="de.hybris.training.core.search.solrfacetsearch.provider.impl.InternalValueProvider">
+		<property name="fieldNameProvider"
+			ref="solrFieldNameProvider" />
 	</bean>
 
 </beans>

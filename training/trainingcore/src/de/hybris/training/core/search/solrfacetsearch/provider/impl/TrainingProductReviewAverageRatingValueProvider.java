@@ -18,8 +18,6 @@ public class TrainingProductReviewAverageRatingValueProvider extends ProductRevi
 	private static final Logger LOG = Logger.getLogger(TrainingProductReviewAverageRatingValueProvider.class);
 
 
-
-	//@Override
 	@Override
 	protected void addFieldValues(final List<FieldValue> fieldValues, final IndexedProperty indexedProperty,
 			final LanguageModel language, final Object value)
@@ -45,11 +43,6 @@ public class TrainingProductReviewAverageRatingValueProvider extends ProductRevi
 
 		final Collection<String> fieldNames = getFieldNameProvider().getFieldNames(indexedProperty,
 				language == null ? null : language.getIsocode());
-
-		for (final String item : fieldNames)
-		{
-			LOG.info(item);
-		}
 
 		final Object valueToPass = (rangeName == null ? value : rangeName);
 

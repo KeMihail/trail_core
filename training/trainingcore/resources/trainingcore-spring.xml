@@ -749,7 +749,8 @@
 
 	<bean id="trainingProductInternalValueProvider"
 		class="de.hybris.training.core.search.solrfacetsearch.provider.impl.TrainingProductInternalValueProvider"
-		parent="abstractPropertyFieldValueProvider">
+		parent="modelPropertyFieldValueProvider">
+		<property name="commonI18NService" ref="commonI18NService" />
 	</bean>
 
 </beans>

@@ -33,7 +33,7 @@ public class InternalValueProvider implements FieldValueProvider
 	{
 		final Collection<FieldValue> result = new ArrayList<FieldValue>();
 
-		final Object value = "internal";
+		Object value = "not internal";
 
 		try
 		{
@@ -43,13 +43,14 @@ public class InternalValueProvider implements FieldValueProvider
 
 				if (product.getInternalOnly())
 				{
-					final Collection<String> fieldNames = fieldNameProvider.getFieldNames(indexedProperty, null);
+					value = "internal";
+				}
+				final Collection<String> fieldNames = fieldNameProvider.getFieldNames(indexedProperty, null);
 
-					for (final String fieldName : fieldNames)
+				for (final String fieldName : fieldNames)
+				{
 					{
-						{
-							result.add(new FieldValue(fieldName, value));
-						}
+						result.add(new FieldValue(fieldName, value));
 					}
 				}
 			}
@@ -60,5 +61,4 @@ public class InternalValueProvider implements FieldValueProvider
 		}
 		return result;
 	}
-
 }

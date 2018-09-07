@@ -107,16 +107,6 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		);
 	
 		createItemType(
-			"FeedbackComponent",
-			"SimpleCMSComponent",
-			de.hybris.training.core.jalo.FeedbackComponent.class,
-			null,
-			false,
-			null,
-			false
-		);
-	
-		createItemType(
 			"CustomOffersComponent",
 			"SimpleCMSComponent",
 			de.hybris.training.core.jalo.CustomOffersComponent.class,
@@ -198,10 +188,6 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				single_createattr_CMSCustomComponent_description();
 			
 				single_createattr_CMSCustomComponent_media();
-			
-				single_createattr_FeedbackComponent_media();
-			
-				single_createattr_FeedbackComponent_confirmationMessage();
 			
 				single_createattr_CustomOffersComponent_headrerText();
 			
@@ -401,40 +387,6 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 					"media",  
 					null,
 					"localized:Media",
-					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
-					null,
-					sqlColumnDefinitions
-				);
-			
-	}
-	
-	public void single_createattr_FeedbackComponent_media() throws JaloBusinessException
-	{
-		
-						Map sqlColumnDefinitions = null;
-					
-				createPropertyAttribute(
-					"FeedbackComponent", 
-					"media",  
-					null,
-					"Media",
-					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
-					null,
-					sqlColumnDefinitions
-				);
-			
-	}
-	
-	public void single_createattr_FeedbackComponent_confirmationMessage() throws JaloBusinessException
-	{
-		
-						Map sqlColumnDefinitions = null;
-					
-				createPropertyAttribute(
-					"FeedbackComponent", 
-					"confirmationMessage",  
-					null,
-					"java.lang.String",
 					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
 					null,
 					sqlColumnDefinitions
@@ -769,23 +721,6 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				Map customPropsMap = new HashMap();
 				
 				setItemTypeProperties(
-					"FeedbackComponent",
-					false,
-					true,
-					true,
-					null,
-					customPropsMap
-				);
-				}
-			
-			single_setAttributeProperties_FeedbackComponent_media();
-		
-			single_setAttributeProperties_FeedbackComponent_confirmationMessage();
-		
-				{
-				Map customPropsMap = new HashMap();
-				
-				setItemTypeProperties(
 					"CustomOffersComponent",
 					false,
 					true,
@@ -1105,50 +1040,6 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							setAttributeProperties(
 								"CMSCustomComponent", 
 								"media",
-								false, 
-								null,
-								null,
-								null,
-								true,
-								true,
-								null,
-								customPropsMap,
-								null
-							);
-						}
-					
-						public void single_setAttributeProperties_FeedbackComponent_media() throws JaloBusinessException
-						{
-							
-							
-							
-							Map customPropsMap = new HashMap();
-							
-							setAttributeProperties(
-								"FeedbackComponent", 
-								"media",
-								false, 
-								null,
-								null,
-								null,
-								true,
-								true,
-								null,
-								customPropsMap,
-								null
-							);
-						}
-					
-						public void single_setAttributeProperties_FeedbackComponent_confirmationMessage() throws JaloBusinessException
-						{
-							
-							
-							
-							Map customPropsMap = new HashMap();
-							
-							setAttributeProperties(
-								"FeedbackComponent", 
-								"confirmationMessage",
 								false, 
 								null,
 								null,

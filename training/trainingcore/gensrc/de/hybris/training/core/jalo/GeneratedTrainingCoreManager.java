@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Sep 6, 2018 10:11:19 AM                     ---
+ * --- Generated at Sep 7, 2018 10:07:32 AM                     ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -33,7 +33,6 @@ import de.hybris.training.core.jalo.CMSCustomComponent;
 import de.hybris.training.core.jalo.CMSMediaParagraphComponent;
 import de.hybris.training.core.jalo.CustomOffersComponent;
 import de.hybris.training.core.jalo.ElectronicsColorVariantProduct;
-import de.hybris.training.core.jalo.FeedbackComponent;
 import de.hybris.training.core.jalo.RandomImageParagraphComponentFromCore;
 import java.util.Collections;
 import java.util.HashMap;
@@ -285,32 +284,6 @@ public abstract class GeneratedTrainingCoreManager extends Extension
 	public ElectronicsColorVariantProduct createElectronicsColorVariantProduct(final Map attributeValues)
 	{
 		return createElectronicsColorVariantProduct( getSession().getSessionContext(), attributeValues );
-	}
-	
-	public FeedbackComponent createFeedbackComponent(final SessionContext ctx, final Map attributeValues)
-	{
-		try
-		{
-			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( TrainingCoreConstants.TC.FEEDBACKCOMPONENT );
-			return (FeedbackComponent)type.newInstance( ctx, attributeValues );
-		}
-		catch( JaloGenericCreationException e)
-		{
-			final Throwable cause = e.getCause();
-			throw (cause instanceof RuntimeException ?
-			(RuntimeException)cause
-			:
-			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
-		}
-		catch( JaloBusinessException e )
-		{
-			throw new JaloSystemException( e ,"error creating FeedbackComponent : "+e.getMessage(), 0 );
-		}
-	}
-	
-	public FeedbackComponent createFeedbackComponent(final Map attributeValues)
-	{
-		return createFeedbackComponent( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public RandomImageParagraphComponentFromCore createRandomImageParagraphComponentFromCore(final SessionContext ctx, final Map attributeValues)

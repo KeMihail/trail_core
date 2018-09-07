@@ -187,23 +187,6 @@
 				</attributes>
 			</itemtype>
 
-			<itemtype code="FeedbackComponent" autocreate="true"
-				generate="true" abstract="false" extends="SimpleCMSComponent"
-				jaloclass="de.hybris.training.core.jalo.FeedbackComponent">
-
-				<attributes>
-					<attribute qualifier="media" type="Media">
-						<persistence type="property" />
-					</attribute>
-					<attribute qualifier="confirmationMessage"
-						type="java.lang.String">
-						<persistence type="property" />
-					</attribute>
-				</attributes>
-
-			</itemtype>
-
-
 			<itemtype code="CustomOffersComponent" autocreate="true"
 				generate="true" extends="SimpleCMSComponent"
 				jaloclass="de.hybris.training.core.jalo.CustomOffersComponent">

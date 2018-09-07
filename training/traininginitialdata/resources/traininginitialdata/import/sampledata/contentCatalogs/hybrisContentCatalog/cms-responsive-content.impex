@@ -60,9 +60,11 @@ INSERT_UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]     
                                ;                         ; AccountManagePaymentDetailsLink ; AccountManagePaymentDetailsLink ; /my-account/payment-details                                             ; AccountManagePaymentDetailsLink ; AccountManagePaymentDetailsLink ;                                    ;           ;          ;  
                                ;                         ; AccountOrderHistoryLink         ; AccountOrderHistoryLink         ; /my-account/orders                                                      ; AccountOrderHistoryLink         ; AccountOrderHistoryLink         ;                                    ;           ;          ;  
                                ;                         ; AccountViewOrderHistoryLink     ; AccountViewOrderHistoryLink     ; /my-account/orders                                                      ; AccountViewOrderHistoryLink     ; AccountViewOrderHistoryLink     ;                                    ;           ;          ;  
-#                               ;                         ; FeedbackLink                    ; Feedback Link                   ; /feedback                                                               ; FeedbackLink                    ; FeedbackLink                    ;                                    ;           ;          ;  
                                
-                               
+
+INSERT_UPDATE FeedbackComponent ; $contentCV ; uid[unique=true] ; $picture      ; confirmationMessage         ; &componentRef
+                                ;            ; feedback         ; /feedback.png ; Thank you for your feedback ; Feedback     
+                                
 # Lightbox Banner for Mini Cart 
 INSERT_UPDATE SimpleBannerComponent ; $contentCV[unique=true] ; uid[unique=true]                    ; name                                    ; &componentRef                       ; urlLink
                                     ;                         ; LightboxHomeDeliveryBannerComponent ; Lightbox Home Delivery Banner Component ; LightboxHomeDeliveryBannerComponent ;        
@@ -270,7 +272,7 @@ INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]       ; n
                           ;                         ; Section2BSlot-Homepage ; Section2B Slot for Homepage ; true   ; people                                
                           ;                         ; Section2CSlot-Homepage ; Section2C Slot for Homepage ; true   ; customComponent                       
                           ;                         ; Section3Slot-Homepage  ; Section3 Slot for Homepage  ; true   ; HybrisHomepageProductCarouselComponent
-                          ;                         ; Section4Slot-Homepage  ; Section4 Slot for Homepage  ; true   ;                                       
+                          ;                         ; Section4Slot-Homepage  ; Section4 Slot for Homepage  ; true   ; Feedback                              
                           ;                         ; Section5Slot-Homepage  ; Section5 Slot for Homepage  ; true   ; NextDayDeliveryBanner                 
                           
 INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]   ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='homepage'] ; contentSlot(uid,$contentCV)[unique=true]
@@ -340,7 +342,7 @@ INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]          
 INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]     ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='checkout-login'] ; contentSlot(uid,$contentCV)[unique=true]
                                  ;                         ; Bottom-checkoutLogin ; BottomContent         ;                                                             ; BottomContent-checkoutLogin             
                                  
-###### Merchandise Checkout Summary / Proceed to Checkout Page ######
+###### Hybris Checkout Summary / Proceed to Checkout Page ######
                                  
 INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]                         ; name                                       ; active ; cmsComponents(&componentRef)
                           ;                         ; SideContent-multiStepCheckoutSummaryPage ; Side Slot for multiStepCheckoutSummaryPage ; true   ; HelpParagraphComponent      
@@ -378,7 +380,7 @@ INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true] ; 
                                  ;                         ; Section2A-FAQ    ; Section2A             ;                                                  ; Section2ASlot-FAQ                        ;  ;  ;  
                                  ;                         ; Section2B-FAQ    ; Section2B             ;                                                  ; Section2BSlot-FAQ                        ;  ;  ;  
                                  
-###### Merchandise Order Expired Page ######
+###### Hybris Order Expired Page ######
                                  
 # CMSParagraphComponent          
 INSERT_UPDATE CMSParagraphComponent ; $contentCV[unique=true] ; uid[unique=true]          ; name                    ; &componentRef             ;  ;  ;  ;  

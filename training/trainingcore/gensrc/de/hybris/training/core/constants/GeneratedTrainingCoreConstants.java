@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Sep 7, 2018 10:07:32 AM                     ---
+ * --- Generated at Sep 7, 2018 1:40:34 PM                      ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -30,6 +30,7 @@ public class GeneratedTrainingCoreConstants
 		public static final String CMSMEDIAPARAGRAPHCOMPONENT = "CMSMediaParagraphComponent".intern();
 		public static final String CUSTOMOFFERSCOMPONENT = "CustomOffersComponent".intern();
 		public static final String ELECTRONICSCOLORVARIANTPRODUCT = "ElectronicsColorVariantProduct".intern();
+		public static final String FEEDBACKCOMPONENT = "FeedbackComponent".intern();
 		public static final String RANDOMIMAGEPARAGRAPHCOMPONENTFROMCORE = "RandomImageParagraphComponentFromCore".intern();
 		public static final String RANDOMPICTURE = "RandomPicture".intern();
 		public static final String SWATCHCOLORENUM = "SwatchColorEnum".intern();

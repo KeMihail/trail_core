@@ -283,4 +283,12 @@
 			ref="defaultCreditCardPaymentInfoConverter" />
 		<property name="add" ref="creditCardPaymentInfoPopulator" />
 	</bean>
+
+	<bean id="defaultFeedbackFacade"
+		class="de.hybris.training.facades.feedback.DefaultFeedbackFacade">
+		<property name="ticketBusinessService"
+			ref="ticketBusinessService" />
+		<property name="userService" ref="userService" />
+	</bean>
+
 </beans>

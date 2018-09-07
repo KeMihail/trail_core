@@ -31,7 +31,8 @@ INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]          
                           ;                         ; CenterRightContentSlot     ; Center Right Content Slot       ; true  
 # this slot for backward compatibility, it not used in responsive
                           ;                         ; HomepageNavLinkSlot        ; Default Homepage Link           ; true  
-
+                          ;                         ; Section4Slot               ; Section4 ProductDetailsPage     ; true  
+                          
 
 # Preview Image for use in the CMS Cockpit for special ContentPages
 INSERT_UPDATE Media ; $contentCV[unique=true] ; code[unique=true]                  ; mime     ; realfilename                           ; @media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true]
@@ -127,7 +128,7 @@ INSERT_UPDATE ContentSlotName ; name[unique=true]      ; template(uid,$contentCV
                               ; Section1               ;                                                                             ;                                 ; wide               
                               ; Section2               ;                                                                             ;                                 ; wide               
                               ; Section3               ;                                                                             ;                                 ; wide               
-                              ; Section4               ;                                                                             ;                                 ; wide               
+                              ; Section4               ;                                                                             ; FeedbackComponent               ; wide               
 
 # The CrossSelling and UpSelling slots are designed for related products, cross-sells and up-sells.
 INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]    ; name             ; active
@@ -152,7 +153,7 @@ INSERT_UPDATE ContentSlotForTemplate ; $contentCV[unique=true] ; uid[unique=true
                                      ;                         ; CrossSelling-ProductDetails       ; CrossSelling           ;                                                                                 ; CrossSellingSlot                         ; true          
                                      ;                         ; UpSelling-ProductDetails          ; UpSelling              ;                                                                                 ; UpSellingSlot                            ; true          
                                      ;                         ; Tabs-ProductDetails               ; Tabs                   ;                                                                                 ; TabsSlot                                 ; true          
-
+                                     ;                         ; Section4-ProductDetails           ; Section4               ;                                                                                 ; Section4Slot                             ; true          
 INSERT_UPDATE ProductPage ; $contentCV[unique=true] ; uid[unique=true] ; name            ; masterTemplate(uid,$contentCV) ; defaultPage ; approvalStatus(code)[default='approved']
                           ;                         ; productDetails   ; Product Details ; ProductDetailsPageTemplate     ; true        ;                                         
 ###### ProductDetailsPageTemplate end ######

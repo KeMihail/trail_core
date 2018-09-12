@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content-editor hideEmpty="true" hideReadOnly="true"
+	groupCollections="true">
+	<template>
+    <![CDATA[
+        <table width="100%" style="margin:0px;padding:0px">
+            <tbody>
+                <tr>
+                    <td colspan="2"><div style="height:6px"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><div class="contentEditorHeader" style="background-color:#C3C3C3;font-size:11px;padding:3px;"><b>$label</b></div></td>
+                </tr>
+                <tr>
+                    <td><cockpit code="property" value="FeedbackComponent.media"/></td>
+                    <td><div style="height:6px"/></td>
+                </tr>
+                <tr>
+                    <td><cockpit code="property" value="FeedbackComponent.confirmationMessage"/></td>
+                    <td><div style="height:6px"/></td>
+                </tr>
+            </tbody>
+        </table>
+    ]]>
+	</template>
+	<custom-editors>
+		<property qualifier="FeedbackComponent.media"
+			editorCode="simpleMediaReferenceSelector">
+			<parameter>
+				<name>mimeTypes</name>
+				<value>
+					image/jpeg;image/gif
+				</value>
+			</parameter>
+			<parameter>
+				<name>mimeTypes</name>
+				<value>
+					image/jpeg;image/gif
+				</value>
+			</parameter>
+			<parameter>
+				<name>allowCreate</name>
+				<value>true</value>
+			</parameter>
+			<parameter>
+				<name>restrictToCreateTypes</name>
+				<value>Media</value>
+			</parameter>
+			<parameter>
+				<name>imageHeight</name>
+				<value>80px</value>
+			</parameter>
+		</property>
+		<property qualifier="FeedbackComponent.confirmationMessage"
+			editorCode="default" />
+	</custom-editors>
+</content-editor>

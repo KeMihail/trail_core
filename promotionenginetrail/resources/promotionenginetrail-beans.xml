@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="beans.xsd">
+
+	<bean
+		class="de.hybris.platform.promotionenginetrail.rao.CustomerReviewRAO">
+		<property name="product"
+			type="de.hybris.platform.ruleengineservices.rao.ProductRAO" />
+	</bean>
+
+
+	<bean class="de.hybris.platform.ruleengineservices.rao.UserRAO">
+		<property name="customerReviews"
+			type="java.util.List&lt;de.hybris.platform.promotionenginetrail.rao.CustomerReviewRAO&gt;" />
+	</bean>
+
+	<bean
+		class="de.hybris.platform.ruleengineservices.rao.ChangeUserGroupRAO"
+		extends="de.hybris.platform.ruleengineservices.rao.AbstractRuleActionRAO">
+		<property name="userGroupId" type="String" />
+	</bean>
+
+</beans>

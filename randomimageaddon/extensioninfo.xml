@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<extensioninfo
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
+
+	<extension abstractclassprefix="Generated"
+		classprefix="Randomimageaddon"
+		description="randomimageaddon extension"
+		managername="RandomimageaddonManager"
+		managersuperclass="de.hybris.platform.jalo.extension.Extension"
+		name="randomimageaddon">
+
+		<requires-extension name="addonsupport" />
+		<requires-extension name="cms2" />
+
+		<coremodule generated="true"
+			manager="de.hybris.training.jalo.RandomimageaddonManager"
+			packageroot="de.hybris.training" />
+
+
+		<meta key="classpathgen" value="false" />
+
+	</extension>
+
+</extensioninfo>

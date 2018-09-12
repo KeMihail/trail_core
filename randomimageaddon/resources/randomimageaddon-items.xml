@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="items.xsd">
+
+	<enumtypes>
+		<enumtype code="RandomPictureTopic" autocreate="true"
+			generate="true" dynamic="true">
+			<value code="fashion" />
+			<value code="sports" />
+			<value code="abstract" />
+			<value code="animals" />
+			<value code="city" />
+			<value code="food" />
+			<value code="nightlife" />
+			<value code="people" />
+			<value code="nature" />
+			<value code="technics" />
+			<value code="transport" />
+		</enumtype>
+	</enumtypes>
+
+	<itemtypes>
+		<itemtype code="RandomImageParagraphComponent"
+			autocreate="true" generate="true" extends="CMSParagraphComponent">
+			<attributes>
+
+				<attribute qualifier="topic" type="RandomPictureTopic">
+					<description>Topic of the Image</description>
+					<modifiers read="true" write="true" search="true"
+						optional="false" />
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="width" type="int">
+					<modifiers read="true" write="true" search="true"
+						optional="false" />
+					<defaultvalue>Integer.valueOf(228)</defaultvalue>
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="height" type="int">
+					<defaultvalue>Integer.valueOf(228)</defaultvalue>
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="text"
+					type="localized:java.lang.String">
+					<modifiers read="true" write="true" search="true"
+						optional="true" />
+					<persistence type="property" />
+				</attribute>
+
+			</attributes>
+		</itemtype>
+	</itemtypes>
+</items>

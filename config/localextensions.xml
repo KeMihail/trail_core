@@ -78,5 +78,7 @@
 		<extension name="acceleratorstorefrontcommons" />
 		<extension name="b2cbtgaddon" />
 
+		<extension name="ticketsystembackoffice" />
+
 	</extensions>
 </hybrisconfig>

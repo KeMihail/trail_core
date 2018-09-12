@@ -63,44 +63,56 @@
 
 <c:url value="/feedback/submit" var="feedbackSubmitUrl" />
 
-<script type="text/javascript">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
+<script>
 	$(document).ready(function() {
 
 		$('div.feedbackComponent a.feedback').click(function() {
 			$('#feedback-popup-form').show();
 			$('#feedback-confirmation').hide();
+
+			$('#feedback-button').show();
+
 			$('#feedback-popup-form-message').val('');
-			$('#feedback-popup-form-message').val('');
-			$("#feedback-
-	popup").fadeIn('slow');
+			$("#feedback-popup").fadeIn('slow');
 			return false;
 		});
 
-		$('#feedback-popup a.close').click(function() {
+		$('#btn').click(function() {
 			$("#feedback-popup").fadeOut('slow');
 			return false;
 		});
 
 		$('#feedback-popup input.form_but').click(function() {
-
 			$('#feedback-popup-form').hide();
 			$('#feedback-confirmation').show();
 
-			$.post('$(feedbackSubmitUrl)', {
-				path : document.location.pathname,
-				message : $('#feedback-popup-form-message').val()
+			$.ajax({
+				url : '/feedback/submit',
+				data : {
+					path : 'path',
+					message : 'message',
+					method : 'POST',
+				}
 			});
 
+			/* $.post('/feedback/submit', {
+				path : 'path',
+				message : 'message'
+			}); */
 			return false;
 		});
 	});
 </script>
 
-<div id="feedback-popup" class="feedback-form">
-	<a class="close" href="#">Close</a>
 
-	<form id="feedback-popup-form" method="post" action="/feedback/submit">
+<div id="feedback-popup" class="feedback-form" style="display: none">
+
+	<a href="#"><input type="button" id="btn" value="CLOSE" /></a>
+
+	<form id="feedback-popup-form" method="post" action="#">
 		<textarea id="feedback-popup-form-message" name="message" rows="18"
 			cols="40" placeholder="Enter your feedback here..."></textarea>
 		<input type="submit" name="submit" class="form_but" value="Submit" />

@@ -5,10 +5,8 @@ import de.hybris.training.facades.feedback.FeedbackFacade;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
@@ -19,12 +17,23 @@ public class FeedbackController extends AbstractPageController
 	private FeedbackFacade feedbackFacade;
 
 	@RequestMapping(value = "/submit", method = RequestMethod.POST)
-	@ResponseBody
-	public Boolean submitFeedback(@RequestAttribute("path") final String pageUrl,
-			@RequestAttribute("message") final String message)
+	/* @ResponseBody @RequestParam("path") final String pageUrl, @RequestParam("message") final String message */
+	public Boolean submitFeedback()
 	{
 		final Integer i = 5;
-		return feedbackFacade.submitFeedback(pageUrl, message);
+		return feedbackFacade.submitFeedback("https", "hello");
 	}
 
+	@RequestMapping(value = "/test", method = RequestMethod.POST)
+	public void testSubmit()
+	{
+		final String str = "";
+		String str1 = "";
+		final String str2 = "";
+
+		if (str.equals(str2))
+		{
+			str1 = "str";
+		}
+	}
 }

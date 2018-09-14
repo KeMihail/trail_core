@@ -1,5 +1,6 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <style type="text/css">
 #feedback-popup {
@@ -70,7 +71,7 @@
 	$(document).ready(function() {
 
 		$('div.feedbackComponent a.feedback').click(function() {
-			$('#feedback-popup-form').show();
+			$('#feedback-popup-form-message').show();
 			$('#feedback-confirmation').hide();
 
 			$('#feedback-button').show();
@@ -85,38 +86,66 @@
 			return false;
 		});
 
-		$('#feedback-popup input.form_but').click(function() {
-			$('#feedback-popup-form').hide();
+		$('#btn1').click(function() {
 			$('#feedback-confirmation').show();
+			$('#feedback-popup-form-message').hide();
+			$('#btn1').hide();
 
-			$.ajax({
-				url : '/feedback/submit',
-				data : {
-					path : 'path',
-					message : 'message',
-					method : 'POST',
-				}
-			});
-
-			/* $.post('/feedback/submit', {
+			$.post("/feedback/submit")
+			/* {
 				path : 'path',
 				message : 'message'
-			}); */
-			return false;
+			}) */
 		});
+
+		/* 
+		 $('#feedback-popup input.form_but').click(function() {
+		 $('#feedback-popup-form').hide();
+		 $('#feedback-confirmation').show();
+
+		 $.ajax({
+		 url : '/feedback/submit',
+		 data : {
+		 path : 'path',
+		 message : 'message'},
+		 method : 'POST',
+		 });
+
+		 /* $.post('/feedback/submit', {
+		 path : 'path',
+		 message : 'message'
+		 });
+		 return false;
+		 }); */
 	});
 </script>
 
+<script>
+	$('#btn1').click(function() {
+		alert('submit');
+		$('#feedback-popup-form').hide();
+		$('#feedback-confirmation').show();
+		$.post("/feedback/submit");
+		return false;
+	});
+</script>
 
 <div id="feedback-popup" class="feedback-form" style="display: none">
 
-	<a href="#"><input type="button" id="btn" value="CLOSE" /></a>
+	<textarea id="feedback-popup-form-message" class="form textarea"
+		name="message" rows="18" cols="40"
+		placeholder="Enter your feedback here..." style="display: none;"></textarea>
 
-	<form id="feedback-popup-form" method="post" action="#">
+	<input type="button" id="btn" value="CLOSE" /> <input type="button"
+		id="btn1" value="SEND_FEEDBACK" />
+
+	<%-- <form:form id="feedback-popup-form" method="post" action="#">
 		<textarea id="feedback-popup-form-message" name="message" rows="18"
 			cols="40" placeholder="Enter your feedback here..."></textarea>
 		<input type="submit" name="submit" class="form_but" value="Submit" />
-	</form>
+	</form:form> --%>
+
+
 
 	<div id="feedback-confirmation" style="display: none">
 		${confirmationMessage}</div>

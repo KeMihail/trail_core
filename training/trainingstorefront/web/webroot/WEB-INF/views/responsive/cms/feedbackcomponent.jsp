@@ -31,7 +31,7 @@
 	text-indent: -1000px;
 }
 
-#feedback-popup form textarea {
+#feedback-popup  textarea {
 	height: 80px;
 	border: 1px solid #ccc;
 	width: 97%;

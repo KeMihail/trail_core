@@ -60,9 +60,66 @@
 	padding: 5px;
 	color: #000;
 }
+
+.btn-style {
+	border: solid 1px #288c1a;
+	border-radius: 20px 3px 20px 4px;
+	moz-border-radius: 20px 3px 20px 4px;
+	-webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.7);
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.7);
+	font-size: 20px;
+	color: #ffffff;
+	padding: 1px 17px;
+	background: #31fa1e;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #31fa1e),
+		color-stop(100%, #30ab00));
+	background: -moz-linear-gradient(top, #31fa1e 0%, #30ab00 100%);
+	background: -webkit-linear-gradient(top, #31fa1e 0%, #30ab00 100%);
+	background: -o-linear-gradient(top, #31fa1e 0%, #30ab00 100%);
+	background: -ms-linear-gradient(top, #31fa1e 0%, #30ab00 100%);
+	background: linear-gradient(top, #31fa1e 0%, #30ab00 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#31fa1e',
+		endColorstr='#30ab00', GradientType=0);
+}
+
+.close {
+	opacity: 0.3;
+}
+
+.close:hover {
+	opacity: 1;
+}
+
+.close:before, .close:after {
+	content: ' ';
+	height: 33px;
+	width: 2px;
+	background-color: #333;
+}
+
+.close:before {
+	transform: rotate(45deg);
+}
+
+.close:after {
+	transform: rotate(-45deg);
+}
+
+.H1 {
+	text-shadow: -1px -1px #000, 0 1px 0 #444;
+	color: #222;
+	transition: all 1s;
+}
+
+.H1:hover {
+	text-shadow: -1px -1px #000, 0 1px 0 #444;
+	color: #1A1A1A;
+}
 </style>
 
-<c:url value="/feedback/submit" var="feedbackSubmitUrl" />
+<c:url value="/trainingstorefront/feedback/submit"
+	var="feedbackSubmitUrl" />
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -70,6 +127,7 @@
 <script>
 	$(document).ready(function() {
 
+		//click to image (feddback)
 		$('div.feedbackComponent a.feedback').click(function() {
 			$('#feedback-popup-form-message').show();
 			$('#feedback-confirmation').hide();
@@ -81,63 +139,45 @@
 			return false;
 		});
 
-		$('#btn').click(function() {
+		//button close
+		$('#close').click(function() {
 			$("#feedback-popup").fadeOut('slow');
 			return false;
 		});
 
-		$('#btn1').click(function() {
+		//button submit
+		$('#submit').click(function() {
+
+			var feedback = $('#feedback-popup-form-message').val();
+
 			$('#feedback-confirmation').show();
 			$('#feedback-popup-form-message').hide();
-			$('#btn1').hide();
+			$('#submit').hide();
 
-			$.post("/feedback/submit")
-			/* {
-				path : 'path',
-				message : 'message'
-			}) */
+			$.post("/trainingstorefront/feedback/submit", {
+				path : document.location.href,
+				message : feedback
+			})
+
+			$("#feedback-popup").fadeOut(7000);
 		});
 
-		/* 
-		 $('#feedback-popup input.form_but').click(function() {
-		 $('#feedback-popup-form').hide();
-		 $('#feedback-confirmation').show();
-
-		 $.ajax({
-		 url : '/feedback/submit',
-		 data : {
-		 path : 'path',
-		 message : 'message'},
-		 method : 'POST',
-		 });
-
-		 /* $.post('/feedback/submit', {
-		 path : 'path',
-		 message : 'message'
-		 });
-		 return false;
-		 }); */
 	});
 </script>
 
-<script>
-	$('#btn1').click(function() {
-		alert('submit');
-		$('#feedback-popup-form').hide();
-		$('#feedback-confirmation').show();
-		$.post("/feedback/submit");
-		return false;
-	});
-</script>
+
+
 
 <div id="feedback-popup" class="feedback-form" style="display: none">
 
-	<textarea id="feedback-popup-form-message" class="form textarea"
-		name="message" rows="18" cols="40"
-		placeholder="Enter your feedback here..." style="display: none;"></textarea>
+	<textarea id="feedback-popup-form-message" name="message" rows="18"
+		cols="40" placeholder="Enter your feedback here..."
+		style="display: none;"></textarea>
 
-	<input type="button" id="btn" value="CLOSE" /> <input type="button"
-		id="btn1" value="SEND_FEEDBACK" />
+	<p />
+	<input type="button" id="submit" class="btn-style" value="submit" /> <input
+		type="button" class="close" id="close" value="close" />
+
 
 	<%-- <form:form id="feedback-popup-form" method="post" action="#">
 		<textarea id="feedback-popup-form-message" name="message" rows="18"
@@ -147,7 +187,7 @@
 
 
 
-	<div id="feedback-confirmation" style="display: none">
+	<div id="feedback-confirmation" class="H1" style="display: none">
 		${confirmationMessage}</div>
 </div>
 

@@ -125,7 +125,7 @@ INSERT_UPDATE ContentSlotName ; name[unique=true]      ; template(uid,$contentCV
                               ; CrossSelling           ;                                                                             ; ProductReferencesComponent      ; narrow             
                               ; UpSelling              ;                                                                             ; ProductReferencesComponent      ; wide               
                               ; Tabs                   ;                                                                             ; CMSTabParagraphContainer        
-                              ; Section1               ;                                                                             ;                                 ; wide               
+                              ; Section1               ;                                                                             ; Feedback                        ; wide               
                               ; Section2               ;                                                                             ;                                 ; wide               
                               ; Section3               ;                                                                             ;                                 ; wide               
                               ; Section4               ;                                                                             ; FeedbackComponent               ; wide               

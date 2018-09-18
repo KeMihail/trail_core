@@ -251,6 +251,9 @@ INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[uni
                               ; Section2A         ;                                                                       ; RandomImageParagraphComponentFromCore ; narrow              
                               ; Section2B         ;                                                                       ; RandomImageParagraphComponent         ; narrow              
                               
+                              
+                                         
+                              
 INSERT_UPDATE  RandomImageParagraphComponentFromCore ; $contentCV ; uid[unique=true] ; name          ; &componentRef ; topic(code) ; width ; height
                                                      ;            ; fashioncore      ; Random Image1 ; fashioncore   ; fashion     ; 228   ; 228   
                                                      ;            ; peoplecore       ; Random Image2 ; peoplecore    ; people      ; 228   ; 228   
@@ -267,9 +270,9 @@ INSERT_UPDATE ProductCarouselComponent ; $contentCV[unique=true] ; uid[unique=tr
                                        ;                         ; HybrisHomepageProductCarouselComponent ; Hybris Homepage Product Carousel ; 0007,0001,0002,0003,0004,0005,0006,0100,0101,0102,0110,0111,0112,0200,0201,0202,0210,0211,0212 ; allVisible   ; HybrisHomepageProductCarouselComponent
                                        
 INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]       ; name                        ; active ; cmsComponents(&componentRef)          
-                          ;                         ; Section1Slot-Homepage  ; Section1 Slot for Homepage  ; true   ; welcomeMessage                        
-                          ;                         ; Section2ASlot-Homepage ; Section2A Slot for Homepage ; true   ; fashioncore                           
-                          ;                         ; Section2BSlot-Homepage ; Section2B Slot for Homepage ; true   ; people                                
+#                          ;                         ; Section1Slot-Homepage  ; Section1 Slot for Homepage  ; true   ; welcomeMessage                        
+#                          ;                         ; Section2ASlot-Homepage ; Section2A Slot for Homepage ; true   ; fashioncore                           
+#                          ;                         ; Section2BSlot-Homepage ; Section2B Slot for Homepage ; true   ; people                                
                           ;                         ; Section2CSlot-Homepage ; Section2C Slot for Homepage ; true   ; customComponent                       
                           ;                         ; Section3Slot-Homepage  ; Section3 Slot for Homepage  ; true   ; HybrisHomepageProductCarouselComponent
                           ;                         ; Section4Slot-Homepage  ; Section4 Slot for Homepage  ; true   ; Feedback                              
@@ -284,7 +287,19 @@ INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]   
                                  ;                         ; Section4-Homepage  ; Section4              ;                                                       ; Section4Slot-Homepage                   
                                  ;                         ; Section5-Homepage  ; Section5              ;                                                       ; Section5Slot-Homepage                   
                                  
-                                 
+#Product Details page, feedback component#
+INSERT_UPDATE ContentSlotName ; name[unique=true] ; template(uid,$contentCV)[unique=true][default='ProductDetailsPageTemplate'] ; validComponentTypes(code) ; compTypeGroup(code) ;  
+                              ; Section4          ;                                                                             ; FeedbackComponent         ; narrow              
+
+
+INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]                ; name                              ; active ; cmsComponents(&componentRef)
+                          ;                         ; Section4Slot-ProductDetailsPage ; Section4 slot ProductDetails page ; true   ; Feedback                    
+
+
+INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]            ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='productDetails'] ; contentSlot(uid,$contentCV)[unique=true]
+                                 ;                         ; Section4-ProductDetailsPage ; Section4              ;                                                             ; Section4Slot-ProductDetailsPage         
+
+						                                   
 ###### Hybris Search Results Page ######
                                  
                                  
@@ -354,7 +369,6 @@ INSERT_UPDATE ContentSlotForPage ; $contentCV[unique=true] ; uid[unique=true]   
                                  
                                  
 INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]              ; name                              ; active ; cmsComponents(&componentRef)
-                          
                           ;                         ; MiddleContent-StoreFinderPage ; Middle Slot for Store Finder Page ; true   ; StoreFinderComponent        
                           
                           

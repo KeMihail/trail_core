@@ -31,8 +31,7 @@ INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]          
                           ;                         ; CenterRightContentSlot     ; Center Right Content Slot       ; true  
 # this slot for backward compatibility, it not used in responsive
                           ;                         ; HomepageNavLinkSlot        ; Default Homepage Link           ; true  
-                          ;                         ; Section4Slot               ; Section4 ProductDetailsPage     ; true  
-                          
+                          ;							; Section4Slot				 ; Section4Slot Product Details    ; true		  
 
 # Preview Image for use in the CMS Cockpit for special ContentPages
 INSERT_UPDATE Media ; $contentCV[unique=true] ; code[unique=true]                  ; mime     ; realfilename                           ; @media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true]
@@ -125,7 +124,7 @@ INSERT_UPDATE ContentSlotName ; name[unique=true]      ; template(uid,$contentCV
                               ; CrossSelling           ;                                                                             ; ProductReferencesComponent      ; narrow             
                               ; UpSelling              ;                                                                             ; ProductReferencesComponent      ; wide               
                               ; Tabs                   ;                                                                             ; CMSTabParagraphContainer        
-                              ; Section1               ;                                                                             ; Feedback                        ; wide               
+                              ; Section1               ;                                                                             ;                                 ; wide               
                               ; Section2               ;                                                                             ;                                 ; wide               
                               ; Section3               ;                                                                             ;                                 ; wide               
                               ; Section4               ;                                                                             ; FeedbackComponent               ; wide               

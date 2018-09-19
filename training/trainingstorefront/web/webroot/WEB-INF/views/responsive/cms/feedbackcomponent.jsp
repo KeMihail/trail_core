@@ -106,7 +106,10 @@
 }
 
 .close {
+	position: relative;
 	opacity: 0.3;
+	top: -33px;
+	left: -11px;
 }
 
 .close:hover {
@@ -234,11 +237,11 @@
 	<!-- <p />
 	<input type="button" id="submit" class="btn-style" value="submit" /> -->
 
+
 	<form id="feedback-popup-form" method="post" action="#">
 
-		<p>
-			<strong> <font size="4" color="orange">Priority</font></strong>
-		</p>
+		<label> <strong> <font size="4" color="orange">Priority</font></strong>
+		</label>
 		<div class="new-select-style-wpandyou">
 			<select id="feedback-popup-select">
 				<option value="LOW">LOW</option>

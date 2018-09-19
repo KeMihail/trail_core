@@ -10,4 +10,5 @@ encoding//web/webroot/WEB-INF/messages/site-electronics.properties=UTF-8
 encoding//web/webroot/WEB-INF/messages/site-electronics_de.properties=UTF-8
 encoding//web/webroot/WEB-INF/messages/site-electronics_ja.properties=UTF-8
 encoding//web/webroot/WEB-INF/views/responsive/cms/cmscustomcomponent.jsp=UTF-8
+encoding//web/webroot/WEB-INF/views/responsive/cms/feedbackcomponent.jsp=UTF-8
 encoding/<project>=UTF-8

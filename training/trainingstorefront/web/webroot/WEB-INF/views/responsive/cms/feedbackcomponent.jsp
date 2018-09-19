@@ -136,17 +136,18 @@
 
 			$('#feedback-popup-form-message').val('');
 			$("#feedback-popup").fadeIn('slow');
+
 			return false;
 		});
 
 		//button close
 		$('#close').click(function() {
-			$("#feedback-popup").fadeOut('slow');
+			$("#feedback-popup").fadeOut(3000);
 			return false;
 		});
 
-		//button submit
-		$('#submit').click(function() {
+		//button submit (variant 1)
+		/* $('#submit').click(function() {
 
 			var feedback = $('#feedback-popup-form-message').val();
 
@@ -160,7 +161,30 @@
 			})
 
 			$("#feedback-popup").fadeOut(7000);
+		}); */
+
+		//click button submit
+		$('#feedback-popup input.form_but').click(function() {
+
+			var feedback = $('#feedback-popup-form-message').val();
+
+			$('#feedback-confirmation').show();
+			$('#feedback-popup-form-message').hide();
+			$('#feedback-popup input.form_but').hide();
+
+			$.post("/trainingstorefront/feedback/submit", {
+				path : document.location.href,
+				message : feedback
+			})
+
+			$("#feedback-popup").fadeOut(7000);
+			$('feedback-popup-form').submit();
 		});
+
+		//откл submit c form
+		$('#feedback-popup-form').submit(function(event) {
+			event.preventDefault();
+		})
 
 	});
 </script>
@@ -170,21 +194,22 @@
 
 <div id="feedback-popup" class="feedback-form" style="display: none">
 
-	<textarea id="feedback-popup-form-message" name="message" rows="18"
+	<!--  (variant 1) -->
+	<!-- <textarea id="feedback-popup-form-message" name="message" rows="18"
 		cols="40" placeholder="Enter your feedback here..."
 		style="display: none;"></textarea>
+ -->
 
-	<p />
-	<input type="button" id="submit" class="btn-style" value="submit" /> <input
-		type="button" class="close" id="close" value="close" />
+	<!-- <p />
+	<input type="button" id="submit" class="btn-style" value="submit" /> -->
 
-
-	<%-- <form:form id="feedback-popup-form" method="post" action="#">
+	<form id="feedback-popup-form" method="post" action="#">
 		<textarea id="feedback-popup-form-message" name="message" rows="18"
 			cols="40" placeholder="Enter your feedback here..."></textarea>
 		<input type="submit" name="submit" class="form_but" value="Submit" />
-	</form:form> --%>
+	</form>
 
+	<input type="button" class="close" id="close" value="close" />
 
 
 	<div id="feedback-confirmation" class="H1" style="display: none">

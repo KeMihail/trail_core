@@ -43,7 +43,7 @@ public class DefaultFeedbackFacade implements FeedbackFacade
 	}
 
 	@Override
-	public boolean submitFeedback(final String pageUrl, final String message)
+	public boolean submitFeedback(final String pageUrl, final String message, final String priority)
 	{
 		LOG.info("Submitting Feedback for page: " + pageUrl);
 
@@ -51,19 +51,19 @@ public class DefaultFeedbackFacade implements FeedbackFacade
 		final String description = "Page: " + pageUrl + "\n\n" + message;
 		final CustomerModel customer = getCurrentCustomer();
 
-		final CsTicketModel ticket = createTicket(subject, description, customer, CsTicketCategory.NOTE, CsTicketPriority.MEDIUM);
+		final CsTicketModel ticket = createTicket(subject, description, customer, CsTicketCategory.NOTE, priority);
 		return ticket != null;
 
 	}
 
 	protected CsTicketModel createTicket(final String subject, final String description, final CustomerModel customer,
-			final CsTicketCategory category, final CsTicketPriority priority)
+			final CsTicketCategory category, final String priority)
 	{
 
 		final CsTicketModel ticket = new CsTicketModel();
 		ticket.setHeadline(subject);
 		ticket.setCategory(category);
-		ticket.setPriority(priority);
+		ticket.setPriority(CsTicketPriority.valueOf(priority));
 		if (customer != null)
 		{
 			ticket.setCustomer(customer);

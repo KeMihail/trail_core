@@ -3,6 +3,28 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <style type="text/css">
+.new-select-style-wpandyou select {
+	border-radius: 0;
+	background: transparent;
+	height: 34px;
+	padding: 5px;
+	border: 0;
+	font-size: 16px;
+	line-height: 1;
+	-webkit-appearance: none;
+	width: 268px;
+}
+
+.new-select-style-wpandyou {
+	border: 1px solid #CCC;
+	overflow: hidden;
+	height: 34px;
+	background:
+		url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg)
+		no-repeat right #DDD;
+	width: 240px;
+}
+
 #feedback-popup {
 	position: absolute;
 	margin-top: -50px;
@@ -125,68 +147,77 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 <script>
-	$(document).ready(function() {
+	$(document).ready(
+			function() {
 
-		//click to image (feddback)
-		$('div.feedbackComponent a.feedback').click(function() {
-			$('#feedback-popup-form-message').show();
-			$('#feedback-confirmation').hide();
+				//click to image (feddback)
+				$('div.feedbackComponent a.feedback').click(function() {
+					$('#feedback-popup-form-message').show();
+					$('#feedback-confirmation').hide();
 
-			$('#feedback-button').show();
+					$('#feedback-button').show();
 
-			$('#feedback-popup-form-message').val('');
-			$("#feedback-popup").fadeIn('slow');
+					$('#feedback-popup-form-message').val('');
+					$("#feedback-popup").fadeIn('slow');
 
-			return false;
-		});
+					return false;
+				});
 
-		//button close
-		$('#close').click(function() {
-			$("#feedback-popup").fadeOut(3000);
-			return false;
-		});
+				//button close
+				$('#close').click(function() {
+					$("#feedback-popup").fadeOut(3000);
+					return false;
+				});
 
-		//button submit (variant 1)
-		/* $('#submit').click(function() {
+				//button submit (variant 1)
+				/* $('#submit').click(function() {
 
-			var feedback = $('#feedback-popup-form-message').val();
+					var feedback = $('#feedback-popup-form-message').val();
 
-			$('#feedback-confirmation').show();
-			$('#feedback-popup-form-message').hide();
-			$('#submit').hide();
+					$('#feedback-confirmation').show();
+					$('#feedback-popup-form-message').hide();
+					$('#submit').hide();
 
-			$.post("/trainingstorefront/feedback/submit", {
-				path : document.location.href,
-				message : feedback
-			})
+					$.post("/trainingstorefront/feedback/submit", {
+						path : document.location.href,
+						message : feedback
+					})
 
-			$("#feedback-popup").fadeOut(7000);
-		}); */
+					$("#feedback-popup").fadeOut(7000);
+				}); */
 
-		//click button submit
-		$('#feedback-popup input.form_but').click(function() {
+				//click button submit
+				$('#feedback-popup input.form_but').click(
+						function() {
 
-			var feedback = $('#feedback-popup-form-message').val();
+							var feedback_message = $(
+									'#feedback-popup-form-message').val();
+							var feedback_priority = $(
+									'#feedback-popup-select option:selected')
+									.val();
 
-			$('#feedback-confirmation').show();
-			$('#feedback-popup-form-message').hide();
-			$('#feedback-popup input.form_but').hide();
+							alert(feedback_priority);
 
-			$.post("/trainingstorefront/feedback/submit", {
-				path : document.location.href,
-				message : feedback
-			})
+							$('#feedback-confirmation').show();
+							$('#feedback-popup-form-message').hide();
+							$('#feedback-popup input.form_but').hide();
 
-			$("#feedback-popup").fadeOut(7000);
-			$('feedback-popup-form').submit();
-		});
+							$.post("/trainingstorefront/feedback/submit", {
+								path : document.location.href,
+								message : feedback_message,
+								priority : feedback_priority
+							})
 
-		//откл submit c form
-		$('#feedback-popup-form').submit(function(event) {
-			event.preventDefault();
-		})
+							$("#feedback-popup").fadeOut(7000);
+							$('feedback-popup-form').submit();
+						});
 
-	});
+				//откл submit c form
+				$('#feedback-popup-form').submit(function(event) {
+					event.preventDefault();
+				})
+
+			});
 </script>
 
 
@@ -204,9 +235,23 @@
 	<input type="button" id="submit" class="btn-style" value="submit" /> -->
 
 	<form id="feedback-popup-form" method="post" action="#">
+
+		<p>
+			<strong> <font size="4" color="orange">Priority</font></strong>
+		</p>
+		<div class="new-select-style-wpandyou">
+			<select id="feedback-popup-select">
+				<option value="LOW">LOW</option>
+				<option value="MEDIUM">MEDIUM</option>
+				<option value="HIGH">HIGH</option>
+			</select>
+		</div>
+
 		<textarea id="feedback-popup-form-message" name="message" rows="18"
 			cols="40" placeholder="Enter your feedback here..."></textarea>
+
 		<input type="submit" name="submit" class="form_but" value="Submit" />
+
 	</form>
 
 	<input type="button" class="close" id="close" value="close" />

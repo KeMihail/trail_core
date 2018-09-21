@@ -3,231 +3,100 @@
 
 <%@ page import="de.hybris.platform.ticket.enums.CsTicketPriority"%>
 
+<link rel="stylesheet"
+	href="<c:url value="../_ui/responsive/common/css/feedback.css"/>"
+	type="text/css" />
+
+<script
+	src="/trainingstorefront/web/webroot/_ui/responsive/common/css/feedback.css.js"></script>
 
 <!-- are connected ??? -->
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
 
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+<script>
+	$(function() {
+		$("#salutation").selectmenu();
+	});
+</script>
 
-<style type="text/css">
-#feedback-popup {
-	position: absolute;
-	margin-top: -50px;
-	left: 250px;
-	color: #fff;
-	padding: 15px;
-	margin-bottom: 20px;
-	width: 420px;
-	z-index: 1;
-	border: 1px solid #555;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	background-color: #ccc;
-}
+<script>
+	$(document).ready(function() {
 
-#feedback-popup  textarea {
-	height: 80px;
-	border: 1px solid #ccc;
-	width: 97%;
-	font: 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-	padding: 5px;
-	color: #000;
-}
+		//click to image (feddback)
+		$('div.feedbackComponent a.feedback').click(function() {
+			$('#feedback-popup-form-message').show();
+			$('#feedback-confirmation').hide();
+			$('#feedback-button').show();
+			$('#feedback-popup-form-message').val('');
+			$("#feedback-popup").fadeIn('slow');
 
-#feedback-popup form table {
-	width: 100%;
-}
+			return false;
+		});
 
-#feedback-popup form input.form_but {
-	margin-top: 10px;
-	background-color: #ff9933;
-	border: 3px solid #cc9900;
-	color: #fff;
-	font: bold 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	padding: 5px 10px;
-}
+		function runEffect() {
 
-#feedback-confirmation {
-	left: -11px;
-	font: 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-	padding: 5px;
-	color: #000;
-}
+			var selectedEffect = 'clip';
+			var options = {};
 
-.new-select-style-wpandyou select {
-	border-radius: 0;
-	background: transparent;
-	height: 34px;
-	padding: 5px;
-	border: 0;
-	font-size: 16px;
-	line-height: 1;
-	-webkit-appearance: none;
-	width: 268px;
-}
+			$("#feedback-popup").effect(selectedEffect, options, 1000);
+		}
+		;
 
-.new-select-style-wpandyou {
-	border: 1px solid #CCC;
-	overflow: hidden;
-	height: 34px;
-	background:
-		url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg)
-		no-repeat right #DDD;
-	width: 240px;
-}
+		//button close
+		$('#close').click(function() {
 
-.message {
-	text-shadow: -1px -1px #000, 0 1px 0 #444;
-	color: #222;
-	transition: all 1s;
-}
+			runEffect();
+			return false;
 
-.message:hover {
-	text-shadow: -1px -1px #000, 0 1px 0 #444;
-	color: #1A1A1A;
-}
+		});
 
-.close {
-	display: inline-block;
-	font-family: Arial, Helvetica, FreeSans, "Liberation Sans",
-		"Nimbus Sans L", sans-serif;
-	font-size: 1.5em;
-	font-weight: 700;
-	color: rgb(245, 245, 245);
-	text-shadow: 0 -1px rgba(0, 0, 0, .1);
-	text-decoration: none;
-	user-select: none;
-	padding: .3em 1em;
-	outline: none;
-	border: none;
-	border-radius: 3px;
-	background: #0c9c0d linear-gradient(#82d18d, #0c9c0d);
-	box-shadow: inset #72de26 0 -1px 1px, inset 0 1px 1px #98ff98, #3caa3c 0
-		0 0 1px, rgba(0, 0, 0, .3) 0 2px 5px;
-	-webkit-animation: pulsate 1.2s linear infinite;
-	animation: pulsate 1.2s linear infinite;
-}
+		//click button submit
+		$('#feedback-popup input.close').click(function() {
 
-.close:hover {
-	-webkit-animation-play-state: paused;
-	animation-play-state: paused;
-	cursor: pointer;
-}
+			$('#feedback-confirmation').show();
+			$('#feedback-popup-form').hide();
 
-.close:active {
-	top: 1px;
-	color: #fff;
-	text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
-	box-shadow: 0 -1px 3px rgba(0, 0, 0, .3), 0 1px 1px #fff, inset 0 1px
-		2px rgba(0, 0, 0, .8), inset 0 -1px 0 rgba(0, 0, 0, .05);
-}
+			$.post("/trainingstorefront/feedback/submit", {
+				path : document.location.href,
+				message : $('#feedback-popup-form-message').val(),
+				priority : $('#priority').val()
+			})
+		});
 
-@
--webkit-keyframes pulsate { 50% {
-	color: #fff;
-	text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
-}
-
-}
-@
-keyframes pulsate { 50% {
-	color: #fff;
-	text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
-}
-</style>
+		//откл submit c form
+		$('#feedback-popup-form').submit(function(event) {
+			event.preventDefault();
+		})
+	});
+</script>
 
 <c:url value="/trainingstorefront/feedback/submit"
 	var="feedbackSubmitUrl" />
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-<script>
-	$(document).ready(
-			function() {
-
-				//click to image (feddback)
-				$('div.feedbackComponent a.feedback').click(function() {
-					$('#feedback-popup-form-message').show();
-					$('#feedback-confirmation').hide();
-
-					$('#feedback-button').show();
-
-					$('#feedback-popup-form-message').val('');
-					$("#feedback-popup").fadeIn('slow');
-
-					return false;
-				});
-
-				function runEffect() {
-
-					var selectedEffect = 'clip';
-					var options = {};
-
-					$("#feedback-popup").effect(selectedEffect, options, 1000);
-				}
-				;
-
-				//button close
-				$('#close').click(function() {
-
-					runEffect();
-					return false;
-
-				});
-
-				//click button submit
-				$('#feedback-popup input.close').click(
-						function() {
-
-							var feedback_message = $(
-									'#feedback-popup-form-message').val();
-							var feedback_priority = $(
-									'#feedback-popup-select option:selected')
-									.val();
-
-							$('.button_css').removeClass('close').addClass(
-									'green');
-
-							$('#feedback-confirmation').show();
-							$('#feedback-popup-form').hide();
-
-							$.post("/trainingstorefront/feedback/submit", {
-								path : document.location.href,
-								message : feedback_message,
-								priority : feedback_priority
-							})
-
-							$('feedback-popup-form').submit();
-						});
-
-				//откл submit c form
-				$('#feedback-popup-form').submit(function(event) {
-					event.preventDefault();
-				})
-			});
-</script>
-
-
 <div id="feedback-popup" class="feedback-form" style="display: none">
 
 
-	<form id="feedback-popup-form" method="post" action="#">
+	<form id="feedback-popup-form" method="post" action="#"
+		autocomplete="on">
 
-		<label for="feedback-popup-select"> <strong> <font
-				size="4" color="orange">Priority</font></strong>
-		</label>
-		<div class="new-select-style-wpandyou">
-			<select id="feedback-popup-select">
+		<fieldset>
+			<label for=""><font size="4"><strong>Priority</strong></font></label>
+
+			<select id="priority" name="priority">
+				<option disabled selected>Please pick one</option>
 				<option value="LOW">LOW</option>
 				<option value="MEDIUM">MEDIUM</option>
 				<option value="HIGH">HIGH</option>
 			</select>
-		</div>
+
+		</fieldset>
 
 		<textarea id="feedback-popup-form-message" name="message" rows="18"
 			cols="40" placeholder="Enter your feedback here..."></textarea>
@@ -278,3 +147,39 @@ keyframes pulsate { 50% {
 				});  -->
 
 
+<!-- <label for="feedback-popup-select"> <strong> <font
+				size="4" color="orange">Priority</font></strong>
+		</label>
+		
+		<div class="new-select-style-wpandyou">
+			<select id="feedback-popup-select">
+				<option value="LOW">LOW</option>
+				<option value="MEDIUM">MEDIUM</option>
+				<option value="HIGH">HIGH</option>
+			</select>
+		</div> -->
+
+<!-- 		.new-select-style-wpandyou select {
+	border-radius: 0;
+	background: transparent;
+	height: 34px;
+	padding: 5px;
+	border: 0;
+	font-size: 16px;
+	line-height: 1;
+	-webkit-appearance: none;
+	width: 268px;
+}
+
+.new-select-style-wpandyou {
+	border: 1px solid #CCC;
+	overflow: hidden;
+	height: 34px;
+	background:
+		url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg)
+		no-repeat right #DDD;
+	width: 240px;
+} -->
+
+<!-- /* edit css class	 */
+			$('.button_css').removeClass('close').addClass('green'); -->

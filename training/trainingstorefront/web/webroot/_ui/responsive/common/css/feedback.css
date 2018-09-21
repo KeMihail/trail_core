@@ -1,0 +1,110 @@
+#feedback-popup {
+	position: absolute;
+	margin-top: -50px;
+	top: -100px;
+	left: 250px;
+	color: #fff;
+	padding: 15px;
+	margin-bottom: 20px;
+	width: 420px;
+	z-index: 1;
+	border: 1px solid #555;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	background-color: #ccc;
+	left: 250px;
+}
+
+#feedback-popup  textarea {
+	height: 80px;
+	border: 1px solid #ccc;
+	width: 97%;
+	font: 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	padding: 5px;
+	color: #000;
+}
+
+#feedback-popup form table {
+	width: 100%;
+}
+
+#feedback-popup form input.form_but {
+	margin-top: 10px;
+	background-color: #ff9933;
+	border: 3px solid #cc9900;
+	color: #fff;
+	font: bold 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	padding: 5px 10px;
+}
+
+#feedback-confirmation {
+	left: -11px;
+	font: 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	padding: 5px;
+	color: #000;
+}
+
+fieldset {
+	border: 0;
+}
+
+.message {
+	text-shadow: -1px -1px #000, 0 1px 0 #444;
+	color: #222;
+	transition: all 1s;
+}
+
+.message:hover {
+	text-shadow: -1px -1px #000, 0 1px 0 #444;
+	color: #1A1A1A;
+}
+
+.close {
+	display: inline-block;
+	font-family: Arial, Helvetica, FreeSans, "Liberation Sans",
+		"Nimbus Sans L", sans-serif;
+	font-size: 1.5em;
+	font-weight: 700;
+	color: rgb(245, 245, 245);
+	text-shadow: 0 -1px rgba(0, 0, 0, .1);
+	text-decoration: none;
+	user-select: none;
+	padding: .3em 1em;
+	outline: none;
+	border: none;
+	border-radius: 3px;
+	background: #0c9c0d linear-gradient(#82d18d, #0c9c0d);
+	box-shadow: inset #72de26 0 -1px 1px, inset 0 1px 1px #98ff98, #3caa3c 0
+		0 0 1px, rgba(0, 0, 0, .3) 0 2px 5px;
+	-webkit-animation: pulsate 1.2s linear infinite;
+	animation: pulsate 1.2s linear infinite;
+}
+
+.close:hover {
+	-webkit-animation-play-state: paused;
+	animation-play-state: paused;
+	cursor: pointer;
+}
+
+.close:active {
+	top: 1px;
+	color: #fff;
+	text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
+	box-shadow: 0 -1px 3px rgba(0, 0, 0, .3), 0 1px 1px #fff, inset 0 1px
+		2px rgba(0, 0, 0, .8), inset 0 -1px 0 rgba(0, 0, 0, .05);
+}
+
+@
+-webkit-keyframes pulsate { 50% {
+	color: #fff;
+	text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
+}
+
+}
+@
+keyframes pulsate { 50% {
+	color: #fff;
+	text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
+}

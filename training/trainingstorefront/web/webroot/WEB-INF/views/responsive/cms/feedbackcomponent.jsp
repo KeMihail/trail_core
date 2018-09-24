@@ -9,8 +9,7 @@
 	href="<c:url value="../_ui/responsive/common/css/feedback.css"/>"
 	type="text/css" />
 
-<script
-	src="/trainingstorefront/web/webroot/_ui/responsive/common/css/feedback.css.js"></script>
+<script src="../_ui/responsive/common/js/cms/feedback.js"></script>
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

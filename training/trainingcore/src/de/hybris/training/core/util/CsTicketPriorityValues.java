@@ -18,8 +18,6 @@ public class CsTicketPriorityValues
 
 		for (final Field field : fields)
 		{
-
-
 			final int modifier = field.getModifiers();
 			if (Modifier.isPublic(modifier) && Modifier.isStatic(modifier) && Modifier.isFinal(modifier))
 			{

@@ -1,9 +1,11 @@
-	$(function() {
-		$("#salutation").selectmenu();
-	});
-</script>
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+src="https://code.jquery.com/jquery-1.12.4.js">
+src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">
 
-<script>
+	$(function() {
+		$("#priority").selectmenu();
+	});
+
 	$(document).ready(function() {
 
 		// click to image (feddback)
@@ -27,7 +29,7 @@
 		;
 
 		// button close
-		$('#close').click(function() {
+		$('#close_feedback').click(function() {
 
 			runEffect();
 			return false;
@@ -35,7 +37,7 @@
 		});
 
 		// click button submit
-		$('#feedback-popup input.close').click(function() {
+		$('#submit_feedback').click(function() {
 
 			$('#feedback-confirmation').show();
 			$('#feedback-popup-form').hide();

@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
 /**
  * This class provides hooks into the system's initialization and update processes.
  */
@@ -33,8 +34,8 @@ public class CoreSystemSetup extends AbstractSystemSetup
 	public static final String IMPORT_ACCESS_RIGHTS = "accessRights";
 
 	/**
-	 * This method will be called by system creator during initialization and system update. Be sure that this method can
-	 * be called repeatedly.
+	 * This method will be called by system creator during initialization and system update. Be sure that this method can be
+	 * called repeatedly.
 	 *
 	 * @param context
 	 *           the context provides the selected parameters and values
@@ -42,6 +43,7 @@ public class CoreSystemSetup extends AbstractSystemSetup
 	@SystemSetup(type = Type.ESSENTIAL, process = Process.ALL)
 	public void createEssentialData(final SystemSetupContext context)
 	{
+
 		importImpexFile(context, "/trainingcore/import/common/essential-data.impex");
 		importImpexFile(context, "/trainingcore/import/common/countries.impex");
 		importImpexFile(context, "/trainingcore/import/common/delivery-modes.impex");

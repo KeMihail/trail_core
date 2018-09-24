@@ -760,4 +760,8 @@
 			ref="solrFieldNameProvider" />
 	</bean>
 
+	<bean id="csTicketPriorityValues"
+		class="de.hybris.training.core.util.CsTicketPriorityValues">
+	</bean>
+
 </beans>

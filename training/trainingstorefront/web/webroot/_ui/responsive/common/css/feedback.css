@@ -61,7 +61,7 @@ fieldset {
 	color: #1A1A1A;
 }
 
-.close {
+.button_style {
 	display: inline-block;
 	font-family: Arial, Helvetica, FreeSans, "Liberation Sans",
 		"Nimbus Sans L", sans-serif;
@@ -80,15 +80,17 @@ fieldset {
 		0 0 1px, rgba(0, 0, 0, .3) 0 2px 5px;
 	-webkit-animation: pulsate 1.2s linear infinite;
 	animation: pulsate 1.2s linear infinite;
+	width: 133px;
+	height: 45px;
 }
 
-.close:hover {
+.button_style:hover {
 	-webkit-animation-play-state: paused;
 	animation-play-state: paused;
 	cursor: pointer;
 }
 
-.close:active {
+.button_style:active {
 	top: 1px;
 	color: #fff;
 	text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
@@ -108,3 +110,68 @@ keyframes pulsate { 50% {
 	color: #fff;
 	text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
 }
+
+/* 
+ (variant 1) 
+ <textarea id="feedback-popup-form-message" name="message" rows="18"
+		cols="40" placeholder="Enter your feedback here..."
+		style="display: none;"></textarea>
+
+
+ <p />
+	<input type="button" id="submit" class="btn-style" value="submit" /> -->
+
+ button submit (variant 1)
+				$('#submit').click(function() {
+
+					var feedback = $('#feedback-popup-form-message').val();
+
+					$('#feedback-confirmation').show();
+					$('#feedback-popup-form-message').hide();
+					$('#submit').hide();
+
+					$.post("/trainingstorefront/feedback/submit", {
+						path : document.location.href,
+						message : feedback
+					})
+
+					$("#feedback-popup").fadeOut(7000);
+				});  -->
+
+
+<label for="feedback-popup-select"> <strong> <font
+				size="4" color="orange">Priority</font></strong>
+		</label>
+		
+		<div class="new-select-style-wpandyou">
+			<select id="feedback-popup-select">
+				<option value="LOW">LOW</option>
+				<option value="MEDIUM">MEDIUM</option>
+				<option value="HIGH">HIGH</option>
+			</select>
+		</div> -->
+
+		.new-select-style-wpandyou select {
+	border-radius: 0;
+	background: transparent;
+	height: 34px;
+	padding: 5px;
+	border: 0;
+	font-size: 16px;
+	line-height: 1;
+	-webkit-appearance: none;
+	width: 268px;
+}
+
+.new-select-style-wpandyou {
+	border: 1px solid #CCC;
+	overflow: hidden;
+	height: 34px;
+	background:
+		url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg)
+		no-repeat right #DDD;
+	width: 240px;
+} 
+
+edit css class	
+			$('.button_css').removeClass('close').addClass('green');  */

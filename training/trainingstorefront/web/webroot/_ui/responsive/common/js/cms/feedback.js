@@ -1,52 +1,47 @@
-$(function() {
-	$("#priority").selectmenu();
-});
-
-$(document).ready(function() {
-
-	// click to image (feddback)
-	$('div.feedbackComponent a.feedback').click(function() {
-		$('#feedback-popup-form-message').show();
-		$('#feedback-confirmation').hide();
-		$('#feedback-button').show();
-		$('#feedback-popup-form-message').val('');
-		$("#feedback-popup").fadeIn('slow');
-
-		return false;
+	$(function() {
+		$("#priority").selectmenu();
 	});
 
-	function runEffect() {
+	$(document).ready(
+			function() {
 
-		var selectedEffect = 'clip';
-		var options = {};
+				//click to image (feddback)
+				$('#feedback_component').click(function() {
+					$('#feedback-popup-form-message').show();
+					$('#feedback-confirmation').hide();
+					$('#feedback-button').show();
+					$('#feedback-popup-form-message').val('');
+					$("#feedback-popup").fadeIn('slow');
 
-		$("#feedback-popup").effect(selectedEffect, options, 1000);
-	}
-	;
+					return false;
+				});
 
-	// button close
-	$('#close_feedback').click(function() {
+				function runEffect() {
 
-		runEffect();
-		return false;
+					var selectedEffect = 'clip';
+					var options = {};
 
-	});
+					$("#feedback-popup").effect(selectedEffect, options, 1000);
+				}
+				;
 
-	// click button submit
-	$('#submit_feedback').click(function() {
+				//button close
+				$('#close_feedback').click(function() {
 
-		$('#feedback-confirmation').show();
-		$('#feedback-popup-form').hide();
+					runEffect();
+					return false;
 
-		$.post("/trainingstorefront/feedback/submit", {
-			path : document.location.href,
-			message : $('#feedback-popup-form-message').val(),
-			priority : $('#priority').val()
-		})
-	});
+				});
 
-	// откл submit c form
-	$('#feedback-popup-form').submit(function(event) {
-		event.preventDefault();
-	})
-});
+				//click button submit
+				$('#submit_feedback').click(
+						function() {
+
+							$('#feedback-confirmation').show();
+							$('#feedback-popup-form').hide();
+							$('#path').val(document.location.href);
+
+							$.post("/trainingstorefront/feedback/submit", $(
+									'#feedback-popup-form').serialize())
+						});
+			});

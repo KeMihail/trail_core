@@ -6,22 +6,18 @@
 
 <%@ page import="de.hybris.platform.ticket.enums.CsTicketPriority"%>
 
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <link rel="stylesheet"
 	href="<c:url value="../_ui/responsive/common/css/feedback.css"/>"
 	type="text/css" />
 
 <script src="../_ui/responsive/common/js/cms/feedback.js"></script>
 
-<!-- <script
-	src="https://hybris.local:9002/trainingstorefront/web/webroot/_ui/responsive/common/js/cms/feedback.js"></script> -->
-
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-<script>
+<!-- <script>
 	$(function() {
 		$("#priority").selectmenu();
 	});
@@ -71,7 +67,7 @@
 									'#feedback-popup-form').serialize())
 						});
 			});
-</script>
+</script> -->
 
 <div id="feedback-popup" class="feedback-form" style="display: none">
 
@@ -122,8 +118,3 @@
 		title="${media.altText}" alt="${media.altText}" src="${media.url}">
 	</a>
 </div>
-
-
-<!-- path : document.location.href,
-				message : $('#feedback-popup-form-message').val(),
-				priority : $('#priority').val() -->

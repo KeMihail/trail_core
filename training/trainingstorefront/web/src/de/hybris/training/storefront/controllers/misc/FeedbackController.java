@@ -20,10 +20,10 @@ public class FeedbackController extends AbstractPageController
 	@RequestMapping(value = "/submit", method = RequestMethod.POST)
 	/* @ResponseBody */
 
-	public Boolean submitFeedback(@RequestParam("path") final String pageUrl, @RequestParam("message") final String message,
+	public Boolean submitFeedback(@RequestParam("path") final String path, @RequestParam("message") final String message,
 			@RequestParam("priority") final String priority)
 	{
-		feedbackFacade.submitFeedback(pageUrl, message, priority);
+		feedbackFacade.submitFeedback(path, message, priority);
 		return true;
 	}
 }

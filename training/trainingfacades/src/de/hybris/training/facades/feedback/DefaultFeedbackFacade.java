@@ -52,6 +52,7 @@ public class DefaultFeedbackFacade implements FeedbackFacade
 		final CustomerModel customer = getCurrentCustomer();
 
 		final CsTicketModel ticket = createTicket(subject, description, customer, CsTicketCategory.NOTE, priority);
+
 		return ticket != null;
 
 	}

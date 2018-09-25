@@ -3,6 +3,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <%@ page import="de.hybris.training.core.util.CsTicketPriorityValues"%>
+
 <%@ page import="de.hybris.platform.ticket.enums.CsTicketPriority"%>
 
 <link rel="stylesheet"
@@ -10,6 +11,10 @@
 	type="text/css" />
 
 <script src="../_ui/responsive/common/js/cms/feedback.js"></script>
+
+<!-- <script
+	src="https://hybris.local:9002/trainingstorefront/web/webroot/_ui/responsive/common/js/cms/feedback.js"></script> -->
+
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -23,60 +28,57 @@
 </script>
 
 <script>
-	$(document).ready(function() {
+	$(document).ready(
+			function() {
 
-		//click to image (feddback)
-		$('div.feedbackComponent a.feedback').click(function() {
-			$('#feedback-popup-form-message').show();
-			$('#feedback-confirmation').hide();
-			$('#feedback-button').show();
-			$('#feedback-popup-form-message').val('');
-			$("#feedback-popup").fadeIn('slow');
+				//click to image (feddback)
+				$('#feedback_component').click(function() {
+					$('#feedback-popup-form-message').show();
+					$('#feedback-confirmation').hide();
+					$('#feedback-button').show();
+					$('#feedback-popup-form-message').val('');
+					$("#feedback-popup").fadeIn('slow');
 
-			return false;
-		});
+					return false;
+				});
 
-		function runEffect() {
+				function runEffect() {
 
-			var selectedEffect = 'clip';
-			var options = {};
+					var selectedEffect = 'clip';
+					var options = {};
 
-			$("#feedback-popup").effect(selectedEffect, options, 1000);
-		}
-		;
+					$("#feedback-popup").effect(selectedEffect, options, 1000);
+				}
+				;
 
-		//button close
-		$('#close_feedback').click(function() {
+				//button close
+				$('#close_feedback').click(function() {
 
-			runEffect();
-			return false;
+					runEffect();
+					return false;
 
-		});
+				});
 
-		//click button submit
-		$('#submit_feedback').click(function() {
+				//click button submit
+				$('#submit_feedback').click(
+						function() {
 
-			$('#feedback-confirmation').show();
-			$('#feedback-popup-form').hide();
+							$('#feedback-confirmation').show();
+							$('#feedback-popup-form').hide();
+							$('#path').val(document.location.href);
 
-			$.post("/trainingstorefront/feedback/submit", {
-				path : document.location.href,
-				message : $('#feedback-popup-form-message').val(),
-				priority : $('#priority').val()
-			})
-		});
-
-		//откл submit c form
-		$('#feedback-popup-form').submit(function(event) {
-			event.preventDefault();
-		})
-	});
+							$.post("/trainingstorefront/feedback/submit", $(
+									'#feedback-popup-form').serialize())
+						});
+			});
 </script>
 
 <div id="feedback-popup" class="feedback-form" style="display: none">
 
 	<form id="feedback-popup-form" method="post" action="#"
 		autocomplete="on">
+
+		<input type="hidden" id="path" name="path" value="" />
 
 		<fieldset>
 			<label for="priority"><font size="4"><strong>Priority</strong></font></label>
@@ -96,9 +98,6 @@
 
 				</c:forEach>
 
-				<%-- <option value="${CsTicketPriority.LOW.getCode()}">${CsTicketPriority.LOW}</option>
-				<option value="${CsTicketPriority.MEDIUM.getCode()}">${CsTicketPriority.MEDIUM}</option>
-				<option value="${CsTicketPriority.HIGH.getCode()}">${CsTicketPriority.HIGH}</option> --%>
 			</select>
 
 		</fieldset>
@@ -106,7 +105,7 @@
 		<textarea id="feedback-popup-form-message" name="message" rows="18"
 			cols="40" placeholder="Enter your feedback here..."></textarea>
 
-		<input type="submit" id="submit_feedback" name="submit"
+		<input type="button" id="submit_feedback" name="submit"
 			class="button_style" value="Submit" />
 
 	</form>
@@ -119,10 +118,12 @@
 </div>
 
 <div class="feedbackComponent">
-
-	<a class="feedback" href="#"> <img title="${media.altText}"
-		alt="${media.altText}" src="${media.url}">
+	<a class="feedback" href="#" id="feedback_component"> <img
+		title="${media.altText}" alt="${media.altText}" src="${media.url}">
 	</a>
 </div>
 
 
+<!-- path : document.location.href,
+				message : $('#feedback-popup-form-message').val(),
+				priority : $('#priority').val() -->

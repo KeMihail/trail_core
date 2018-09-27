@@ -2,10 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-<%@ page import="de.hybris.training.core.util.CsTicketPriorityValues"%>
-
-<%@ page import="de.hybris.platform.ticket.enums.CsTicketPriority"%>
-
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -30,18 +26,6 @@
 
 			<select id="priority" name="priority">
 				<option disabled selected>Please pick one</option>
-
-				<c:forEach var="item"
-					items="${CsTicketPriorityValues.getPriorityValues().keySet()}">
-
-					<c:if
-						test="${not fn:containsIgnoreCase(item, 'SIMPLE_CLASSNAME') && not fn:containsIgnoreCase(item, '_TYPECODE')}">
-						<option
-							value="${CsTicketPriorityValues.getPriorityValues().get(item)}">${item}
-						</option>
-					</c:if>
-
-				</c:forEach>
 
 			</select>
 

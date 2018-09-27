@@ -2,12 +2,15 @@ package de.hybris.training.facades.feedback;
 
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.core.model.user.UserModel;
+import de.hybris.platform.enumeration.EnumerationService;
 import de.hybris.platform.servicelayer.user.UserService;
 import de.hybris.platform.ticket.enums.CsTicketCategory;
 import de.hybris.platform.ticket.enums.CsTicketPriority;
 import de.hybris.platform.ticket.events.model.CsCustomerEventModel;
 import de.hybris.platform.ticket.model.CsTicketModel;
 import de.hybris.platform.ticket.service.TicketBusinessService;
+
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Required;
@@ -19,6 +22,19 @@ public class DefaultFeedbackFacade implements FeedbackFacade
 
 	private TicketBusinessService ticketBusinessService;
 	private UserService userService;
+	private EnumerationService enumerationService;
+
+
+	public EnumerationService getEnumerationService()
+	{
+		return enumerationService;
+	}
+
+	@Required
+	public void setEnumerationService(final EnumerationService enumerationService)
+	{
+		this.enumerationService = enumerationService;
+	}
 
 	protected TicketBusinessService getTicketBusinessService()
 	{
@@ -81,5 +97,13 @@ public class DefaultFeedbackFacade implements FeedbackFacade
 		final UserModel currentUser = getUserService().getCurrentUser();
 		return currentUser instanceof CustomerModel && !getUserService().isAnonymousUser(currentUser) ? (CustomerModel) currentUser
 				: null;
+	}
+
+	@Override
+	public List<CsTicketPriority> getTicketPriorityValues()
+	{
+		final List<CsTicketPriority> list = getEnumerationService().getEnumerationValues(CsTicketPriority.class);
+
+		return list;
 	}
 }

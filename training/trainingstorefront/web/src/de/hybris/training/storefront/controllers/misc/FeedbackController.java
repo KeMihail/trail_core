@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping(value = "/feedback")
+@ResponseBody
 public class FeedbackController extends AbstractPageController
 {
 	@Autowired
@@ -33,6 +34,7 @@ public class FeedbackController extends AbstractPageController
 	@ResponseBody
 	public List<CsTicketPriority> getTicketPriorityValues()
 	{
+
 		return feedbackFacade.getTicketPriorityValues();
 	}
 }

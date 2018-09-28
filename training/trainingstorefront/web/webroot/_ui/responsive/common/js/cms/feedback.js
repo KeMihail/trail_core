@@ -13,19 +13,15 @@ $(document).ready(
 			$('#feedback_component').click(function() {
 
 				$.get("/trainingstorefront/feedback/enum", function(data) {
-				/* console.log(data); */
 					$('#priority').find('option').remove();
+					
 					for (var item of data){
-						if(item.code.length > 2){
+						console.log(item);
+						
+						if (item.code.length > 1){
 						$('#priority').append(new Option(item.code, item.code));
 						}
 					}
-					
-				/*
-				 * $.map(data, function(value, key) {
-				 * 
-				 * $('#priority').append(new Option(value, key)); });
-				 */
 				});
 
 				$('#feedback-popup-form-message').show();

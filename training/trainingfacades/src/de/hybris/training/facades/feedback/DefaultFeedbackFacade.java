@@ -1,5 +1,7 @@
 package de.hybris.training.facades.feedback;
 
+import de.hybris.platform.core.enums.CreditCardType;
+import de.hybris.platform.core.enums.OrderStatus;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.core.model.user.UserModel;
 import de.hybris.platform.enumeration.EnumerationService;
@@ -69,6 +71,7 @@ public class DefaultFeedbackFacade implements FeedbackFacade
 
 		final CsTicketModel ticket = createTicket(subject, description, customer, CsTicketCategory.NOTE, priority);
 
+
 		return ticket != null;
 
 	}
@@ -102,8 +105,12 @@ public class DefaultFeedbackFacade implements FeedbackFacade
 	@Override
 	public List<CsTicketPriority> getTicketPriorityValues()
 	{
-		final List<CsTicketPriority> list = getEnumerationService().getEnumerationValues(CsTicketPriority.class);
 
-		return list;
+		final List<CreditCardType> orderStatus = getEnumerationService().getEnumerationValues(OrderStatus._TYPECODE);
+		final List<CreditCardType> creditCardTypes = getEnumerationService().getEnumerationValues(CreditCardType._TYPECODE);
+
+
+		final List<CsTicketPriority> enumValues = getEnumerationService().getEnumerationValues(CsTicketPriority._TYPECODE);
+		return enumValues;
 	}
 }
